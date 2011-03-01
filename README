@@ -1,0 +1,9 @@
+Gestione consegne sacchetti per raccolta differenziata.
+
+Funziona cosi':
+l'utente si presenta alla circoscrizione per il ritiro dei sacchetti;
+l'operatore avvia il programma e si autentica;
+ricerca l'utente;
+visualizza i suoi dati;
+seleziona i sacchetti da consegnare: plastica, umido, ecc.
+inserisce i d... see more
