@@ -8,8 +8,14 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Differenzia2
   class Application < Rails::Application
+    
+    config.generators do |g|
+      g.template_engine :haml
+      g.test_framework  :rspec, :fixture => false, :views => false
+      g.fixture_replacement :machinist
+    end
   
-config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -32,9 +38,6 @@ config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :en
-
-    config.action_view.javascript_expansions[:defaults] = %w()
-    g.fixture_replacement :machinist
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
