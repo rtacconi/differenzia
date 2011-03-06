@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Differenzia2::Application.load_tasks
+Differenzia::Application.load_tasks

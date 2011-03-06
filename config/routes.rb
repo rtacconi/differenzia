@@ -1,4 +1,4 @@
-Differenzia2::Application.routes.draw do
+Differenzia::Application.routes.draw do
   devise_for :users
 
   get "dashboard/index"
