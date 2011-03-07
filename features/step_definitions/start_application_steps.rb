@@ -1,7 +1,8 @@
-Given /^I am a guest$/ do
-  # not logged
+Given /^I am not authenticated$/ do
+  visit('/users/sign_in')
 end
 
-When /^I access to root of the application$/ do
-  visit("/")
+When /^I access the root of the application$/ do
+    visit ('/')
 end
+
