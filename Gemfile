@@ -23,8 +23,8 @@ platforms :jruby do
   # SQLite JDBC adapter
   gem 'jdbc-sqlite3', :require => false
 
-  #openssl
   gem 'jruby-openssl'
+  gem 'warbler'
 
 end
 
@@ -45,7 +45,6 @@ gem 'ruby-debug'
 # gem 'aws-s3', :require => 'aws/s3'
 
 gem 'will_paginate', '~> 3.0.pre2'
-gem 'warbler'
 gem 'annotate'
 gem 'normalize_attributes'
 gem 'haml-rails'
