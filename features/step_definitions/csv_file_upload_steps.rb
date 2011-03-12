@@ -7,7 +7,8 @@ When /^I visit the csv import page$/ do
 end                                                                                                       
                                                                                                           
 When /^I upload a file with valid data for the customers$/ do                                             
-    pending # express the regexp above with the code you wish you had                                       
+    attach_file(:csv, File.join(RAILS_ROOT, 'public', 'data', 'csv_ok'))                                 
+    click_button "Upload"
 end                                                                                                       
                                                                                                           
 Then /^I should be sent to the csv uploaded page$/ do                                                     
@@ -15,7 +16,8 @@ Then /^I should be sent to the csv uploaded page$/ do
 end                                                                                                       
                                                                                                           
 When /^I upload a malformed file$/ do                                                                     
-    pending # express the regexp above with the code you wish you had                                       
+    attach_file(:csv, File.join(RAILS_ROOT, 'public', 'data', 'csv_ok')) 
+        click_button "Upload"                                     
 end                                                                                                       
                                                                                                           
 Then /^I should be sent to (\d+)\.html page$/ do |arg1|                                                   
