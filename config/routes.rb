@@ -1,4 +1,6 @@
 Differenzia::Application.routes.draw do
+  get "csv/import"
+
   devise_for :users
 
   get "dashboard/index"
