@@ -27,4 +27,3 @@ end
 When /^I access the root of application$/ do                                                              
     visit '/'                                       
 end 
->>>>>>> cucumber-feature
