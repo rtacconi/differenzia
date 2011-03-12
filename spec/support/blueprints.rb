@@ -5,3 +5,7 @@ User.blueprint do
   password {"password"}
   password_confirmation {"password"}
 end
+
+Customer.blueprint do
+  # Attributes here
+end
