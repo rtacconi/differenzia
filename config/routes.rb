@@ -1,7 +1,7 @@
 Differenzia::Application.routes.draw do
   get "csv/import"
   
-  post "csv/import"
+  post "csv/import" => 'csv#upload'
 
   devise_for :users
 
