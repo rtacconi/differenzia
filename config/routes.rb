@@ -1,5 +1,7 @@
 Differenzia::Application.routes.draw do
   get "csv/import"
+  
+  post "csv/import"
 
   devise_for :users
 
