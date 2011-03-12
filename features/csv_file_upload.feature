@@ -10,3 +10,10 @@ Feature: CSV file upload
     Then I should be sent to the csv uploaded page
     And I should see "Uploaded successfully!"
 
+  Scenario: Uploading a malformed file
+    Given I am an admin user
+    When I visit the csv import page
+    And I upload a malformed file
+    Then I should be sent to 500.html page
+
+
