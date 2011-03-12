@@ -6,7 +6,10 @@ When /^I access the root of the application$/ do
     visit ('/')
 end
 
-Then /^I should redirect to "([^"]*)"$/ do |arg1|
-    visit "/users/sign_in"
-end
+#Then /^I should redirect to "([^"]*)"$/ do |arg1|
+#    visit "/users/sign_in"
+#end
 
+Then /^I should redirect to sign_in page$/ do                                                             
+    visit  "/users/sign_in"                                       
+end 
