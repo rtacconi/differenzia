@@ -1,11 +1,10 @@
 Feature: Starting the application
   In order access the dashboard
-  As a user
+  As a guest
   I have to login
   
-  Scenario: User redirected to login
+  Scenario: Guest redirected to login
     Given I am not authenticated
     When I access the root of the application
-    Then I should see "Email"
-    And I should see "Password"
-    And I should see "Forgot your password?"
+    Then I should redirect to sign_in page
+
