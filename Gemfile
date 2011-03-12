@@ -71,3 +71,8 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
 end
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> cucumber-feature
