@@ -6,4 +6,4 @@ $(function() {
     delay: 250,
     loading_css: '#spinner'
   });
-}
+})
