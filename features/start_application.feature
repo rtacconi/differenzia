@@ -11,8 +11,3 @@ Feature: Starting the application
     And I should see "Email"
     And I should see "Password"
     And I should see "Forgot your password?"
-
-    Scenario: Access to root application
-      Given I am an authenticated user 
-      When I access the root of application
-      Then I should see "Nominativo"
