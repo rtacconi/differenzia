@@ -105,7 +105,7 @@ GEM
     normalize_attributes (0.1.6)
       activerecord (>= 3.0.0)
     polyglot (0.3.1)
-    rack (1.2.1)
+    rack (1.2.2)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
     rack-test (0.5.7)

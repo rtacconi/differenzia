@@ -59,10 +59,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'capybara'
+  gem 'launchy'
   gem 'autotest'
   gem 'autotest-notification'
   gem 'database_cleaner'
-  gem 'launchy'
   gem 'spork', '~> 0.9.0.rc'
   gem 'machinist', '>= 2.0.0.beta1'
 end
