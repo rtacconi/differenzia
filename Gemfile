@@ -23,8 +23,8 @@ platforms :jruby do
   # SQLite JDBC adapter
   gem 'jdbc-sqlite3', :require => false
 
-  #openssl
   gem 'jruby-openssl'
+  gem 'warbler'
 
 end
 
@@ -45,7 +45,6 @@ gem 'ruby-debug'
 # gem 'aws-s3', :require => 'aws/s3'
 
 gem 'will_paginate', '~> 3.0.pre2'
-gem 'warbler'
 gem 'annotate'
 gem 'normalize_attributes'
 gem 'haml-rails'
@@ -55,15 +54,20 @@ gem 'devise'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
- group :development, :test do
+group :development, :test do
 #   gem 'webrat'
-   gem 'rspec-rails'
-   gem 'cucumber-rails'
-   gem 'capybara'
-   gem 'autotest'
-   gem 'autotest-notification'
-   gem 'database_cleaner'
-   gem 'launchy'
-   gem 'spork', '~> 0.9.0.rc'
-   gem 'machinist', '>= 2.0.0.beta1'
- end
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'autotest'
+  gem 'autotest-notification'
+  gem 'database_cleaner'
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'machinist', '>= 2.0.0.beta1'
+end
+
+group :development do
+  gem 'hpricot'
+  gem 'ruby_parser'
+end

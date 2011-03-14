@@ -1,7 +1,13 @@
 Differenzia::Application.routes.draw do
+  get "csv/import"
+  
+  post "csv/import" => 'csv#upload'
+
   devise_for :users
 
   get "dashboard/index"
+  
+  get "customers/list"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
