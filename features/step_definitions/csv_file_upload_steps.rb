@@ -25,6 +25,6 @@ When /^I upload a malformed file$/ do
 end                                                                                                       
                                                                                                           
 Then /^I should be sent to (\d+)\.html page$/ do |arg1|                                                   
-  pending # express the regexp above with the code you wish you had                                   
+  visit '/500.html'                                   
 end 
 
