@@ -15,10 +15,6 @@ When /^I upload a file with valid data for the customers$/ do
   click_button "Upload"
 end                                                                                                       
                                                                                                           
-Then /^I should be sent to the csv uploaded_ok page$/ do                                                     
-  pending # express the regexp above with the code you wish you had
-end                                                                                                       
-                                                                                                          
 When /^I upload a malformed file$/ do                                                                     
   attach_file('upload_csv', File.join(Rails.root.to_s, 'public', 'data', 'csv_not_ok'))
   click_button "Upload"                                     
