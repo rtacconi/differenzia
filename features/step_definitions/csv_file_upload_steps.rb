@@ -11,7 +11,7 @@ When /^I visit the csv import page$/ do
 end                                                                                                       
                                                                                                           
 When /^I upload a file with valid data for the customers$/ do                                       
-  attach_file ('upload_csv', File.join(Rails.root.to_s, 'public', 'data', 'csv_ok'))
+  attach_file('upload_csv', File.join(Rails.root.to_s, 'public', 'data', 'csv_ok'))
   click_button "Upload"
 end                                                                                                       
                                                                                                           
@@ -20,7 +20,7 @@ Then /^I should be sent to the csv uploaded page$/ do
 end                                                                                                       
                                                                                                           
 When /^I upload a malformed file$/ do                                                                     
-  attach_file ('upload_csv', File.join(Rails.root.to_s, 'public', 'data', 'csv_not_ok'))
+  attach_file('upload_csv', File.join(Rails.root.to_s, 'public', 'data', 'csv_not_ok'))
   click_button "Upload"                                     
 end                                                                                                       
                                                                                                           
