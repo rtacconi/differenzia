@@ -1,16 +1,26 @@
-%h2 Sign in
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %p
-    = f.label :email
-    %br/
+= javascript_include_tag "sign_in"
+
+#sign-in
+  %h2 Sign in
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    %label
+      Email
+      %span{:class => "small"}
+        Enter a valid email
     = f.text_field :email
-  %p
-    = f.label :password
-    %br/
+    %label
+      Password
+      %span{:class => "small"}
+        At least 6 characters
     = f.password_field :password
-  - if devise_mapping.rememberable?
-    %p
+    - if devise_mapping.rememberable?
+      %label
+        Remember me
       = f.check_box :remember_me
-      = f.label :remember_me
-  %p= f.submit "Sign in"
-= render :partial => "devise/shared/links"
+    .spacer
+    = f.submit "Sign in", :class => "button"
+    
+    %label
+      &nbsp;
+    .forgot
+      = render :partial => "devise/shared/links"

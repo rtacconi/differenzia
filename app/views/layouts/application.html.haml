@@ -1,0 +1,16 @@
+!!! Strict
+%html
+  %head
+    %title= h(yield(:title) || "Differenzia")
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults, 'searchbox'
+    = csrf_meta_tag
+    = yield :header
+  %body
+    #header 
+      %h1 Differenzia
+    - unless flash.empty?
+      #flash
+        = content_tag :div, h(flash[:notice]), :class => "notice" unless flash[:notice].blank?
+        = content_tag :div, h(flash[:error]), :class => "error" unless flash[:error].blank?
+    = yield
