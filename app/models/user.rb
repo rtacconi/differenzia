@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
     errors.add(:base, "Role #{self.role} is not allowed") unless User::ROLES.include?(self.role)
   end
 end
-end
 
 # == Schema Information
 #
