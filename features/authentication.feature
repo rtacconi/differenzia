@@ -1,9 +1,9 @@
 Feature: Authentication
 
   Scenario: Login
-    Given I have a user with email address "mrsanna1@gmail.com"
-    When I go to the sign_in page
-    And I fill in "user_email" with "mrsanna1@gmail.com"
-    And I fill in "user_password" with "secret"
+    Given I have a user with email address "mauro@differezia.it"
+    When I go to the sign in page
+    And I fill in "user_email" with "mauro@differenzia.it"
+    And I fill in "user_password" with "password"
     Then I should see "Nominativo:"
 

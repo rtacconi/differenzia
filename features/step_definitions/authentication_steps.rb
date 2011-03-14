@@ -1,3 +1,3 @@
-Given /^I have a user with email address "([^"]*)"$/ do |arg1|                                                            
-    pending # express the regexp above with the code you wish you had
+Given /^I have a user with email address "([^"]*)"$/ do |email|
+  User.make!(:email => email)
 end 
