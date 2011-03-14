@@ -7,7 +7,7 @@ Feature: CSV file upload
     Given I am an user with role "ADMIN"
     When I visit the csv import page
     And I upload a file with valid data for the customers
-    Then I should be sent to the csv uploaded page
+    Then I should be sent to the csv uploaded_ok page
     And I should see "Uploaded successfully!"
 
   Scenario: Uploading a malformed file
