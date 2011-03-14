@@ -11,7 +11,7 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
     when /the sign in page/ 
-      new_session_path
+      new_user_session_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
