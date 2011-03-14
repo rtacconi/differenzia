@@ -1,11 +1,17 @@
 Feature: Authentication
 
-  Scenario: Login
+  Scenario: Sign in as user
     Given I have a user with email address "mrsanna1@gmail.com"
     When I go to the sign in page
     And I fill in "user_email" with "mrsanna1@gmail.com"
     And I fill in "user_password" with "password"
     And I press "Sign in"
-    Then I should redirect to the root page"
-    And I should see "Nominativo:"
-
+    And I should see "user"
+    
+  Scenario: Sign in as admin
+    Given I have an admin user with email address "admin@differenzia.com" 
+    When I go to the sign in page
+    Then I fill in "user_email" with "admin@differenzia.com"
+    And I fill in "user_password" with "password"
+    And I press "Sign in"
+    And I should see "admin"

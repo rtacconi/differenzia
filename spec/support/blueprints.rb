@@ -8,5 +8,7 @@ User.blueprint do
 end
 
 Customer.blueprint do
-  # Attributes here
+  full_name {"Riccardo#{sn} Tacconi"}
+  address_line_1 {"Via dei Mille #{sn}"}
+  country {"Italia"}
 end
