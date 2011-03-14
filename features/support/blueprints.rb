@@ -1,0 +1,11 @@
+require 'machinist/active_record'
+
+User.blueprint do
+  email {"user#{sn}@differenzia.it"}
+  password {"password"}
+  password_confirmation {"password"}
+end
+
+Customer.blueprint do
+  # Attributes here
+end
