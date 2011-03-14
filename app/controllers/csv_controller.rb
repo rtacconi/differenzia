@@ -3,7 +3,7 @@ class CsvController < ApplicationController
   end
   
   def upload
-  	render :text => params.to_json
+  	render :text => "File has been uploaded successfully!"
   end
 
 end

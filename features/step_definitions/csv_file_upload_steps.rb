@@ -10,7 +10,7 @@ When /^I visit the csv import page$/ do
   visit "/csv/import"                                       
 end                                                                                                       
                                                                                                           
-When /^I upload a file with valid data for the customers$/ do                                       
+When /^I upload a file with valid customers data$/ do                                       
   attach_file('upload_csv', File.join(Rails.root.to_s, 'public', 'data', 'csv_ok'))
   click_button "Upload"
 end                                                                                                       
