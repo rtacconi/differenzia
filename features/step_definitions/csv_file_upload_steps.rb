@@ -1,9 +1,9 @@
 Given /^I am an user with role "ADMIN"$/ do                                                             
-  email = "mrsanna1@gmail.com"                         
-  login = "mauro.sanna"
-  password = "secret"
-  role = "ADMIN"
-  #User.findByRole("ADMIN")
+  #email = "mrsanna1@gmail.com"                         
+  #login = "mauro.sanna"
+  #password = "secret"
+  #role = "ADMIN"
+  User.find_by_role("ADMIN")
 end
 
 When /^I visit the csv import page$/ do                                                                   
