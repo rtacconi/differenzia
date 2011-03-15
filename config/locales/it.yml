@@ -12,6 +12,7 @@ it:
   Show: "Mostra"
   Edit: "Modifica"
   Destroy: "Elimina"
+  role: "Ruolo"
 
   number:
     format:
@@ -203,7 +204,8 @@ it:
       user: "Operatore"
     attributes:
       user:
-      	first_name: "Nome"
-      	last_name: "Cognome"
+        first_name: "Nome"
+        last_name: "Cognome"
+        role: "Ruolo"
         
         
