@@ -1,11 +1,12 @@
 it:
+  Forgot your password?: "Password dimenticata?"
   errors:
     messages:
       not_found: "non trovato"
       already_confirmed: "è stato già confermato"
       not_locked: "non era bloccato"
 
-  devise:
+  devise:  	
     failure:
       unauthenticated: "Devi accedere o registrarti per continuare."
       unconfirmed: "Devi confermare il tuo account per continuare."
@@ -17,9 +18,10 @@ it:
     sessions:
       signed_in: "Accesso effettuato con successo."
       signed_out: "Sei uscito correttamente."
+      remember_me: "Resta connesso"      
     passwords:
       send_instructions: "Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto."
-      updated: "La tua password è stata cambiata. Ora sei collegato."
+      updated: "La tua password è stata cambiata. Ora sei collegato."      
     confirmations:
       send_instructions: "Riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto."
       confirmed: "Il tuo account è stato correttamente confermato. Ora sei collegato."
