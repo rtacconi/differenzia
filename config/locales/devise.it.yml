@@ -1,4 +1,5 @@
 it:
+  remember_me: "Resta connesso"
   Forgot your password?: "Password dimenticata?"
   errors:
     messages:
@@ -17,8 +18,7 @@ it:
       inactive: "Il tuo account non è stato ancora attivato."
     sessions:
       signed_in: "Accesso effettuato con successo."
-      signed_out: "Sei uscito correttamente."
-      remember_me: "Resta connesso"      
+      signed_out: "Sei uscito correttamente."            
     passwords:
       send_instructions: "Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto."
       updated: "La tua password è stata cambiata. Ora sei collegato."      
