@@ -1,4 +1,6 @@
 = render 'shared/user_details'
+%br
+= link_to 'Operators', new_user_session_path if admin
 = render 'form'
 %br
 #results
