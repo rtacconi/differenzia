@@ -1,7 +1,7 @@
 Feature: User creation
 
   Scenario: Create user
-    Given I am a guest
+    Given I am not authenticated
     When I go to the sign in page
     And I fill in "user_email" with "admin@differenzia.com"
     And I fill in "user_password" with "adminadmin"

@@ -4,7 +4,9 @@ User.blueprint do
   email {"user#{sn}@differenzia.it"}
   password {"password"}
   password_confirmation {"password"}
-  role { "user" }
+  role {"user"}
+  first_name {"Riccardo"}
+  last_name {"Tacconi"}
 end
 
 Customer.blueprint do
