@@ -6,12 +6,12 @@ Feature: Authentication
     And I fill in "user_email" with "mrsanna1@gmail.com"
     And I fill in "user_password" with "password"
     And I press "Sign in"
-    And I should see "user"
+    Then I should see "user"
     
   Scenario: Sign in as admin
     Given I have an admin user with email address "admin@differenzia.com" 
     When I go to the sign in page
-    Then I fill in "user_email" with "admin@differenzia.com"
+    And I fill in "user_email" with "admin@differenzia.com"
     And I fill in "user_password" with "password"
     And I press "Sign in"
-    And I should see "admin"
+    Then I should see "admin"
