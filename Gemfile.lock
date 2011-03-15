@@ -84,7 +84,7 @@ GEM
     jquery-rails (0.2.7)
       rails (~> 3.0)
       thor (~> 0.14.4)
-    jruby-jars (1.5.6)
+    jruby-jars (1.6.0)
     jruby-openssl (0.7.3)
       bouncy-castle-java
     jruby-rack (1.0.7)
