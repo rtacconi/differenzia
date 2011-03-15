@@ -24,6 +24,7 @@ describe User do
 end
 
 
+
 # == Schema Information
 #
 # Table name: users
@@ -43,5 +44,7 @@ end
 #  created_at           :datetime
 #  updated_at           :datetime
 #  role                 :string(255)     default("user"), not null
+#  first_name           :string(255)
+#  last_name            :string(255)
 #
 

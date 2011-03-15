@@ -7,13 +7,14 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role
   validate :role_in_list
-  validates :first_name, :last_name, :role, :presence => true
+  validates :role, :presence => true
   ROLES = %w[admin manager user].freeze
   
   def role_in_list
     errors.add(:base, "Role #{self.role} is not allowed") unless User::ROLES.include?(self.role)
   end
 end
+
 
 # == Schema Information
 #
@@ -34,5 +35,7 @@ end
 #  created_at           :datetime
 #  updated_at           :datetime
 #  role                 :string(255)     default("user"), not null
+#  first_name           :string(255)
+#  last_name            :string(255)
 #
 
