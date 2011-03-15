@@ -7,7 +7,7 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 user = User.create!({:first_name => "Admin",
 	                   :last_name => "Admin",
-										 :email => "admin@example.com", 
+										 :email => "admin@differenzia.com", 
                      :role => "admin", 
                      :password => "adminadmin", 
                      :password_confirmation => "adminadmin" }) # do not change the password!!!
