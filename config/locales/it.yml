@@ -7,8 +7,7 @@
 # Rails 3 version by Davide Guerri (d.guerri@caspur.it)
 
 it:
-  Are you sure?: "Sei sicuro?"
-  remember_me: "Resta connesso"
+  Are you sure?: "Sei sicuro?"  
   Back: "Indietro"
   Show: "Mostra"
   Edit: "Modifica"
