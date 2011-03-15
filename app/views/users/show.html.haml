@@ -1,2 +1,7 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+%p
+	%b email:
+	= @user.email
+
+%p
+	= link_to t('Edit'), edit_user_path(@user) |
+	= link_to t('Back'), users_path
