@@ -150,3 +150,11 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+.list-line-even {
+	background: #fdfdfd;
+}
+
+.list-line-odd {
+	background: #e2e2e2;
+}
