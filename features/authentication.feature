@@ -1,7 +1,7 @@
 Feature: Authentication
 
-  Background:
-    Given I have an admin user with "admin@differenzia.com" as email
+  #Background:
+  #  Given I have an admin user with "admin@differenzia.com" as email
 
   Scenario: Sign in as user
     Given I have a user with email address "mrsanna1@gmail.com"
