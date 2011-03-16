@@ -1,9 +1,11 @@
-Given /^I am an user with role "ADMIN"$/ do                                                             
-  #email = "mrsanna1@gmail.com"                         
-  #login = "mauro.sanna"
-  #password = "secret"
-  role = "ADMIN"
-  #User.find_by_role("ADMIN")
+Given /^I am user "([^"]*)" "([^"]*)" with email "([^"]*)" role "([^"]*)" password "([^"]*)" and password_confirmation "([^"]*)"$/ do |first_name, last_name, email, role, password, password_confirmation|
+#  User.make!(:first_name => "#{first_name}",
+#             :last_name => "#{last_name}",
+#             :email => "#{email}",
+#             :role => "#{role}",
+#             :password => "#{password}",
+#             :password_confirmation => "#{password_confirmation}")
+  User.find_by_email("#{email}")             
 end
 
 When /^I visit the csv import page$/ do                                                                   
