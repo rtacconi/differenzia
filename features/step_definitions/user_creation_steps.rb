@@ -1,4 +1,4 @@
-Given /^I am a valid user with role "([^"]*)"$/ do |role|
+Given /^I am an user with role "([^"]*)"$/ do |role|
   User.find_by_role("#{role}")                
 end                                                                                    
 

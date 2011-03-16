@@ -1,21 +1,26 @@
 Feature: Authentication
 
-  #Background:
-  #  Given I have an admin user with "admin@differenzia.com" as email
+  Background:
+    Given I am not authenticated
 
   Scenario: Sign in as user
-    Given I have a user with email address "mrsanna1@gmail.com"
     When I go to the sign in page
-    And I fill in "user_email" with "mrsanna1@gmail.com"
-    And I fill in "user_password" with "password"
+    And I fill in "user_email" with "user@differenzia.com"
+    And I fill in "user_password" with "useruser"
     And I press "Sign in"
     Then I should see "user"
+
+  Scenario: Sign in as manager
+    When I go to the sign in page
+    And I fill in "user_email" with "manager@differenzia.com"
+    And I fill in "user_password" with "managermanager"
+    And I press "Sign in"
+    Then I should see "manager"
     
   Scenario: Sign in as admin
-    Given I am not authenticated
     When I go to the sign in page
     And I fill in "user_email" with "admin@differenzia.com"
-    And I fill in "user_password" with "password"
+    And I fill in "user_password" with "adminadmin"
     And I press "Sign in"
     Then I should see "admin"
-    And I should see "Operators"
+    And I should see "Operators" within "a"
