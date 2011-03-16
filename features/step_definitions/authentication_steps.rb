@@ -10,3 +10,7 @@ Given /^I have one user "([^"]*)" "([^"]*)" with email "([^"]*)" role "([^"]*)" 
             :password => "#{password}",
             :password_confirmation => "#{password_confirmation}")
 end 
+
+Then /^I should see the link "([^"]*)"$/ do |link|
+  page.should have_link(link)
+end
