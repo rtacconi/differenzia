@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(params[:sector])
+  	@user = User.new(params[:user])
     flash[:notice] = "Operatore creato con successo" if@user.save
     respond_with(@user)
   end
