@@ -1,7 +1,7 @@
 Feature: User creation
 
   Background:
-    Given I have an admin user with "admin@differenzia.com" as email
+    Given I have one user with email "admin@differenzia.com" role "admin" and password "adminadmin"
 
   Scenario: Authenticate and go to the users page
     Given I am not authenticated

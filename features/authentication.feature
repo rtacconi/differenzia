@@ -5,15 +5,15 @@ Feature: Authentication
 	I must authenticate
 
   Background:
-    Given I have one user with email "user@differenzia.com" role "user"
-    And I have one user with email "manager@differenzia.com" role "manager"
-    And I have one user with email "admin@differenzia.com" role "admin"
+    Given I have one user with email "user@differenzia.com" role "user" and password "password"
+    And I have one user with email "manager@differenzia.com" role "manager" and password "password"
+    And I have one user with email "admin@differenzia.com" role "admin" and password "password"
 
   Scenario: Sign in as user
     Given I am not authenticated
     When I go to the sign in page
     And I fill in "user_email" with "user@differenzia.com"
-    And I fill in "user_password" with "useruser"
+    And I fill in "user_password" with "password"
     And I press "Sign in"
     Then I should see "user"
 
@@ -21,7 +21,7 @@ Feature: Authentication
     Given I am not authenticated
     When I go to the sign in page
     And I fill in "user_email" with "manager@differenzia.com"
-    And I fill in "user_password" with "managermanager"
+    And I fill in "user_password" with "password"
     And I press "Sign in"
     Then I should see "manager"
     
@@ -29,7 +29,7 @@ Feature: Authentication
     Given I am not authenticated
     When I go to the sign in page
     And I fill in "user_email" with "admin@differenzia.com"
-    And I fill in "user_password" with "adminadmin"
+    And I fill in "user_password" with "password"
     And I press "Sign in"
     Then I should see "admin"
     And I should see the link "Operators"
