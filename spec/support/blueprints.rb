@@ -11,6 +11,4 @@ end
 
 Customer.blueprint do
   full_name {"Riccardo#{sn} Tacconi"}
-  address {"Via dei Mille #{sn}"}
-  locality {"Italia"}
 end

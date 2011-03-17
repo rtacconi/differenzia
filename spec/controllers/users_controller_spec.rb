@@ -13,15 +13,14 @@ describe UsersController do
     it "should be successful" do
       get 'new'
       response.should be_success
-      pending
     end
   end
 
   describe "GET 'edit'" do
     it "should be successful" do
-      get 'edit'
+      user = User.make!
+      get 'edit', :id => user.id
       response.should be_success
-      pending
     end
   end
 
@@ -34,17 +33,15 @@ describe UsersController do
     end
   end
 
-  describe "GET 'update'" do
+  describe "PUT 'update'" do
     it "should be successful" do
-      get 'update'
-      response.should be_success
+      pending
     end
   end
 
-  describe "GET 'destroy'" do
+  describe "DELETE 'destroy'" do
     it "should be successful" do
-      get 'destroy'
-      response.should be_success
+      pending
     end
   end
 
