@@ -1,20 +1,33 @@
+@no-txn
 Feature: Authentication
+	In order to go to the root page of application
+	As an user
+	I must authenticate
 
   Background:
-    Given I have an admin user with "admin@differenzia.com" as email
+    Given I am not authenticated
 
   Scenario: Sign in as user
-    Given I have a user with email address "mrsanna1@gmail.com"
+    Given I have one user "User" "User" with email "user@differenzia.com" role "user" password "useruser" and password_confirmation "useruser"
     When I go to the sign in page
-    And I fill in "user_email" with "mrsanna1@gmail.com"
-    And I fill in "user_password" with "password"
+    And I fill in "user_email" with "user@differenzia.com"
+    And I fill in "user_password" with "useruser"
     And I press "Sign in"
     Then I should see "user"
+
+  Scenario: Sign in as manager
+    Given I have one user "Manager" "Manager" with email "manager@differenzia.com" role "manager" password "managermanager" and password_confirmation "managermanager"
+    When I go to the sign in page
+    And I fill in "user_email" with "manager@differenzia.com"
+    And I fill in "user_password" with "managermanager"
+    And I press "Sign in"
+    Then I should see "manager"
     
   Scenario: Sign in as admin
-    Given I am not authenticated
+    Given I have one user "Admin" "Admin" with email "admin@differenzia.com" role "admin" password "adminadmin" and password_confirmation "adminadmin"
     When I go to the sign in page
     And I fill in "user_email" with "admin@differenzia.com"
-    And I fill in "user_password" with "password"
+    And I fill in "user_password" with "adminadmin"
     And I press "Sign in"
     Then I should see "admin"
+    And I should see the link "Operators"

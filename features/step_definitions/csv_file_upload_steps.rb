@@ -1,9 +1,5 @@
-Given /^I am an user with role "ADMIN"$/ do                                                             
-  #email = "mrsanna1@gmail.com"                         
-  #login = "mauro.sanna"
-  #password = "secret"
-  role = "ADMIN"
-  #User.find_by_role("ADMIN")
+Given /^I am user with email "([^"]*)"$/ do |email|
+  User.find_by_email("#{email}")             
 end
 
 When /^I visit the csv import page$/ do                                                                   
