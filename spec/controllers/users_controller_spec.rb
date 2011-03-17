@@ -9,17 +9,11 @@ describe UsersController do
     end
   end
 
-  describe "GET 'show'" do
-    it "should be successful" do
-      get 'show'
-      response.should be_success
-    end
-  end
-
   describe "GET 'new'" do
     it "should be successful" do
       get 'new'
       response.should be_success
+      pending
     end
   end
 
@@ -27,13 +21,16 @@ describe UsersController do
     it "should be successful" do
       get 'edit'
       response.should be_success
+      pending
     end
   end
 
-  describe "GET 'create'" do
+  describe "POST 'create'" do
     it "should be successful" do
-      get 'create'
-      response.should be_success
+      post :create, :user => {:first_name => "riccardo", :last_name => "tacconi", :email => "rt@differenzia.com",
+                              :password => "password", :password_confiramtion => "password"}
+      response.should redirect_to users_url
+      flash.now[:notice].should be == "Operatore creato con successo"
     end
   end
 
