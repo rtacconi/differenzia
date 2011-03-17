@@ -1,5 +1,8 @@
 @no-txn
 Feature: Authentication
+	In order to go to the root page of application
+	As an user
+	I must authenticate
 
   Background:
     Given I am not authenticated
