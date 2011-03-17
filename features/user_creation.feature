@@ -14,3 +14,8 @@ Feature: User creation
     And I follow "Nuovo Operatore"
     And I fill in "user_email" with "op1@differenzia.com"
     And I press "Crea Operatore"
+    And I fill "first_name" with "John"
+    And I fill "last_name" with "Doe"
+    And I fill "email" with "new_user@differenzia.com"
+    And I press "Crea Operatore"
+    And I see "Il nuovo utente "
