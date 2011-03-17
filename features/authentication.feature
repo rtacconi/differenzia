@@ -5,10 +5,12 @@ Feature: Authentication
 	I must authenticate
 
   Background:
-    Given I am not authenticated
+    Given I have one user with email "user@differenzia.com" role "user"
+    And I have one user with email "manager@differenzia.com" role "manager"
+    And I have one user with email "admin@differenzia.com" role "admin"
 
   Scenario: Sign in as user
-    Given I have one user "User" "User" with email "user@differenzia.com" role "user" password "useruser" and password_confirmation "useruser"
+    Given I am not authenticated
     When I go to the sign in page
     And I fill in "user_email" with "user@differenzia.com"
     And I fill in "user_password" with "useruser"
@@ -16,7 +18,7 @@ Feature: Authentication
     Then I should see "user"
 
   Scenario: Sign in as manager
-    Given I have one user "Manager" "Manager" with email "manager@differenzia.com" role "manager" password "managermanager" and password_confirmation "managermanager"
+    Given I am not authenticated
     When I go to the sign in page
     And I fill in "user_email" with "manager@differenzia.com"
     And I fill in "user_password" with "managermanager"
@@ -24,7 +26,7 @@ Feature: Authentication
     Then I should see "manager"
     
   Scenario: Sign in as admin
-    Given I have one user "Admin" "Admin" with email "admin@differenzia.com" role "admin" password "adminadmin" and password_confirmation "adminadmin"
+    Given I am not authenticated
     When I go to the sign in page
     And I fill in "user_email" with "admin@differenzia.com"
     And I fill in "user_password" with "adminadmin"
