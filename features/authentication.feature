@@ -18,4 +18,3 @@ Feature: Authentication
     And I fill in "user_password" with "password"
     And I press "Sign in"
     Then I should see "admin"
-    And I should see "Operators"

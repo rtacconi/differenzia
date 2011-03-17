@@ -7,6 +7,7 @@ gem 'rails'
 
 platforms :ruby do
   gem 'sqlite3'
+  gem 'pg'
   # Deploy with Capistrano
   gem 'capistrano'
 end

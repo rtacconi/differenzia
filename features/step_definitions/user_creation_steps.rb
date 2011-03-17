@@ -4,4 +4,4 @@ end
 
 Then /^I should see the list of users$/ do                                             
     users_path                    
-end 
+end
