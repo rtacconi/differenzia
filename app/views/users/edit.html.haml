@@ -1,2 +1,4 @@
-%h1 Users#edit
-%p Find me in app/views/users/edit.html.haml
+= render 'form'
+
+= link_to t('Show'), @user |
+= link_to t('Back'), users_path
