@@ -18,7 +18,7 @@ describe User, "that is new," do
     
   it "should create a normal user" do
     User.make!(:role => "user")
-    User.count.should be == 1
+    User.count.should eql(1)
   end
     
     #it "is not valid with a wrong role" do
@@ -26,7 +26,7 @@ describe User, "that is new," do
     #end
   it "should not create with a wrong role" do
     User.make(:role => 'wrong_role')
-    User.count.should be == 0
+    User.count.should eql(0)
   end
 #  end
 end
