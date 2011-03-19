@@ -6,3 +6,4 @@ tmp/
 *.swp
 Gemfile.lock
 config/database.yml
+.sass-cache/
