@@ -1,3 +1,3 @@
-$(document).ready(function() {
+$(function() {
   $('#user_email').focus();
 });

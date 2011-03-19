@@ -44,17 +44,17 @@ a:hover {
   margin-bottom: 8px;
   color: #600;
 }
-
-#sign-in input {
-	width: 200px;
-	padding: 4px 2px;
-	margin: 4px 0 8px 0;
+/*
+#sign-in label{
+  text-align: left;
+  width: 70px;
+  float: left; 
 }
 
-#sign-in label {
-	text-align: left;
-	width: 80px;
-	float: left;
+#sign-in label.connesso{
+  text-align: left;
+  width: 100px;
+  float: left; 
 }
 
 #sign-in .hint{
@@ -64,11 +64,38 @@ a:hover {
   font-weight: normal;
 }
 
-.spacer, .forgot {
-	clear:both; 
-	height:40px; 
-	text-align: center;
+#sign-in input{
+  float: left; 
+  font-size: 12px;
+  padding: 4px 2px;
+  border: solid 1px #aacfe4;
+  width: 200px;
 }
+
+#sign-in .forgot{
+  float: left;
+  font-size: 14px;
+  padding: 100px;
+  width: 200px;
+  margin: 2px 0 20px 10px;
+}
+
+#sign-in .button{
+  clear: both;
+  margin-left: 150px;
+  width: 125px;
+  height: 31px;
+  background: #000;
+  text-align: center;
+  line-height: 31px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+}
+*/
+.spacer{clear:both; height:40px;}
+
+font-family: verdana, arial, sans-serif; font-size: 14px;  }
 
 #flash { text-align: center; margin: 0px auto; width: 924px; }
 #flash div { padding: 8px; }
@@ -86,7 +113,42 @@ a:hover {
 .success a  { color: #264409; }
 .info a			{ color: #205791; }
 
-.button {background: #000; color: #fff;}
+.button {background: #000; color: #fff;}*/
+/*
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
 
 .list-line-even {
 	background: #fdfdfd;
@@ -94,4 +156,4 @@ a:hover {
 
 .list-line-odd {
 	background: #e2e2e2;
-}
+}*/
