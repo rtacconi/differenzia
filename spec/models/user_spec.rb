@@ -1,34 +1,34 @@
 require 'spec_helper'
 
-describe User do
-  describe "roles" do
-    before(:each) do
-      User.delete_all
-    end
+describe User, "that is new," do
+#  describe "roles" do
+  before(:each) do
+    User.delete_all
+  end
     
-    it "should create an admin user" do
-      User.make!(:role => "admin")
-      User.count.should be == 1
-    end
+  it "should create an admin user" do
+    User.make!(:role => "admin")
+    User.count.should be == 1
+  end
     
-    it "should create a manager" do
-      User.make!(:role => "manager")
-      User.count.should be == 1
-    end
+  it "should create a manager" do
+    User.make!(:role => "manager")
+    User.count.should be == 1
+  end
     
-    it "should create a normal user" do
-      User.make!(:role => "user")
-      User.count.should be == 1
-    end
+  it "should create a normal user" do
+    User.make!(:role => "user")
+    User.count.should be == 1
+  end
     
     #it "is not valid with a wrong role" do
     #  User.new(:role => "wrong_role").should_not be_valid
     #end
-    it "should not create with a wrong role" do
-      User.make(:role => 'wrong_role')
-      User.count.should be == 0
-    end
+  it "should not create with a wrong role" do
+    User.make(:role => 'wrong_role')
+    User.count.should be == 0
   end
+#  end
 end
 
 
