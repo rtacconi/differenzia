@@ -87,11 +87,3 @@ a:hover {
 .info a			{ color: #205791; }
 
 .button {background: #000; color: #fff;}
-
-.list-line-even {
-	background: #fdfdfd;
-}
-
-.list-line-odd {
-	background: #e2e2e2;
-}
