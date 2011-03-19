@@ -1,0 +1,155 @@
+body {
+  background-image: url("/images/green-leaf.png");
+  background-repeat: no-repeat;
+  background-position: left top; }
+
+header {
+  padding-top: 20px;
+  /*  background-color: #600; 
+    height: 60px; 
+    margin-right: 0px; 
+    margin-left: 120px; 
+    margin-top: 20px;
+    margin-bottom: 50px; */ }
+
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #fff; }
+
+section h1 {
+  font-size: 200px; }
+
+/* banner */
+
+#banner {
+  padding: 1em 0 1em 0;
+  background-color: #600;
+  height: 3em;
+  margin-left: 100px; }
+  #banner h1 {
+    color: #fff;
+    left: 290px;
+    position: absolute; }
+
+/* Sign in container */
+
+#sign-in {
+  border: 3px solid #b7ddf2;
+  background: #ebf4fb;
+  width: 400px;
+  /*--Specify Width--*/
+  height: 300px;
+  /*--Specify Height--*/
+  position: absolute;
+  /*--Set positioning to absolute--*/
+  top: 35%;
+  /*--Set top coordinate to 50%--*/
+  left: 50%;
+  /*--Set left coordinate to 50%--*/
+  margin: -100px 0 0 -150px;
+  /*--Set negative top/left margin--*/
+  padding: 10px; }
+  #sign-in h2 {
+  	text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #600; }
+  #sign-in input {
+    width: 200px;
+    padding: 4px 2px;
+    margin: 4px 0 8px 0; }
+  #sign-in label {
+    text-align: left;
+    width: 80px;
+    float: left; }
+  #sign-in .hint {
+    color: #666666;
+    padding: 2px;
+    font-size: 11px;
+    font-weight: normal; }
+  #sign-in .spacer, #sign-in .forgot {
+    clear: both;
+    height: 40px;
+    text-align: center; }
+  #sign-in .button {
+    text-align: center;
+    width: 100px;
+    font-size: 110%;
+    font-weight: bold;
+    padding: 5px; }
+
+/* Round corners */
+
+.round {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+
+/* links */
+
+a:link {
+  color: #600; }
+
+a:visited {
+  color: #600; }
+
+a:active {
+  color: #600; }
+
+a:hover {
+  color: #600;
+  text-decoration: none; }
+
+#flash {
+  text-align: center;
+  margin: 0px auto;
+  width: 924px; }
+  #flash div {
+    padding: 8px; }
+
+.error,
+.notice,
+.success,
+.info {
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 2px solid #ddd; }
+
+.error {
+  background: #fbe3e4;
+  color: #8a1f11;
+  border-color: #fbc2c4; }
+
+.notice {
+  background: #fff6bf;
+  color: #514721;
+  border-color: #ffd324; }
+
+.success {
+  background: #e6efc2;
+  color: #264409;
+  border-color: #c6d880; }
+
+.info {
+  background: #d5edf8;
+  color: #205791;
+  border-color: #92cae4; }
+
+.error a {
+  color: #8a1f11; }
+
+.notice a {
+  color: #514721; }
+
+.success a {
+  color: #264409; }
+
+.info a {
+  color: #205791; }
+
+.button {
+  background: #000;
+  color: #fff; }
