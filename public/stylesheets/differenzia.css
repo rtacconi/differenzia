@@ -21,8 +21,21 @@ section {
 section h1 {
   font-size: 200px; }
 
-/* banner */
+/* links */
+a:link {
+  color: #600; }
 
+a:visited {
+  color: #600; }
+
+a:active {
+  color: #600; }
+
+a:hover {
+  color: #600;
+  text-decoration: none; }
+
+/* banner */
 #banner {
   padding: 1em 0 1em 0;
   background-color: #600;
@@ -34,7 +47,6 @@ section h1 {
     position: absolute; }
 
 /* Sign in container */
-
 #sign-in {
   border: 3px solid #b7ddf2;
   background: #ebf4fb;
@@ -44,7 +56,7 @@ section h1 {
   /*--Specify Height--*/
   position: absolute;
   /*--Set positioning to absolute--*/
-  top: 35%;
+  top: 45%;
   /*--Set top coordinate to 50%--*/
   left: 50%;
   /*--Set left coordinate to 50%--*/
@@ -52,7 +64,7 @@ section h1 {
   /*--Set negative top/left margin--*/
   padding: 10px; }
   #sign-in h2 {
-  	text-align: center;
+    text-align: center;
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -78,30 +90,14 @@ section h1 {
     text-align: center;
     width: 100px;
     font-size: 110%;
-    font-weight: bold;
+    font-weigth: bold;
     padding: 5px; }
 
 /* Round corners */
-
 .round {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px; }
-
-/* links */
-
-a:link {
-  color: #600; }
-
-a:visited {
-  color: #600; }
-
-a:active {
-  color: #600; }
-
-a:hover {
-  color: #600;
-  text-decoration: none; }
 
 #flash {
   text-align: center;

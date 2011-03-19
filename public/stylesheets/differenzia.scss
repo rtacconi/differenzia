@@ -35,7 +35,7 @@ a:hover {
   text-decoration: none; }
 
 /* banner */
-#banner {
+#banner {	
   padding: 1em 0 1em 0;
   background-color: #600;
   height: 3em;
@@ -57,7 +57,7 @@ a:hover {
   /*--Specify Height--*/
   position: absolute;
   /*--Set positioning to absolute--*/
-  top: 35%;
+  top: 45%;
   /*--Set top coordinate to 50%--*/
   left: 50%;
   /*--Set left coordinate to 50%--*/
@@ -65,6 +65,7 @@ a:hover {
   /*--Set negative top/left margin--*/
   padding: 10px; 
   h2 {
+  	text-align: center;
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
