@@ -21,8 +21,12 @@ describe User do
       User.count.should be == 1
     end
     
-    it "is not valid with a wrong role" do
-      User.new(:role => "wrong_role").should_not be_valid
+    #it "is not valid with a wrong role" do
+    #  User.new(:role => "wrong_role").should_not be_valid
+    #end
+    it "should not create with a wrong role" do
+      User.make(:role => 'wrong_role')
+      User.count.should be == 0
     end
   end
 end
