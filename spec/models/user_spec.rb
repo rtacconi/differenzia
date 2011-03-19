@@ -24,10 +24,26 @@ describe User, "that is new," do
     #it "is not valid with a wrong role" do
     #  User.new(:role => "wrong_role").should_not be_valid
     #end
-  it "should not create with a wrong role" do
-    User.make(:role => 'wrong_role')
-    User.count.should eql(0)
+  it "should not be valid with a wrong role" do
+    user = User.make(:role => 'wrong_role')
+    user.should_not be_valid
   end
+
+  it "should not be valid withouth a first name" do
+    user = User.make(:first_name => nil)
+    user.should_not be_valid
+  end
+
+  it "should not be valid without a last name" do
+    user = User.make(:last_name => nil)
+    user.should_not be_valid
+  end
+
+  it "should not be valid without a role" do
+    user = User.make(:role => nil)
+    user.should_not be_valid
+  end
+
 #  end
 end
 
