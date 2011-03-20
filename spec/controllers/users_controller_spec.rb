@@ -6,6 +6,15 @@ describe UsersController do
     @user = mock_model(User, :id => "1")
   end
 
+  describe "GET 'new'" do
+
+    it "should be successful" do
+      get 'new'
+      response.should be_success
+    end
+  end
+
+
   describe "GET 'index'" do
 
     #before(:each) do
@@ -76,13 +85,13 @@ describe UsersController do
     end
   end
 
-  describe "GET 'new'" do
+  #describe "GET 'new'" do
 
-    it "should be successful" do
-      get 'new'
-      response.should be_success
-    end
-  end
+  #  it "should be successful" do
+  #    get 'new'
+  #    response.should be_success
+  #  end
+  #end
 
   describe "GET 'edit'" do
 
