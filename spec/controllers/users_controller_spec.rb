@@ -14,7 +14,6 @@ describe UsersController do
     end
   end
 
-
   describe "GET 'index'" do
 
     #before(:each) do
@@ -112,7 +111,7 @@ describe UsersController do
     describe "with valid params" do
 
       before(:each) do
-        #@user = mock_model(User)
+        @user = mock_model(User)
         User.stub!(:new).and_return(@user)
         @params = { :first_name => 'name', :last_name => 'surname', :email => 'mail@differenzia.com',
                     :role => 'user', :password => 'password', :password_confirmation => 'password' }
@@ -145,9 +144,8 @@ describe UsersController do
     describe "with valid params" do
 
       before(:each) do
-        #@user = mock_model(User, :update_attributes => true)
+        @user = mock_model(User, :update_attributes => true)
         User.stub!(:find).with("1").and_return(@user)
-        @user.stub!(:update_attributes).and_return(true)
       end
 
       it "should find user and return object" do
