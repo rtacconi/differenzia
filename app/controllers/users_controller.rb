@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def update
   	@user = User.find(params[:id])
     flash[:notice] = "Operatore modificato con successo." if @user.update_attributes(params[:user])
-    redirect_to users_url
+    respond_with(@user, :location => users_url)
   end
 
   def destroy
