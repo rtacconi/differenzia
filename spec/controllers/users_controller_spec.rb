@@ -29,6 +29,35 @@ describe UsersController do
     
   end
 
+  #CREATE
+  describe "POST users" do
+
+    describe "with valid params" do
+      before(:each) do
+        @user = mock_model(User)
+        User.stub!(:new).and_return(@user)
+        @params = { :first_name => 'name', :last_name => 'surname', :email => 'mail@differenzia.com',
+                    :role => 'user', :password => 'password', :password_confirmation => 'password' }
+      end
+  
+      it "should create a new user and return object" do
+        User.should_receive(:create).with(@params).and_return(@user)
+        post :create, :user => @params
+      end
+  
+      #it "should save the user" do
+      #  @user.should_receive(:save).and_return(true)
+      #  post :create, :user => @params
+      #end
+  
+      it "should redirect to user's index page" do
+        post :crate, :user => @params
+        response.should redirect_to users_url
+      end
+    end
+
+  end
+  
   #UPDATE
   describe "PUT users/:id" do
 

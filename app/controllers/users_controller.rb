@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    flash[:notice] = "Operatore creato con successoi." if User.create(params[:user])
+    flash[:notice] = "Operatore creato con successo." if User.create(params[:user])
     redirect_to users_url
   end
 
