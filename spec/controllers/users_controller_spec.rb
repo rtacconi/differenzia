@@ -3,10 +3,31 @@ require 'spec_helper'
 describe UsersController do
 
   describe "GET 'index'" do
+
+    before(:each) do
+      @user = mock_model(User)
+    end
+
+    it "should find all users" do
+      User.should_receive(:all)
+      get 'index'
+    end
+
     it "should be successful" do
       get 'index'
       response.should be_success
     end
+
+    it "should render the correct template" do
+      get 'index'
+      response.should render_template(:index)    
+    end
+
+    it "should assign the #{@pluralized_model_name} to the #{@pluralized_model_name} view variable" do
+      get 'index'
+      assigns[@users].should == @users
+    end
+
   end
 
   describe "GET 'new'" do
@@ -17,6 +38,7 @@ describe UsersController do
   end
 
   describe "GET 'edit'" do
+
     before(:each) do
       @user = mock_model(User)
       User.stub!(:find).with("1").and_return(@user)
@@ -33,6 +55,7 @@ describe UsersController do
   describe "POST users" do
 
     describe "with valid params" do
+
       before(:each) do
         @user = mock_model(User)
         User.stub!(:new).and_return(@user)
@@ -62,6 +85,7 @@ describe UsersController do
   describe "PUT users/:id" do
 
     describe "with valid params" do
+
       before(:each) do
         @user = mock_model(User, :update_attributes => true)
         User.stub!(:find).with("1").and_return(@user)
