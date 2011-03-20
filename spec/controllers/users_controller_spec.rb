@@ -37,7 +37,7 @@ describe UsersController do
 
     it "should assign the users to the @users view variable" do
       do_get
-      assigns[@users].should == @users
+      assigns[:user].should == @users
     end
 
     def do_get page = nil, format = 'html'
@@ -111,7 +111,7 @@ describe UsersController do
     describe "with valid params" do
 
       before(:each) do
-        @user = mock_model(User)
+        @user = mock_model(User, :id => 1, :save => true)
         User.stub!(:new).and_return(@user)
         @params = { :first_name => 'name', :last_name => 'surname', :email => 'mail@differenzia.com',
                     :role => 'user', :password => 'password', :password_confirmation => 'password' }
@@ -133,7 +133,7 @@ describe UsersController do
       end
 
       def do_post format = 'html'
-        post 'create', @user => @params, :format => format
+        post 'create', :user => @params, :format => format
       end
     end
   end
