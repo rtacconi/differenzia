@@ -84,7 +84,7 @@ describe UsersController do
     end
   end
 
-  describe "GET 'edit'" do
+  describe "GET edit" do
 
     before(:each) do
       #@user = mock_model(User)
@@ -97,8 +97,7 @@ describe UsersController do
     end
   end
 
-  #CREATE
-  describe "POST users" do
+  describe "POST create" do
 
     describe "with valid params" do
 
@@ -129,8 +128,7 @@ describe UsersController do
     end
   end
   
-  #UPDATE
-  describe "PUT users/:id" do
+  describe "PUT update" do
 
     describe "with valid params" do
 
