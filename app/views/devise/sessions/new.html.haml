@@ -2,16 +2,24 @@
 
 #sign-in
   %h2 Sign in
-  %br
-  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-    %label Email
-    = f.input :email, :label => false, :hint => 'Enter a valid mail'
-    %label Password   
-    = f.input :password, :as => :password, :label => false, :hint => 'At least 6 characters'
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    %label
+      Email
+      %span{:class => "small"}
+        Enter a valid email
+    = f.text_field :email
+    %label
+      Password
+      %span{:class => "small"}
+        At least 6 characters
+    = f.password_field :password
     - if devise_mapping.rememberable?
-      %label{:class => 'connesso'}= t :remember_me
+      %label= t :remember_me
       = f.check_box :remember_me
-      .spacer
-        = f.submit "Sign in", :class => "button round"
-  .forgot
-    = render :partial => "devise/shared/links"
+    .spacer
+    = f.submit "Sign in", :class => "button"
+    
+    %label
+      &nbsp;
+    .forgot
+      = render :partial => "devise/shared/links"
