@@ -105,8 +105,7 @@ describe UsersController do
       before(:each) do
         @user = mock_model(User, :id => 1, :save => true)
         User.stub!(:new).and_return(@user)
-        @params = { :first_name => 'name', :last_name => 'surname', :email => 'mail@differenzia.com',
-                    :role => 'user', :password => 'password', :password_confirmation => 'password' }
+        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', "role" => 'user', "password" => 'password', "password_confirmation" => 'password'}
       end
   
       it "should create a new user and return object" do
