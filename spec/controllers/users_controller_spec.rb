@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe UsersController do
 
-  before(:each) do
-    @user = mock_model(User, :id => "1")
-  end
+  #before(:all) do
+  #  @user = mock_model(User, :id => "1")
+  #end
 
   describe "GET 'new'" do
 
@@ -48,9 +48,9 @@ describe UsersController do
 
   describe "GET show" do
 
-    #before(:each) do
-    #  @user = mock_model(User)
-    #end
+    before(:each) do
+      @user = mock_model(User, :id => "1")
+    end
 
     describe "with a valid ID" do
       before(:each) do
