@@ -3,11 +3,11 @@ class UsersController < ApplicationController
 	respond_to :html
 	
   def index
-  	@users = User.all
+  	@users = User.all(:order => "created_at DESC")
   end
 
   def show
-  	respond_with(@user = User.find(params[:id]))
+  	# respond_with(@user = User.find(params[:id]))
   end
 
   def new
@@ -30,8 +30,27 @@ class UsersController < ApplicationController
   end
 
   def destroy
-  	@user = User.find(params[:id])
-    @user.destroy
+    @user = User.find(params[:id])
+    if @user.id != 1
+      @user.destroy
+      flash[:notice] = "Operatore eliminato con successo."
+    else
+      flash[:notice] = "L'operatore con ID 1 non puo` essere eliminato."
+    end
+    
+    redirect_to users_url
+  end
+  
+  def reset_password
+    @user = User.find(params[:id])
+    if @user.present?
+      if @user.update_attributes(:user => {:password => 'password', :password_confirmation => 'password'})
+        flash[:notice] = "La password e` stata resettata."
+      else
+        flash[:notice] = "Errore: la password non e` stata resettata."
+      end
+    end
+    
     redirect_to users_url
   end
 

@@ -1,16 +1,12 @@
 = simple_form_for @user do |f|
-	/= render 'shared/error_messages', :object => @user
-	.field
-		= f.label :first_name
-		%br
-		= f.input :first_name, :label => false
-	.field
-		= f.label :last_name
-		%br
-		= f.input :last_name, :label => false
-	.field
-		= f.label :email
-		%br
-		= f.input :email, :label => false
-	.actions
-		= f.button :submit
+  /= render 'shared/error_messages', :object => @user
+  .field
+    = f.input :first_name
+  .field
+    = f.input  :last_name
+  .field
+    = f.input :email
+  .field
+    = f.input :role, :collection => User::ROLES
+  .action
+    = f.button :submit

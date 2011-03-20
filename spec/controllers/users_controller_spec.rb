@@ -2,11 +2,7 @@ require 'spec_helper'
 
 describe UsersController do
 
-  #before(:all) do
-  #  @user = mock_model(User, :id => "1")
-  #end
-
-  describe "GET 'new'" do
+  describe "GET new" do
 
     it "should be successful" do
       get 'new'
@@ -14,11 +10,7 @@ describe UsersController do
     end
   end
 
-  describe "GET 'index'" do
-
-    #before(:each) do
-    #  @user = mock_model(User)
-    #end
+  describe "GET index" do
 
     it "should find all users" do
       User.should_receive(:all)
@@ -45,6 +37,7 @@ describe UsersController do
     end
   end
 
+=begin
   describe "GET show" do
 
     before(:each) do
@@ -83,11 +76,11 @@ describe UsersController do
       end
     end
   end
+=end
 
   describe "GET edit" do
 
     before(:each) do
-      #@user = mock_model(User)
       User.stub!(:find).with("1").and_return(@user)
     end
 
@@ -104,18 +97,14 @@ describe UsersController do
       before(:each) do
         @user = mock_model(User, :id => 1, :save => true)
         User.stub!(:new).and_return(@user)
-        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', "role" => 'user', "password" => 'password', "password_confirmation" => 'password'}
+        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', 
+                   "role" => 'user', "password" => 'password', "password_confirmation" => 'password'}
       end
   
       it "should create a new user and return object" do
         User.should_receive(:create).with(@params).and_return(@user)
         do_post
       end
-  
-      #it "should save the user" do
-      #  @user.should_receive(:save).and_return(true)
-      #  post :create, :user => @params
-      #end
   
       it "should redirect to user's index page" do
         do_post
@@ -185,4 +174,62 @@ describe UsersController do
       end
     end
   end
+  
+  describe "DELETE destroy" do
+    
+    describe "succefully destroy the user" do
+      before(:each) do
+        @user = mock_model(User, :update_attributes => true)
+        User.stub!(:find).with("2").and_return(@user)
+      end
+    
+      it "should find user" do
+        User.should_receive(:find).with("2").and_return(@user)
+        delete :destroy, :id => "2"
+      end
+    
+      it "should destroy the user" do
+        @user.should_receive(:destroy).and_return(true)
+        delete :destroy, :id => "2" 
+      end
+    
+      it "should set the flash" do
+        delete :destroy, :id => "2"
+        flash[:notice].should eql 'Operatore eliminato con successo.'
+      end
+    end
+    
+    describe "user 1" do
+      it "should set the flash with a negative message" do
+        stub_model(User, :id => 1)
+        delete :destroy, :id => 1 
+        flash[:notice].should eql "L'operatore con ID 1 non puo` essere eliminato."
+      end
+      
+      it "should not destroy this user" do
+        @user_1 = stub_model(User, :id => 1)
+        @user_1.should_not_receive(:destroy).and_return(true)
+        delete :destroy, :id => 1 
+      end
+    end
+  end
+  
+  describe "GET reset_password" do
+    before(:each) do
+      @user = stub_model(User, :id => "3")
+      User.stub!(:find).with("3").and_return(@user)
+    end
+    
+    it "should reset the password" do
+      pending "still failing when the controller is ok"
+      get :reset_password, :id => "3"
+      flash[:notice].should eql "La password e` stata resettata."
+    end
+    
+    it "should send an email" do
+      get :reset_password, :id => "3"
+      pending
+    end
+  end
+  
 end

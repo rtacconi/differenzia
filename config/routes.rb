@@ -6,7 +6,11 @@ Differenzia::Application.routes.draw do
 
   devise_for :users, :path_prefix => 'd'
   
-  resources :users
+  resources :users do
+    member do
+      get 'reset_password'
+    end
+  end
 
   get "dashboard/index"
   
