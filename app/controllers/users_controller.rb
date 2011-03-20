@@ -19,13 +19,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    flash[:notice] = "Operatore creato con successo" if User.create(params[:user])
+    flash[:notice] = "Operatore creato con successoi." if User.create(params[:user])
     redirect_to users_url
   end
 
   def update
   	@user = User.find(params[:id])
-    flash[:notice] = "Operatore modificato con successo" if @user.update_attributes(params[:user])
+    flash[:notice] = "Operatore modificato con successo." if @user.update_attributes(params[:user])
     redirect_to users_url
   end
 
