@@ -1,11 +1,9 @@
 require 'spec_helper'
+require 'support/controller_macros'
 
 describe DashboardController do
-  before(:each) do
-    @user = User.make!
-    sign_in @user
-  end
-
+  login_user
+	
   describe "GET 'index'" do
     it "should be successful" do
       get 'index'

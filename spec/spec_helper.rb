@@ -27,4 +27,5 @@ RSpec.configure do |config|
   
   # put devise in your specs
   config.include Devise::TestHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
 end
