@@ -1,5 +1,5 @@
 = simple_form_for @user do |f|
-  /= render 'shared/error_messages', :object => @user
+  = render 'shared/error_messages', :object => @user
   .field
     = f.input :first_name
   .field
@@ -9,9 +9,9 @@
   .field
     = f.input :role, :collection => User::ROLES
   .field
-    = f.input :password
+    = f.input :password, :hint => t("it should be at least 6 characters")
   .field
-    = f.input :password_confirmation
+    = f.input :password_confirmation, :hint => t("it has to be the same as the password")
   .action
     = f.button :submit
 

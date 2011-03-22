@@ -83,6 +83,13 @@ describe UsersController do
         post 'create', :user => @params
         flash[:notice].should_not eql 'Operatore creato con successo.'        
       end
+      
+      it "should render new" do
+        @user = mock_model(User, :id => 1).as_null_object
+        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', 
+                   "role" => 'user', "password" => 'password', "12345" => '12345'}
+        post 'create', :user => @params        
+      end
     end
   end
   

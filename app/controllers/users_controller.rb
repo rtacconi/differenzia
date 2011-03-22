@@ -22,8 +22,11 @@ class UsersController < ApplicationController
     user = User.create(params[:user])
     if user.save
       flash[:notice] = "Operatore creato con successo." 
+      redirect_to users_url
+    else
+      @user = User.new
+      render 'new'
     end
-    redirect_to users_url
   end
 
   def update
