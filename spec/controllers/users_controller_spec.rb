@@ -179,7 +179,7 @@ describe UsersController do
     
     describe "succefully destroy the user" do
       before(:each) do
-        @user = mock_model(User, :update_attributes => true)
+        @user = mock_model(User)
         User.stub!(:find).with("2").and_return(@user)
       end
     
