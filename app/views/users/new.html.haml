@@ -9,10 +9,10 @@
   .field
     = f.input :role, :collection => User::ROLES
   .field
-    = f.input :first_name
+    = f.input :password
   .field
-    = f.input  :password
+    = f.input :password_confirmation
   .action
-    = f.button :password_confirmation
+    = f.button :submit
 
 = link_to t('Back'), users_path
