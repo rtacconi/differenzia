@@ -116,6 +116,7 @@ describe UsersController do
     end
     
     describe "with invalid params" do
+
       before(:each) do
         @user = mock_model(User, :update_attributes => false)
         User.stub!(:find).with("1").and_return(@user)
@@ -123,17 +124,21 @@ describe UsersController do
 
       it "should find user and return object" do
         User.should_receive(:find).with("1").and_return(@user)
-        put :update, :id => "1", :user => {}
+        do_put
       end
 
       it "should update the user object's attributes" do
         @user.should_receive(:update_attributes).and_return(false)
-        put :update, :id => "1", :user => {}
+        do_put
       end
 
       it "should render the edit form" do
-        put :update, :id => "1", :user => {}
+        do_put
         response.should render_template :edit
+      end
+
+      def do_put
+        put :update, :id => "1", :user => {}
       end
     end
   end
@@ -194,13 +199,13 @@ describe UsersController do
   end
   
   describe "GET reset_password" do
+
     before(:each) do
-      @user = stub_model(User, :id => "3")
+      @user = stub_model(User, :id => "3", :update_attributes => true)
       User.stub!(:find).with("3").and_return(@user)
     end
     
     it "should reset the password" do
-      pending "still failing when the controller is ok"
       get :reset_password, :id => "3"
       flash[:notice].should eql "La password e` stata resettata."
     end
