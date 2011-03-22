@@ -200,16 +200,21 @@ describe UsersController do
     end
     
     describe "user 1" do
+      before(:each) do
+        @user = mock_model(User)
+        User.stub!(:find).with("1").and_return(@user)
+      end
+      
       it "should set the flash with a negative message" do
-        stub_model(User, :id => 1)
-        delete :destroy, :id => 1 
+        # stub_model(User, :id => 1)
+        delete :destroy, :id => "1" 
         flash[:notice].should eql "L'operatore con ID 1 non puo` essere eliminato."
       end
       
       it "should not destroy this user" do
-        @user_1 = stub_model(User, :id => 1)
+        # @user_1 = stub_model(User, :id => 1)
         @user_1.should_not_receive(:destroy).and_return(true)
-        delete :destroy, :id => 1 
+        delete :destroy, :id => "1" 
       end
     end
   end
