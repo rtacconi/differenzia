@@ -1,3 +1,4 @@
+=begin
 After do |scenario|
   exceptions_to_open = [
     Capybara::ElementNotFound,
@@ -8,3 +9,4 @@ After do |scenario|
     save_and_open_page
   end
 end
+=end
