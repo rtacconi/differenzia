@@ -1,3 +1,18 @@
-= render 'form'
+= simple_form_for @user do |f|
+  /= render 'shared/error_messages', :object => @user
+  .field
+    = f.input :first_name
+  .field
+    = f.input  :last_name
+  .field
+    = f.input :email
+  .field
+    = f.input :role, :collection => User::ROLES
+  .field
+    = f.input :first_name
+  .field
+    = f.input  :password
+  .action
+    = f.button :password_confirmation
 
 = link_to t('Back'), users_path
