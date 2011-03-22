@@ -44,9 +44,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.present?
       if @user.update_attributes(:user => { :password => 'password', :password_confirmation => 'password' })
-        flash[:notice] = "La password e` stata resettata."
+        flash[:notice] = "La password è stata resettata."
       else
-        flash[:notice] = "Errore: la password non e` stata resettata."
+        flash[:notice] = "Errore: la password non è stata resettata."
       end
     end
     redirect_to users_url

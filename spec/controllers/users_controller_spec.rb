@@ -207,9 +207,19 @@ describe UsersController do
     
     it "should reset the password" do
       get :reset_password, :id => "3"
-      flash[:notice].should eql "La password e` stata resettata."
+      #flash[:notice].should eql "La password e` stata resettata."
     end
-    
+
+    it "should update the user object's attributes" do
+      @user.should_receive(:update_attributes).and_return(true)
+      get :reset_password, :id => "3"
+    end
+
+    it "should have a successful flash notice" do
+      get :reset_password, :id => "3"
+      flash[:notice].should eql 'La password è stata resettata.'
+    end
+
     it "should send an email" do
       get :reset_password, :id => "3"
       pending
