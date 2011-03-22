@@ -30,14 +30,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    if @user.id != 1
-      @user.destroy
-      flash[:notice] = "Operatore eliminato con successo."
+    begin
+      @user = User.find(params[:id])
+    rescue
+      flash[:error] = "L'Operatore non può essere eliminato." 
     else
-      flash[:notice] = "L'operatore con ID 1 non puo` essere eliminato."
+      flash[:notice] = "Operatore eliminato con successo." if @user.destroy
     end
-    
     redirect_to users_url
   end
   
