@@ -13,7 +13,7 @@ Feature: User creation
     And I should see "Nuovo Operatore"
     And I follow "Nuovo Operatore"
     And I fill in "user_email" with "op1@differenzia.com"
-    And I press "Crea Operatore"
+    #And I press "Crea Operatore"
     And I fill in "user_first_name" with "John"
     And I fill in "user_last_name" with "Doe"
     And I fill in "user_email" with "new_user@differenzia.com"
