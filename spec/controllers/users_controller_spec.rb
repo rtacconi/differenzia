@@ -60,8 +60,13 @@ describe UsersController do
                    "role" => 'user', "password" => 'password', "password_confirmation" => 'password'}
       end
   
-      it "should create a new user and return object" do
-        User.should_receive(:create).with(@params).and_return(@user)
+      it "should build a new user and return object" do
+        User.should_receive(:new).with(@params).and_return(@user)
+        do_post
+      end
+
+      it "should save the user" do
+        @user.should_receive(:save).and_return(true)
         do_post
       end
   
@@ -78,8 +83,7 @@ describe UsersController do
     describe "with invalid params" do
       it "should have not a successful flash notice" do
         @user = mock_model(User, :id => 1).as_null_object
-        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', 
-                   "role" => 'user'}
+        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', "role" => 'user'}
         post 'create', :user => @params
         flash[:notice].should_not eql 'Operatore creato con successo.'        
       end
