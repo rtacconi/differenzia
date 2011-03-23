@@ -29,3 +29,7 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
 end
+
+def get_file(name)
+  File.new(Rails.root.to_s+"/spec/support/#{name}")
+end
