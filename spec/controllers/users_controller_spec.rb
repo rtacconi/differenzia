@@ -60,8 +60,13 @@ describe UsersController do
                    "role" => 'user', "password" => 'password', "password_confirmation" => 'password'}
       end
   
-      it "should create a new user and return object" do
-        User.should_receive(:create).with(@params).and_return(@user)
+      it "should build a new user and return object" do
+        User.should_receive(:new).with(@params).and_return(@user)
+        do_post
+      end
+
+      it "should save the user" do
+        @user.should_receive(:save).and_return(true)
         do_post
       end
   
