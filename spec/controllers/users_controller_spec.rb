@@ -83,8 +83,7 @@ describe UsersController do
     describe "with invalid params" do
       it "should have not a successful flash notice" do
         @user = mock_model(User, :id => 1).as_null_object
-        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', 
-                   "role" => 'user'}
+        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', "role" => 'user'}
         post 'create', :user => @params
         flash[:notice].should_not eql 'Operatore creato con successo.'        
       end
