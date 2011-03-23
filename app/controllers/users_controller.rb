@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     else
       flash[:notice] = "Operatore eliminato con successo." if @user.destroy
     end
-    redirect_to users_url
+    respond_with(@user)
   end
   
   def reset_password
