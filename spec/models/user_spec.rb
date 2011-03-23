@@ -21,9 +21,6 @@ describe User, "that is new," do
     User.count.should eql(1)
   end
     
-    #it "is not valid with a wrong role" do
-    #  User.new(:role => "wrong_role").should_not be_valid
-    #end
   it "should not be valid with a wrong role" do
     user = User.make(:role => 'wrong_role')
     user.should_not be_valid
