@@ -193,6 +193,7 @@ describe UsersController do
         flash[:notice].should eql 'Operatore eliminato con successo.'
       end
 
+
       def do_delete format = 'html'
         delete 'destroy', :id => "2", :format => format
       end
