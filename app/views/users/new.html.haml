@@ -1,0 +1,18 @@
+= simple_form_for @user do |f|
+  = render 'shared/error_messages', :object => @user
+  .field
+    = f.input :first_name
+  .field
+    = f.input  :last_name
+  .field
+    = f.input :email
+  .field
+    = f.input :role, :collection => User::ROLES
+  .field
+    = f.input :password, :hint => t("it should be at least 6 characters")
+  .field
+    = f.input :password_confirmation, :hint => t("it has to be the same as the password")
+  .action
+    = f.button :submit
+
+= link_to t('Back'), users_path

@@ -7,6 +7,7 @@ gem 'rails'
 
 platforms :ruby do
   gem 'sqlite3'
+  gem 'pg'
   # Deploy with Capistrano
   gem 'capistrano'
 end
@@ -52,6 +53,7 @@ gem 'sass'
 gem 'jquery-rails'
 gem 'devise'
 gem 'meta_where'
+gem 'simple_form'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

@@ -14,8 +14,7 @@
         At least 6 characters
     = f.password_field :password
     - if devise_mapping.rememberable?
-      %label
-        Remember me
+      %label= t :remember_me
       = f.check_box :remember_me
     .spacer
     = f.submit "Sign in", :class => "button"

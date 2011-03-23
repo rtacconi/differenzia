@@ -10,20 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110314173156) do
+ActiveRecord::Schema.define(:version => 20110315111001) do
 
   create_table "customers", :force => true do |t|
-    t.integer  "year"
     t.string   "full_name"
-    t.date     "birth_date"
-    t.string   "address"
-    t.string   "postal_code",     :limit => 5
-    t.string   "locality"
-    t.string   "tax_code",        :limit => 16
-    t.string   "contract_number"
-    t.integer  "square_meters"
-    t.integer  "category"
-    t.string   "taxable_address"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "address_line_3"
+    t.string   "postal_code"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20110314173156) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role",                                :default => "user", :null => false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

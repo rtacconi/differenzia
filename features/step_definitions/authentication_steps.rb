@@ -1,15 +1,19 @@
-Given /^I have a user with email address "([^"]*)"$/ do |email|
-  User.make!(:email => email, :role => 'user')
-end 
+Given /^I am not authenticated$/ do 
+   visit 'd/users/sign_out/'
+end
 
-#Then /^I should redirect to the root page"$/ do
-#    visit "/"
-#end 
 
-#Then /^I should redirect to the root page$/ do
-#  pending # express the regexp above with the code you wish you had
-#end
+And /^I should see the link "([^"]*)"$/ do |link|
+  page.should have_link(link)
+end
 
-Given /^I have an admin user with email address "([^"]*)"$/ do |email|
-   User.make!(:email => email, :role => 'admin')
+Given /^I have one user with email "([^"]*)" role "([^"]*)" and password "([^"]*)"$/ do |email, role, password|
+  user = User.find_by_email(email)
+  if user.present?
+    user
+  else
+    User.create!(:role => role, :email => email,
+                 :password => password, :password_confirmation => password,
+                 :first_name => "John", :last_name => "Doe")
+  end
 end

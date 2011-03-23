@@ -1,9 +1,16 @@
 Differenzia::Application.routes.draw do
+  
   get "csv/import"
   
   post "csv/import" => 'csv#upload'
 
-  devise_for :users
+  devise_for :users, :path_prefix => 'd'
+  
+  resources :users do
+    member do
+      get 'reset_password'
+    end
+  end
 
   get "dashboard/index"
   
