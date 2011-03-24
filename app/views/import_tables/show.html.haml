@@ -10,6 +10,12 @@
       - 0.upto(@column_index_max) do |column_index|
         %th
           = f.select(column_index, [])
+    - 0.upto(@row_index_max) do |row_index|
+      - row = @import_cells.select { |cell| cell.row_index == row_index }
+      %tr
+        - 0.upto(@column_index_max) do |column_index|
+          %td
+            = row.select { |cell| cell.column_index == column_index }[0].contents
   %label= 'Select a table for merging:'
   = f.select(:table, @tables.collect { |t| [t, t] }, { :include_blank => true }, { :onchange => "mergeTableSelected();" })
   = f.submit "Merge", :disable_with => 'Merging...'
@@ -18,7 +24,7 @@
   var columns = new Array();
   - @tables.each do |table|
   	- table.classify.constantize.columns.each do |column|
-  		columns.push(new Array('prova', 'ora'));
+  		columns.push(new Array('= table', '= column.name'));
   function mergeTableSelected() {
     var o = $('select#merge_table option:selected');
     $('th select option').remove();
