@@ -34,6 +34,7 @@
   = f.select(:table, @tables.collect { |t| [t, t] }, { :include_blank => true }, { :onchange => "mergeTableSelected();" })
   = f.submit "Merge", :disable_with => 'Merging...'
   
+/-----------------------------------------------------------------------  
 %table{:border => "1", :cellspacing => "1", :cellpadding => "1"}
   - 0.upto(@row_index_max) do |row_index| 
     - row = @import_cells.select { |cell| cell.row_index == row_index }
