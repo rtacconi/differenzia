@@ -1,3 +1,19 @@
+%p#notice= notice
+
+%p
+  %b Original path:
+  = @import_table.original_path
+  
+= form_for :merge do |f|
+  %table{ :border => "1", :cellspacing => "1", :cellpadding => "1"}
+    %tr
+      - 0.upto(@column_index_max) do |column_index|
+        %th
+          = f.select(column_index, [])
+  %label= 'Select a table for merging:'
+  = f.select(:table, @tables.collect { |t| [t, t] }, { :include_blank => true }, { :onchange => "mergeTableSelected();" })
+  = f.submit "Merge", :disable_with => 'Merging...'
+
 :javascript
   var columns = new Array();
   - @tables.each do |table|
@@ -15,22 +31,6 @@
       });
     });
   }
-
-%p#notice= notice
-
-%p
-  %b Original path:
-  = @import_table.original_path
-  
-= form_for :merge do |f|
-  %table{ :border => "1", :cellspacing => "1", :cellpadding => "1"}
-    %tr
-      - 0.upto(@column_index_max) do |column_index|
-        %th
-          = f.select(column_index, [])
-  %label= 'Select a table for merging:'
-  = f.select(:table, @tables.collect { |t| [t, t] }, { :include_blank => true }, { :onchange => "mergeTableSelected();" })
-  = f.submit "Merge", :disable_with => 'Merging...'
   
 /-----------------------------------------------------------------------  
 /%table{:border => "1", :cellspacing => "1", :cellpadding => "1"}
@@ -41,6 +41,6 @@
 /        %td
 /          = row.select { |cell| cell.column_index == column_index }[0].contents
 
-/= link_to 'Edit', edit_import_table_path(@import_table)
-/\|
-/= link_to 'Back', import_tables_path
+= link_to 'Edit', edit_import_table_path(@import_table)
+\|
+= link_to 'Back', import_tables_path
