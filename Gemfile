@@ -54,6 +54,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'meta_where'
 gem 'simple_form'
+gem "compass", ">= 0.10.6"
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
