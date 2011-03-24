@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110315111001) do
+ActiveRecord::Schema.define(:version => 20110324154425) do
 
   create_table "customers", :force => true do |t|
     t.integer  "year"
@@ -26,6 +26,23 @@ ActiveRecord::Schema.define(:version => 20110315111001) do
     t.integer  "square_meters"
     t.integer  "category"
     t.string   "taxable_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "import_cells", :force => true do |t|
+    t.integer  "import_table_id"
+    t.integer  "row_index"
+    t.integer  "column_index"
+    t.string   "contents"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "import_cells", ["import_table_id"], :name => "index_import_cells_on_import_table_id"
+
+  create_table "import_tables", :force => true do |t|
+    t.string   "original_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
