@@ -108,7 +108,8 @@ class ImportTablesController < ApplicationController
     # merged records.
     merge = params[:merge]
     merge_table = merge[:table]
-    klass = ActiveRecord::Base.const_get(ActiveRecord::Base.class_name(merge_table))
+    #klass = ActiveRecord::Base.const_get(ActiveRecord::Base.table_name(merge_table))
+    klass = merge_table.classify.constantize
     
     # Determine which columns have been mapped. Ignore the rest. Intersect the
     # requested column names with actual column names. Perhaps we should abort
