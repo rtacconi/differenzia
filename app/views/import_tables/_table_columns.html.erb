@@ -1,0 +1,21 @@
+<%= javascript_tag do %>
+  var columns = new Array();
+  <% @tables.each do |table| %>
+  	<% table.classify.constantize.columns.each do |column| %>
+  		columns.push(new Array('<%= table %>', '<%= column.name %>'));
+  	<% end%>
+  <% end %>
+  function mergeTableSelected() {
+    var o = $('select#merge_table option:selected');
+    $('th select option').remove();
+    $('th select').each(function(i, select) {
+      select.options.add(new Option());
+      $.each(columns, function(j, column) {
+        if (o.text() == column[0]) {
+          select.options.add(new Option(column[1]));
+        }
+      });
+    });
+  }
+<% end %>
+  
