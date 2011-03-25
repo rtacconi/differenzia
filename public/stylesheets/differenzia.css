@@ -96,7 +96,9 @@ a:hover {
 
 .spacer{clear:both; height:1px;}
 
-font-family: verdana, arial, sans-serif; font-size: 14px;  }
+.forgot {
+	font-family: verdana, arial, sans-serif; font-size: 14px;
+}
 
 #flash { text-align: center; margin: 0px auto; width: 924px; }
 #flash div { padding: 8px; }
