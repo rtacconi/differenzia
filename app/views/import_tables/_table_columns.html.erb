@@ -2,7 +2,8 @@
   var columns = new Array();
   <% @tables.each do |table| %>
   	<% table.classify.constantize.columns.each do |column| %>
-  		columns.push(new Array('<%= table %>', '<%= column.name %>'));
+  		<% col = column.name.select { |t| t != 'id' and t != 'created_at' and t != 'updated_at' } %>
+  		columns.push(new Array('<%= table %>', '<%= col %>'));
   	<% end%>
   <% end %>
   function mergeTableSelected() {
