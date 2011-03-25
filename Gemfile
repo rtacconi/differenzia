@@ -22,7 +22,10 @@ platforms :jruby do
   # JDBC adapter, comment out all the adapter gems below.
 
   # SQLite JDBC adapter
-  gem 'jdbc-sqlite3', :require => false
+  # gem 'jdbc-sqlite3', :require => false
+  # Postgres JDBC adapter
+  #gem 'activerecord-jdbcpostgresql-adapter'
+  gem 'jdbc-postgres'
 
   gem 'jruby-openssl'
   gem 'warbler'
