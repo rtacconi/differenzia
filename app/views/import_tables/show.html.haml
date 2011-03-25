@@ -24,7 +24,7 @@
   var columns = new Array();
   - @tables.each do |table|
   	- table.classify.constantize.columns.each do |column|
-  		columns.push(new Array('= table', '= column.name'));
+  		columns.push(new Array('table', 'column.name'));
   function mergeTableSelected() {
     var o = $('select#merge_table option:selected');
     $('th select option').remove();
