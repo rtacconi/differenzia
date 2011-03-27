@@ -5,7 +5,7 @@ Feature: CSV file upload
 
   Background:
     Given I have one user with email "admin@differenzia.com" role "admin" and password "password"
-
+  @wip
   Scenario: Uploading a valid file with customers data
     When I visit the csv import page
     And I upload a file with valid customers data

@@ -8,6 +8,7 @@ class CsvController < ApplicationController
     row_index = 0
     uploaded_file = params[:upload][:csv].read
     FasterCSV.parse(uploaded_file) do |cells|
+    	logger.debug cells
       column_index = 0
       cells.each do |cell|
         table.import_cells.build :column_index => column_index, :row_index => row_index, :contents => cell
