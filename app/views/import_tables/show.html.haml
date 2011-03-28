@@ -20,7 +20,7 @@
   = f.select(:table, @tables.collect { |t| [t, t] }, { :include_blank => true }, { :onchange => "mergeTableSelected();" })
   = f.submit "Merge", :disable_with => 'Merging...'
 
-= render 'table_columns'
+/= render 'table_columns'
 
 = link_to 'Edit', edit_import_table_path(@import_table)
 \|
