@@ -10,7 +10,7 @@ Feature: Customer search
     And I should see "Nominativo"
 
 
-  @wip
+  @javascript
   Scenario: search for a customer
     When I go to the root page
     And I fill in "customer_search" with "mauro"
