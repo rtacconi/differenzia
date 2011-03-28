@@ -5,12 +5,14 @@ Feature: CSV file upload
 
   Background:
     Given I have one user with email "admin@differenzia.com" role "admin" and password "password"
+
   @wip
   Scenario: Uploading a valid file with customers data
     When I go to the csv import page
     And I upload a file with valid customers data
     Then I should see "Original path"
 
+  @wip  
   Scenario: Uploading a malformed file
     When I go to the csv import page
     And I upload a malformed file
