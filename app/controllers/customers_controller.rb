@@ -2,8 +2,11 @@ class CustomersController < ApplicationController
 	layout :choose_layout
 	
 	def index
-		fullname = params[:customer_search]		
-		@customers = Customer.all.paginate(:per_page => 15, :page => params[:page]) if fullname == "*"
+		unless params[:customer_search].blank?
+			full_name = params[:customer_search]
+			@total =  Customer.where( :full_name.matches => "%#{full_name}%").count
+			@customers = Customer.all.paginate(:per_page => 15, :page => params[:page]) if full_name == "*"
+		end
 		render :layout => false if request.xhr?
 	end
 	
