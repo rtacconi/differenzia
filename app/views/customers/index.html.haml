@@ -1,0 +1,22 @@
+.list
+- if @total == 0
+
+  %p Nessun risultato.....
+
+- elsif @customers
+
+  %table
+    %thead
+      %tr
+        %th= Customer.human_attribute_name("full_name")
+        %th= Customer.human_attribute_name("birth_date")
+        %th= Customer.human_attribute_name("address")
+        %th= Customer.human_attribute_name("zip_code")
+        %th= Customer.human_attribute_name("locality")
+        %th= Customer.human_attribute_name("tax_code")
+        %th= Customer.human_attribute_name("square_meters")
+    %tbody
+      = render @customers
+%br
+
+  = will_paginate :previous_label => "« prec.", :next_label =>"succ. »"

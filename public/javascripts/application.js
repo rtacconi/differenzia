@@ -1,6 +1,6 @@
 $(function() {
   $('#customer_search').searchbox({
-	url: '/customers/list',
+	url: '/customers/',
     param: 'customer_search',
     dom_id: '#results',
     delay: 250,

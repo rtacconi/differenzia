@@ -7,4 +7,4 @@ Feature: Customer search
     And I fill in "customer_search" with "mauro"
     #When I fill in "user_password" with "password"
     #When I press "Sign in"
-    Then I should see "First name"
+    Then I should see "Full name"
