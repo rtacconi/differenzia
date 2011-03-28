@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
 	
 	def index
 		fullname = params[:customer_search]		
-		@customers = Customer.all.paginate if fullname == '*'
+		@customers = Customer.all.paginate(:per_page => 15, :page => params[:page]) if fullname == "*"
 		render :layout => false if request.xhr?
 	end
 	

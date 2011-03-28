@@ -8,7 +8,7 @@ describe CustomersController do
     end
     context "when full_name is '*'" do
       it "should find all paginated customers" do
-        @customers = Customer.paginate
+        @customers = Customer.paginate :per_page => 15, :page => 1
         Customer.should_receive(:all).and_return(@customers)
         do_get
       end
@@ -25,7 +25,7 @@ describe CustomersController do
   end
 
   def do_get page = nil, format = 'html'
-    get 'index', :full_name => '*', :format => format
+    get 'index', :customer_search => '*', :format => format
   end
 
 
