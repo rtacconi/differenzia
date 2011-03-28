@@ -9,7 +9,7 @@ Feature: CSV file upload
   Scenario: Uploading a valid file with customers data
     When I visit the csv import page
     And I upload a file with valid customers data
-    Then I should be redirected to the show import_table page
+    Then I should see "Select a table for merging"
 
   Scenario: Uploading a malformed file
     When I visit the csv import page
