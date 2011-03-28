@@ -8,6 +8,6 @@ Feature: Customer search
   #  And I press "Sign in"
   #  Then I should see "user"
   #  And I should see "Nominativo"
-  @javascript
+
   Scenario: search for a customer
     When I fill in "customer_search" with "mauro"
