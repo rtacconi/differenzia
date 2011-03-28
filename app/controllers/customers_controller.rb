@@ -1,8 +1,9 @@
 class CustomersController < ApplicationController
 	layout :choose_layout
 	
-	def index		
-		@customers = Customer.all.paginate
+	def index
+		fullname = params[:customer_search]		
+		@customers = Customer.all.paginate if fullname == '*'
 		render :layout => false if request.xhr?
 	end
 	

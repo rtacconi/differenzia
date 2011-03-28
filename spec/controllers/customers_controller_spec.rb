@@ -3,9 +3,13 @@ require 'spec_helper'
 describe CustomersController do
 
   describe "GET index" do
+    before(:each) do
+      @customers = mock_model(Customer)
+    end
     context "when full_name is '*'" do
-      it "should find all customers" do
-        Customer.should_receive(:all)
+      it "should find all paginated customers" do
+        @customers = Customer.paginate
+        Customer.should_receive(:all).and_return(@customers)
         do_get
       end
     end
