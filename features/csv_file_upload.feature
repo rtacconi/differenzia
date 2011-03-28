@@ -7,7 +7,7 @@ Feature: CSV file upload
     Given I have one user with email "admin@differenzia.com" role "admin" and password "password"
   @wip
   Scenario: Uploading a valid file with customers data
-    When I visit the csv import page
+    When I go to the csv import page
     And I upload a file with valid customers data
     Then I should see "Select a table for merging"
 
