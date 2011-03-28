@@ -11,4 +11,4 @@ Feature: Customer search
   @javascript
   Scenario: search for a customer
     Given I am on the root page
-    Then I search for "mauro"
+    When I fill "customer_search " with "mauro"
