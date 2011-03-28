@@ -2,7 +2,7 @@ require 'optparse'
 require 'ostruct'
 
 options = OpenStruct.new
-options.rows = 90000
+options.rows = 100
 options.columns = 13
 OptionParser.new do |opts|
   opts.on('-r', '--rows [INTEGER]', 'Number of rows', Integer) do |x|
