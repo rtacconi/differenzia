@@ -11,9 +11,9 @@ Feature: Customer search
   #  And I should see "Nominativo"
   @javascript
   Scenario: search for a customer
-    Given I am on the root page
-    #When I go to the root page
+    #Given I am on the root page
+    When I go to the root page
     #When I fill in "user_email " with "user@differenzia.com"
     #When I fill in "user_password" with "password"
     #When I press "Sign in"
-    When I fill in "customer_search" with "mauro"
+    Then I should see "user"
