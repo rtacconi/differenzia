@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
 	
-	def index
-		
+	def index		
+		Customer.all if params[:full_name] == '*'
 	end
-	
+		
 end
