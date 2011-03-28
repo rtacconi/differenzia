@@ -4,7 +4,7 @@ Feature: Customer search
   Scenario: search for a customer
     Given I am signed in
     When I go to the root page
-    #When I fill in "user_email " with "user@differenzia.com"
+    And I fill in "customer_search" with "mauro"
     #When I fill in "user_password" with "password"
     #When I press "Sign in"
-    Then I should see "user"
+    Then I should see "First name"
