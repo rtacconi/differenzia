@@ -1,0 +1,29 @@
+<div class="list">
+<% if @total == 0 %>
+
+  <p>Nessun risultato.....</p>
+
+<% elsif @customers %>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= Customer.human_attribute_name("full_name") %></th>
+        <th><%= Customer.human_attribute_name("birth_date") %></th>
+        <th><%= Customer.human_attribute_name("address") %></th>
+        <th><%= Customer.human_attribute_name("zip_code") %></th>
+        <th><%= Customer.human_attribute_name("locality") %></th>
+        <th><%= Customer.human_attribute_name("tax_code") %></th>
+        <th><%= Customer.human_attribute_name("square_meters") %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @customers %>
+    </tbody>
+  </table>
+
+</div>
+<br />
+
+  <%= will_paginate :previous_label => "« prec.", :next_label =>"succ. »" %>
+<% end %>

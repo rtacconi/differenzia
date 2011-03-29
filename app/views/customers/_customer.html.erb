@@ -1,0 +1,16 @@
+<tr valign="top" class="<%= cycle('odd', 'even') %>">
+  <td class="list-title"><%= customer.full_name %></td>
+  <td class="list-title">
+    <% if customer.birth_date %>
+      <%= l customer.birth_date %>
+    <% else %>
+      <%= customer.birth_date %>
+    <% end %>
+  </td>
+  <td class="list-title"><%= customer.address %></td>
+  <td class="list-title"><%= customer.zip_code %></td>
+  <td class="list-title"><%= customer.locality %></td>
+  <td class="list-title"><%= customer.tax_code %></td>
+  <td class="list-title"><%= customer.square_meters %></td>
+  <td><%= link_to 'Dettagli', customer %>dsds</td>
+</tr>
