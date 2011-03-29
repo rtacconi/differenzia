@@ -4,7 +4,7 @@ describe CustomersController do
 
   describe "GET index" do
     before(:each) do
-      @customers = mock_model(Customer, :full_name => "Mauro", :save => true)
+      @customers = mock_model(Customer)
     end
 
     shared_examples_for "index action" do
@@ -26,6 +26,7 @@ describe CustomersController do
         Customer.should_not_receive(:find).with(@full_name)
         Customer.should_receive(:all).and_return(@customers)
         do_get
+        @customers.should_not be_nil
       end
       it_should_behave_like "index action"
     end
@@ -34,6 +35,7 @@ describe CustomersController do
       it "should display nothing" do
         @full_name = ""
         do_get
+        @customers.should be_nil
       end
       it_should_behave_like "index action"
     end
@@ -42,7 +44,7 @@ describe CustomersController do
       it "should not find customers" do
       	@full_name = "wrong"
         Customer.should_receive(:find).with(@full_name).and_return(@customers)
-        @customers.should == 0
+        @customers.should == []
         do_get
       end
     end
