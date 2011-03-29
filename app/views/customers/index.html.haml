@@ -8,13 +8,14 @@
   %table
     %thead
       %tr
-        %th= Customer.human_attribute_name("full_name")
-        %th= Customer.human_attribute_name("birth_date")
-        %th= Customer.human_attribute_name("address")
-        %th= Customer.human_attribute_name("zip_code")
-        %th= Customer.human_attribute_name("locality")
-        %th= Customer.human_attribute_name("tax_code")
-        %th= Customer.human_attribute_name("square_meters")
+        %th= Nominativo
+        %th= 'Data di nascita'
+        %th= 'Codice fiscale'
+        %th= 'Indirizzo di residenza'
+        %th= 'Codice postale'
+        %th= Città
+        %th= Prov.        
+        %th= Mq.
     %tbody
       = render @customers
 %br
