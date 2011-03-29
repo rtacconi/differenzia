@@ -1,0 +1,13 @@
+%tr
+  %td= customer.full_name
+  %td
+    - if customer.birth_dat
+      = l customer.birth_date
+    - else
+      = customer.birth_date
+  %td= 'customer.address'
+  %td= customer.zip_code
+  %td= customer.locality
+  %td= customer.tax_code
+  %td= customer.square_meters
+  %td= link_to 'Dettagli', customer
