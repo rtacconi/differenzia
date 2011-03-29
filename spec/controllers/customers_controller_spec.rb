@@ -4,7 +4,7 @@ describe CustomersController do
 
   describe "GET index" do
     before(:each) do
-      @customers = mock_model(Customer)
+      @customers = mock_model(Customer, :full_name => "Mauro", :save => true)
     end
 
     shared_examples_for "index action" do
@@ -40,7 +40,7 @@ describe CustomersController do
 
     context "when full_name is wrong" do
       it "should not find customers" do
-        @full_name = "wrong"
+      	@full_name = "wrong"
         Customer.should_receive(:find).with(@full_name).and_return(@customers)
         @customers.should == 0
         do_get
