@@ -41,9 +41,9 @@ describe CustomersController do
     end
 
     context "when full_name is wrong" do
-      it "should not find customers" do
+      it "customers should be nil" do
       	@full_name = "wrong"
-        Customer.should_receive(:find).with(@full_name).and_return(@customers)
+        Customer.should_receive(:find).with(@full_name).and_return(nil)
         @customers.should == []
         do_get
       end
