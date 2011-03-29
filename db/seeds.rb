@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+User.delete_all
+Customer.delete_all
 user = User.create!({:first_name => "Admin",
 	                   :last_name => "Admin",
 										 :email => "admin@differenzia.com", 
@@ -26,3 +29,8 @@ user2 = User.create!({:first_name => "User",
 puts "Admin user was created with ID #{user.id}."
 puts "Manager user was created with ID #{user1.id}."
 puts "User user was created with ID #{user2.id}."
+
+0.upto(100) do |n|
+  Customer.create!({:year => '2011', :full_name => "User-#{n}", :birth_date => "2011-08-02"})
+end
+puts "Customers created"
