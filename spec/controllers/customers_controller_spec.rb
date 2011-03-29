@@ -6,40 +6,8 @@ describe CustomersController do
     before(:each) do
       @customers = mock_model(Customer)
     end
-    context "when full_name is '*'" do
-      it "should find all paginated customers" do
-        @full_name = "*"
-        @customers = Customer.paginate :per_page => 15, :page => 1
-        Customer.should_receive(:all).and_return(@customers)
-        do_get
-      end
 
-      #it "should be successful" do
-      #  do_get
-      #  response.should be_success
-      #end
-
-      #it "should render the correct template" do
-      #  do_get
-      #  response.should render_template(:index)
-      #end
-    end
-
-    context "when full_name is blank" do
-      it "should display nothing" do
-        @full_name = ""
-        do_get
-      end
-    end
-
-    context "when number of customers found is equal 0" do
-      it "should display nothing" do
-        @full_name = ""
-        do_get
-      end
-    end
-
-    after(:each) do
+    shared_examples_for "index action" do
       it "should be successful" do
         do_get
         response.should be_success
@@ -48,6 +16,34 @@ describe CustomersController do
       it "should render the correct template" do
         do_get
         response.should render_template(:index)
+      end
+    end
+
+    context "when full_name is '*'" do
+      it "should find all paginated customers" do
+        @full_name = "*"
+        @customers = Customer.paginate :per_page => 15, :page => 1
+        Customer.should_not_receive(:find).with(@full_name)
+        Customer.should_receive(:all).and_return(@customers)
+        do_get
+      end
+      it_should_behave_like "index action"
+    end
+
+    context "when full_name is blank" do
+      it "should display nothing" do
+        @full_name = ""
+        do_get
+      end
+      it_should_behave_like "index action"
+    end
+
+    context "when full_name is wrong" do
+      it "should not find customers" do
+        @full_name = "wrong"
+        Customer.should_receive(:find).with(@full_name).and_return(@customers)
+        @customers.should == 0
+        do_get
       end
     end
 

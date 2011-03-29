@@ -4,8 +4,12 @@ class CustomersController < ApplicationController
 	def index
 		unless params[:customer_search].blank?
 			full_name = params[:customer_search]
-			@total =  Customer.where( :full_name.matches => "%#{full_name}%").count
-			@customers = Customer.all.paginate(:per_page => 15, :page => params[:page]) if full_name == "*"
+			@total =  Customer.where( :full_name.matches => "%#{full_name}%").count unless full_name == "*"
+			if full_name == "*"
+				@customers = Customer.all.paginate(:per_page => 15, :page => params[:page])
+			else
+				@customers = Customer.search_full_name(full_name).paginate(:per_page => 15, :page => params[:page])
+			end
 		end
 		render :layout => false if request.xhr?
 	end
