@@ -1,0 +1,14 @@
+<% if customer.square_meters <= @mq_accepted %>
+  <tr class = 'error'>
+<% else %>
+  <tr>
+<% end %>    
+  <td><%= customer.full_name %></td> 
+  <td><%= l customer.birth_date %></td>
+  <td><%= customer.tax_code %></td>
+  <td><%= customer.address %></td>
+  <td><%= customer.postal_code %></td>
+  <td><%= customer.city %></td>
+  <td><%= customer.prov %></td>
+  <td><%= customer.square_meters %></td>
+  <td><%= link_to 'Dettagli', customer %></td>

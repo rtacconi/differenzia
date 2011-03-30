@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
 	
 	def index
 		unless params[:customer_search].blank?
+			@mq_accepted = 12
 			full_name = params[:customer_search]
 			@total =  Customer.where( :full_name.matches => "%#{full_name}%").count unless full_name == "*"
 			if full_name == "*"
