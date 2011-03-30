@@ -2,4 +2,4 @@
 
 Gestione della distribuzione dei sacchetti per la raccolta differenziata. 
 
-Tecnologia: Rials3, devise, HAML, SASS, RSpec, Cucumber, Machinist.
+Tecnologia: Rails3, devise, HAML, SASS, RSpec, Cucumber, Machinist.
