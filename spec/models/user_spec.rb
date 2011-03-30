@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe User, "that is new," do
+describe User do
 #  describe "roles" do
   before(:each) do
     User.delete_all
