@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-	layout :choose_layout
+	#layout :choose_layout
 	
 	def index
 		unless params[:customer_search].blank?
@@ -14,6 +14,11 @@ class CustomersController < ApplicationController
 		render :layout => false if request.xhr?
 	end
 	
+	def show
+		@customer = Customer.find(params[:id])		
+	end
+
+=begin	
 	private
   def choose_layout
     if [ 'show' ].include? action_name
@@ -22,5 +27,6 @@ class CustomersController < ApplicationController
       'application'
     end
   end
+=end  
 		
 end
