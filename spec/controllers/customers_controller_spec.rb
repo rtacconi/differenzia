@@ -5,7 +5,7 @@ describe CustomersController do
   describe "GET index" do
     before(:each) do
       @customers = mock_model(Customer, :first_name => "Riccardo", :last_name => "Tacconi")
-      #funziona anche
+      #funziona anche senza parametri
       #@customers = mock_model(Customer)
     end
 
