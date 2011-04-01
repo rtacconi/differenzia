@@ -1,0 +1,59 @@
+/* line 1, ../../../app/stylesheets/differenzia.scss */
+body {
+  background-image: url("/images/green-leaf.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+/* line 7, ../../../app/stylesheets/differenzia.scss */
+#header {
+  background-color: #600;
+  height: 90px;
+  margin-right: 0px;
+  margin-left: 220px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* line 15, ../../../app/stylesheets/differenzia.scss */
+#header h1 {
+  color: #fff;
+  left: 290px;
+  padding-top: 10px;
+  position: absolute;
+  font-size: 80px;
+}
+
+/* line 23, ../../../app/stylesheets/differenzia.scss */
+.spacer {
+  clear: both;
+  height: 1px;
+}
+
+/* line 25, ../../../app/stylesheets/differenzia.scss */
+.user-details {
+  color: #fff;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* line 32, ../../../app/stylesheets/differenzia.scss */
+.user-details a:link {
+  color: #fff;
+}
+
+/* line 33, ../../../app/stylesheets/differenzia.scss */
+.user-details a:visited {
+  color: #fff;
+}
+
+/* line 34, ../../../app/stylesheets/differenzia.scss */
+.user-details a:active {
+  color: #fff;
+}
+
+/* line 35, ../../../app/stylesheets/differenzia.scss */
+.user-details a:hover {
+  text-decoration: none;
+}

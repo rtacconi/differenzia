@@ -1,0 +1,35 @@
+body {
+  background-image: url('/images/green-leaf.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+#header {
+  background-color: #600; 
+  height: 90px; 
+  margin-right: 0px; 
+  margin-left: 220px; 
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+#header h1 {
+  color: #fff;
+  left: 290px;
+  padding-top: 10px;
+  position:absolute;
+  font-size: 80px;
+}
+
+.spacer {clear:both; height:1px;}
+
+.user-details {
+  color: #fff;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.user-details a:link {color: #fff;}
+.user-details a:visited {color: #fff;}
+.user-details a:active {color: #fff;}
+.user-details a:hover {text-decoration: none;}

@@ -1,0 +1,38 @@
+body {
+  background-image: url('/images/green-leaf.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+#header {
+  background-color: #600; 
+  height: 90px; 
+  margin-right: 0px; 
+  margin-left: 220px; 
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+#header h1 {
+  color: #fff;
+  left: 290px;
+  padding-top: 10px;
+  position:absolute;
+  font-size: 80px;
+}
+
+#sign-in {
+  border: 3px solid #b7ddf2;
+  background:#ebf4fb;
+  width: 400px; /*--Specify Width--*/
+  height: 360px; /*--Specify Height--*/
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#sign-in h2 {color: #600;}
+
+#user_email {width: 390px;}
+
+#user_password {width: 390px;}
+
+.spacer{clear:both; height:1px;}

@@ -1,0 +1,24 @@
+#operators {
+  background: url(/images/profile.png) no-repeat left center;
+  padding: 5px 5px 5px 25px; /*--Adds padding around each item--*/
+  margin: 0;
+}
+
+#dashboard {
+  background: url(/images/bar_chart.png) no-repeat left center;
+  padding: 5px 5px 5px 25px; /*--Adds padding around each item--*/
+  margin: 0;
+}
+
+#csv {
+  background: url(/images/load.png) no-repeat left center;
+  padding: 5px 5px 5px 25px; /*--Adds padding around each item--*/
+  margin: 0;
+}
+
+ul.menu {
+  font-size: 1.5em;
+  list-style: none; /*--Takes out the default bullets--*/
+  margin: 0;
+  padding: 0;
+}
