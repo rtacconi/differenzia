@@ -1,25 +1,30 @@
-.list
-	%table
-		%tr
-			%th First name
-			%th Last name
-			%th Email
-			%th Role
-			%th Created
-			%th
-			%th
-			%th
-		- @users.each do |user|
-			%tr{:valign => "top", :class => cycle('odd', 'even')}
-				%td= user.first_name
-				%td= user.last_name
-				%td= user.email
-				%td= user.role
-				%td= l user.created_at
-				%td= link_to t('Edit'), edit_user_path(user)
-				%td= link_to t('Destroy'), user, :confirm => 'Are you sure?', :method => :delete
-				%td= link_to 'Reset Password', reset_password_user_url(user)
-%br
-		
-%p
-= link_to 'Nuovo Operatore', new_user_path
+.block
+  .column.span-4
+    %div
+      = render :partial => 'shared/menu'
+  .column.span-20
+    .list
+      %table
+        %tr
+          %th First name
+          %th Last name
+          %th Email
+          %th Role
+          %th Created
+          %th
+          %th
+          %th
+        - @users.each do |user|
+          %tr{:valign => "top", :class => cycle('odd', 'even')}
+            %td= user.first_name
+            %td= user.last_name
+            %td= user.email
+            %td= user.role
+            %td= l user.created_at
+            %td= link_to t('Edit'), edit_user_path(user)
+            %td= link_to t('Destroy'), user, :confirm => 'Are you sure?', :method => :delete
+            %td= link_to 'Reset Password', reset_password_user_url(user)
+    %br
+  
+    %p
+    = link_to 'Nuovo Operatore', new_user_path

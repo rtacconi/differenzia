@@ -1,4 +1,7 @@
-= render 'form'
-
-= link_to t('Show'), @user |
-= link_to t('Back'), users_path
+.block
+  .column.span-4
+    %div
+      = render :partial => 'shared/menu'
+  .column.span-20
+    = render 'form'
+    = link_to t('Back'), users_path

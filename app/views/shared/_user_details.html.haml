@@ -1,3 +1,5 @@
-= current_user.email 
+= current_user.email
+&ndash; 
 = I18n.t('role')+": #{current_user.role}"
+&ndash;
 = link_to "Log out", destroy_user_session_url
