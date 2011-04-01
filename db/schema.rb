@@ -10,15 +10,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110315111001) do
+ActiveRecord::Schema.define(:version => 20110324154425) do
 
   create_table "customers", :force => true do |t|
+    t.integer  "year",            :limit => 10
     t.string   "full_name"
-    t.string   "address_line_1"
-    t.string   "address_line_2"
-    t.string   "address_line_3"
-    t.string   "postal_code"
-    t.string   "country"
+    t.date     "birth_date"
+    t.string   "address"
+    t.string   "number"
+    t.string   "postal_code",     :limit => 5
+    t.string   "city"
+    t.string   "prov"
+    t.string   "tax_code",        :limit => 16
+    t.string   "contract_number"
+    t.integer  "square_meters",   :limit => 10
+    t.integer  "category",        :limit => 10
+    t.string   "taxable_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "import_cells", :force => true do |t|
+    t.integer  "import_table_id", :limit => 10
+    t.integer  "row_index",       :limit => 10
+    t.integer  "column_index",    :limit => 10
+    t.string   "contents"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "import_cells", ["import_table_id"], :name => "index_import_cells_on_import_table_id"
+
+  create_table "import_tables", :force => true do |t|
+    t.string   "original_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,11 +50,10 @@ ActiveRecord::Schema.define(:version => 20110315111001) do
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "",     :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "",     :null => false
-    t.string   "password_salt",                       :default => "",     :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
+    t.integer  "sign_in_count",        :limit => 10,  :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"

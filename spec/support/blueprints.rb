@@ -12,3 +12,11 @@ end
 Customer.blueprint do
   full_name {"Riccardo#{sn} Tacconi"}
 end
+
+ImportTable.blueprint do
+  # Attributes here
+end
+
+ImportCell.blueprint do
+  # Attributes here
+end

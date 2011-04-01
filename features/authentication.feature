@@ -1,4 +1,3 @@
-@no-txn
 Feature: Authentication
 	In order to go to the root page of application
 	As an user
@@ -16,6 +15,7 @@ Feature: Authentication
     And I fill in "user_password" with "password"
     And I press "Sign in"
     Then I should see "user"
+    And I should see "Nominativo"
 
   Scenario: Sign in as manager
     Given I am not authenticated
@@ -24,6 +24,7 @@ Feature: Authentication
     And I fill in "user_password" with "password"
     And I press "Sign in"
     Then I should see "manager"
+    And I should see "Nominativo"
     
   Scenario: Sign in as admin
     Given I am not authenticated
@@ -33,3 +34,4 @@ Feature: Authentication
     And I press "Sign in"
     Then I should see "admin"
     And I should see the link "Operators"
+    And I should see "Nominativo"

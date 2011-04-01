@@ -5,10 +5,7 @@ log/*.log
 tmp/
 *.swp
 Gemfile.lock
-<<<<<<< HEAD
 .sass-cache/
-=======
 config/database.yml
 .sass-cache/
 TODO-Mauro
->>>>>>> crud-users
