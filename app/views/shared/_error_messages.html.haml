@@ -1,6 +1,6 @@
 - if object and object.errors.any?
 	#error_explanation
-	%h2
+	%p
 		pluralize(object.errors.count, "error")	prohibited this
 		object.class.to_s.underscore.humanize.downcase from being saved:
 	%p Si sono verificati degli errori:
