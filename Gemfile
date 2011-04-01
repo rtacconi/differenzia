@@ -1,6 +1,18 @@
 source 'http://rubygems.org'
 
 gem 'rails'
+gem 'compass'
+gem 'will_paginate', '~> 3.0.pre2'
+gem 'annotate'
+gem 'normalize_attributes'
+gem 'haml-rails'
+gem 'sass'
+gem 'jquery-rails'
+gem 'devise'
+gem 'meta_where'
+gem 'simple_form'
+gem 'fastercsv'
+gem 'mongrel'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,7 +34,10 @@ platforms :jruby do
   # JDBC adapter, comment out all the adapter gems below.
 
   # SQLite JDBC adapter
-  gem 'jdbc-sqlite3', :require => false
+  # gem 'jdbc-sqlite3', :require => false
+  # Postgres JDBC adapter
+  #gem 'activerecord-jdbcpostgresql-adapter'
+  gem 'jdbc-postgres'
 
   gem 'jruby-openssl'
   gem 'warbler'
@@ -44,17 +59,6 @@ gem 'ruby-debug'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
-
-gem 'will_paginate', '~> 3.0.pre2'
-gem 'annotate'
-gem 'normalize_attributes'
-gem 'haml-rails'
-gem 'sass'
-gem 'jquery-rails'
-gem 'devise'
-gem 'meta_where'
-gem 'simple_form'
-gem "compass", ">= 0.10.6"
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
