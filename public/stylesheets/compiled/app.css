@@ -58,50 +58,6 @@ body {
   text-decoration: none;
 }
 
-/* line 75, ../../../../../.rvm/gems/ree-1.8.7-2011.03/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body p + p {
-  text-indent: 2em;
-  margin-top: -1.5em;
-  /* Don't want this in forms. */
-}
-/* line 85, ../../../../../.rvm/gems/ree-1.8.7-2011.03/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-form body p + p {
-  text-indent: 0;
-}
-/* line 77, ../../../../../.rvm/gems/ree-1.8.7-2011.03/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body p.incr,
-body .incr p {
-  font-size: 0.833em;
-  line-height: 1.44em;
-  margin-bottom: 1.5em;
-}
-/* line 12, ../../../../../.rvm/gems/ree-1.8.7-2011.03/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body .caps {
-  font-variant: small-caps;
-  letter-spacing: 1px;
-  text-transform: lowercase;
-  font-size: 1.2em;
-  line-height: 1%;
-  font-weight: bold;
-  padding: 0 2px;
-}
-/* line 13, ../../../../../.rvm/gems/ree-1.8.7-2011.03/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body .dquo {
-  margin-left: -0.5em;
-}
-/* line 14, ../../../../../.rvm/gems/ree-1.8.7-2011.03/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_fancy-type.scss */
-body .alt {
-  color: #666666;
-  font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
-  font-style: italic;
-  font-weight: normal;
-}
-
-/* line 6, ../../../app/stylesheets/app.scss */
-.container {
-  width: 80%;
-}
-
 /* line 1, ../../../app/stylesheets/partials/_forms.scss */
 .button {
   background: #000;
