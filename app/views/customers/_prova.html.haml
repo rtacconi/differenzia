@@ -1,0 +1,21 @@
+.list
+  - if @total == 0
+    %p Nessun risultato.....
+  - elsif @customers
+    %table
+      %thead
+        %tr
+          %th= 'Nominativo'
+          %th= 'Data di nascita'
+          %th= 'Codice fiscale'
+          %th= 'Indirizzo di residenza' 
+          %th= 'Codice postale'
+          %th= 'Città'
+          %th= 'Prov.'        
+          %th= 'Mq.'
+          %th
+      %tbody
+        = render @customers
+    %br
+    = will_paginate :previous_label => "« prec.", :next_label =>"succ. »"
+

@@ -147,3 +147,12 @@ ul.menu {
   margin: 0;
   padding: 0;
 }
+
+/* line 26, ../../../app/stylesheets/partials/_menu.scss */
+.menu {
+  font-size: 1.5em;
+  list-style: none;
+  /*--Takes out the default bullets--*/
+  margin: 0;
+  padding: 0;
+}

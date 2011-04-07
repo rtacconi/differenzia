@@ -24,13 +24,18 @@
             products, customers, stocks and create easy reports.
       .block
         .column.span-24
+          = render :partial => 'shared/menu1'
+      .block
+        .column.span-24
           - if flash['notice'].present?
             .notice
               = flash['notice']
           -if flash['alert'].present?
             .alert
               = flash['alert']
-      = yield
+      .block
+        .column.span-24        
+          = yield
       .block
         .column.span-24
           %hr
