@@ -1,4 +1,4 @@
-%ul{:class => "menu"}
-  %li= link_to 'Dashboard', dashboard_index_url, :id => "dashboard"
-  %li= link_to 'Operators', users_url, :id => 'operators'
-  %li= link_to 'CSV', csv_import_url, :id => "csv"
+.menu
+  = link_to 'Dashboard', dashboard_index_url, :id => "dashboard"
+  = link_to 'Operators', users_url, :id => 'operators'
+  = link_to 'CSV', csv_import_url, :id => "csv"
