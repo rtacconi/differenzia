@@ -1,60 +1,60 @@
-/.block
-/  .column.span-4
-/    %div
-/      = render :partial => 'shared/menu'
-.column.span-20
-  %br
-  %p
-    %b= 'Anno:'
-    = @customer.year
+.block
+  /.column.span-4
+  /  %div
+  /    = render :partial => 'shared/menu'
+  .column.span-24
+    %br
+    %p
+      %b= 'Anno:'
+      = @customer.year
 
-  %p
-    %b= 'Nominativo:'
-    = @customer.full_name
+    %p
+      %b= 'Nominativo:'
+      = @customer.full_name
 
-  %p
-    %b= 'Data di nascita:'
-    - if @customer.birth_date
-      = l @customer.birth_date    
-    - else
-      = @customer.birth_date
+    %p
+      %b= 'Data di nascita:'
+      - if @customer.birth_date
+        = l @customer.birth_date    
+      - else
+        = @customer.birth_date
 
-  %p
-    %b= 'Indirizzo di residenza:'
-    = @customer.address
+    %p
+      %b= 'Indirizzo di residenza:'
+      = @customer.address
 
-  %p
-    %b= 'Codice postale:'
-    = @customer.postal_code
+    %p
+      %b= 'Codice postale:'
+      = @customer.postal_code
 
-  %p
-    %b= 'Città:'
-    = @customer.city
+    %p
+      %b= 'Città:'
+      = @customer.city
 
-  %p
-    %b= 'Prov.:'
-    = @customer.prov
+    %p
+      %b= 'Prov.:'
+      = @customer.prov
 
-  %p
-    %b= 'Codice fiscale:'
-    = @customer.tax_code
+    %p
+      %b= 'Codice fiscale:'
+      = @customer.tax_code
 
-  %p
-    %b= 'Numero contratto:'
-    = @customer.contract_number
+    %p
+      %b= 'Numero contratto:'
+      = @customer.contract_number
 
-  %p
-    %b= 'Metri quadri:'
-    = @customer.square_meters
+    %p
+      %b= 'Metri quadri:'
+      = @customer.square_meters
 
-  %p
-    %b= 'Categoria:'
-    = @customer.category
+    %p
+      %b= 'Categoria:'
+      = @customer.category
 
-  %p
-    %b= 'Indirizzo di riferimento:'
-    = @customer.taxable_address
+    %p
+      %b= 'Indirizzo di riferimento:'
+      = @customer.taxable_address
 
-  %br
-  %p
-    = link_to 'Indietro', "javascript:history.back()"
+    %br
+    %p
+      = link_to 'Indietro', "javascript:history.back()"

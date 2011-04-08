@@ -33,9 +33,7 @@
           -if flash['alert'].present?
             .alert
               = flash['alert']
-      .block
-        .column.span-24        
-          = yield
+      = yield
       .block
         .column.span-24
           %hr
