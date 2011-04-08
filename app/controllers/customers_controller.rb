@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+	before_filter :authenticate_user!
 	#layout :choose_layout
 	
 	def index
