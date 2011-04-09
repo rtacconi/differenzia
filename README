@@ -3,3 +3,5 @@
 Gestione della distribuzione dei sacchetti per la raccolta differenziata. 
 
 Tecnologia: Rails3, devise, HAML, SASS, RSpec, Cucumber, Machinist.
+
+Per installare condifurate config/database.yml ed eseguite `rake db:seed`.

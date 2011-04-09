@@ -5,6 +5,7 @@ describe UsersController do
   describe "GET new" do
 
     it "should be successful" do
+      login_admin
       get 'new'
       response.should be_success
     end
@@ -33,6 +34,7 @@ describe UsersController do
     end
 
     def do_get page = nil, format = 'html'
+      login_admin
       get 'index', :format => format
     end
   end
@@ -41,6 +43,7 @@ describe UsersController do
 
     before(:each) do
       User.stub!(:find).with("1").and_return(@user)
+      login_admin
     end
 
     it "should be successful" do
@@ -76,11 +79,16 @@ describe UsersController do
       end
 
       def do_post format = 'html'
+        login_admin
         post 'create', :user => @params, :format => format
       end
     end
     
     describe "with invalid params" do
+      before(:each) do
+        login_admin
+      end
+      
       it "should have not a successful flash notice" do
         @user = mock_model(User, :id => 1).as_null_object
         @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', "role" => 'user'}
@@ -98,7 +106,6 @@ describe UsersController do
   end
   
   describe "PUT update" do
-
     describe "with valid params" do
 
       before(:each) do
@@ -132,12 +139,12 @@ describe UsersController do
       end
 
       def do_put format = 'html'
+        login_admin
         put 'update', :id => "1", :user => {}, :format => format
       end
     end
     
     describe "with invalid params" do
-
       before(:each) do
         @user = mock_model(User, :update_attributes => false)
         User.stub!(:find).with("1").and_return(@user)
@@ -159,6 +166,7 @@ describe UsersController do
       end
 
       def do_put
+        login_admin
         put :update, :id => "1", :user => {}
       end
     end
@@ -193,6 +201,7 @@ describe UsersController do
       end
 
       def do_delete format = 'html'
+        login_admin
         delete 'destroy', :id => "2", :format => format
       end
     end
@@ -209,11 +218,12 @@ describe UsersController do
       end
 
       it "should redirect to user's index page" do
-        delete 'destroy', :id => "1" 
+        do_delete
         response.should redirect_to users_url
       end
       
       def do_delete format = 'html'
+        login_admin
         delete 'destroy', :id => "1", :format => format
       end
     end
@@ -224,6 +234,7 @@ describe UsersController do
     before(:each) do
       @user = stub_model(User, :id => "3", :update_attributes => true)
       User.stub!(:find).with("3").and_return(@user)
+      login_admin
     end
     
     it "should reset the password" do

@@ -15,6 +15,7 @@ it:
   role: "Ruolo"
   it should be at least 6 characters: "deve essere almeno di 6 caratteri"
   it has to be the same as the password: "it has to be the same as the password"
+  Found: "Trovati"
 
   number:
     format:

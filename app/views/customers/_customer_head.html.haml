@@ -1,7 +1,6 @@
 .list
-  - if @total == 0
-    %p Nessun risultato.....
-  - elsif @customers
+  - if @customers.present?
+    %p= page_entries_info
     %table
       %thead
         %tr
@@ -18,4 +17,3 @@
         = render @customers
     %br
     = will_paginate :previous_label => "« prec.", :next_label =>"succ. »"
-

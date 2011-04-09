@@ -33,3 +33,18 @@ end
 def get_file(name)
   File.new(Rails.root.to_s+"/spec/support/#{name}")
 end
+
+def mock_user(stubs={})
+    @mock_user ||= mock_model(User, stubs).as_null_object
+end
+
+def login_user
+  # mock up an authentication in the underlying warden library
+  request.env['warden'] = mock(Warden, :authenticate => mock_user,
+                                       :authenticate! => mock_user)
+end
+
+def login_admin
+  request.env['warden'] = mock(Warden, :authenticate => mock_user(:role => 'admin'),
+                                       :authenticate! => mock_user(:role => 'admin'))
+end

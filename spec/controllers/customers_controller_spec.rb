@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe CustomersController do
+  include Devise::TestHelpers
 
   describe "GET index" do
     before(:each) do
@@ -11,6 +12,7 @@ describe CustomersController do
 
     shared_examples_for "index action" do
       it "should be successful" do
+        @full_name = "user"
         do_get
         response.should be_success
       end
@@ -22,11 +24,10 @@ describe CustomersController do
     end
 
     context "when full_name is '*'" do
-      it "should find all paginated customers" do
+      it "should find all paginated customers" do"*"
+        Customer.should_not_receive(:find).with("*")
+        Customer.should_not_receive(:search_full_name)
         @full_name = "*"
-        @customers = Customer.paginate :per_page => 15, :page => 1
-        Customer.should_not_receive(:find).with(@full_name)
-        Customer.should_receive(:all).and_return(@customers)
         do_get
         @customers.should_not be_nil
       end
@@ -52,6 +53,8 @@ describe CustomersController do
   end
 
   def do_get page = nil, format = 'html'
+    login_user
     get 'index', :customer_search => @full_name, :format => format
   end
+  
 end
