@@ -124,6 +124,14 @@ body {
 }
 
 /* line 7, ../../../app/stylesheets/partials/_menu.scss */
+#customers {
+  background: url(/images/profile.png) no-repeat left center;
+  padding: 5px 5px 5px 25px;
+  /*--Adds padding around each item--*/
+  margin: 0;
+}
+
+/* line 13, ../../../app/stylesheets/partials/_menu.scss */
 #dashboard {
   background: url(/images/bar_chart.png) no-repeat left center;
   padding: 5px 5px 5px 25px;
@@ -131,7 +139,7 @@ body {
   margin: 0;
 }
 
-/* line 13, ../../../app/stylesheets/partials/_menu.scss */
+/* line 19, ../../../app/stylesheets/partials/_menu.scss */
 #csv {
   background: url(/images/load.png) no-repeat left center;
   padding: 5px 5px 5px 25px;
@@ -139,7 +147,7 @@ body {
   margin: 0;
 }
 
-/* line 19, ../../../app/stylesheets/partials/_menu.scss */
+/* line 25, ../../../app/stylesheets/partials/_menu.scss */
 ul.menu {
   font-size: 1.5em;
   list-style: none;
@@ -148,7 +156,7 @@ ul.menu {
   padding: 0;
 }
 
-/* line 26, ../../../app/stylesheets/partials/_menu.scss */
+/* line 32, ../../../app/stylesheets/partials/_menu.scss */
 .menu {
   font-size: 1.5em;
   list-style: none;
