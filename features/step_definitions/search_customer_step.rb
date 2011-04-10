@@ -1,3 +1,3 @@
-Given /^I am signed in$/ do                                                                                       
+Given /^I am signed in$/ do                                                           
   User.make!
 end
