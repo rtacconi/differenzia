@@ -10,6 +10,10 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the sign in\s?page/
+      '/d/users/sign_in'
+    when /dashboard\s?page/
+      dashboard_index_url
   #  when /the sign in page/ 
   #    new_user_session_path
 
