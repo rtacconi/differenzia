@@ -1,10 +1,5 @@
 class UsersController < InheritedResources::Base
 		
-  def index
-  	@users = User.all(:order => "created_at DESC")
-  	index!
-  end
-
   def destroy
     begin
       @user = User.find(params[:id])
@@ -30,7 +25,7 @@ class UsersController < InheritedResources::Base
   
   protected
   def collection
-  	@users ||= end_of_association_chain.paginate(:page => params[:page])
+  	@users ||= end_of_association_chain.paginate(:page => params[:page], :order => "created_at DESC")
   end
 
 end

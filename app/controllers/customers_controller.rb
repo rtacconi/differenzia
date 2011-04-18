@@ -19,14 +19,14 @@ class CustomersController < InheritedResources::Base
 		unless params[:customer_search].blank?
 			@mq_accepted = 12  # valore al di sotto del quale non devono essere consegnati i sacchetti
 			full_name = params[:customer_search]
-			@customers = Customer.search_full_name(full_name).paginate(:per_page => 15, :page => params[:page])
+			@customers = Customer.search_full_name(full_name).paginate(:page => params[:page])
 		end
 		render :layout => false if request.xhr?
 	end
 	
 	protected
   def collection
-  	@customers ||= end_of_association_chain.paginate(:per_page => 15, :page => params[:page])
+  	@customers ||= end_of_association_chain.paginate(:page => params[:page])
   end
 	
 =begin	
