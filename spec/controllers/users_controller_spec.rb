@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe UsersController do
-
+=begin
   describe "GET new" do
 
     it "should be successful" do
@@ -171,7 +171,7 @@ describe UsersController do
       end
     end
   end
-  
+=end  
   describe "DELETE destroy" do
     
     describe "succefully destroy the user" do
