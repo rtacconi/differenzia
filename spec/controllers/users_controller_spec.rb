@@ -2,10 +2,14 @@ require 'spec_helper'
 
 describe UsersController do
 	
+	before(:each) do
+		login_admin
+	end
+	
 	def mock_user(stubs={})
     @mock_user ||= mock_model(User, stubs).as_null_object
   end
-
+  
   describe "GET index" do
     it "assigns all users as @users" do
       User.stub(:all) { [mock_user] }
@@ -15,7 +19,7 @@ describe UsersController do
   end
 
   describe "GET show" do
-    it "assigns the requested user as @shop" do
+    it "assigns the requested user as @user" do
       User.stub(:find).with("37") { mock_user }
       get :show, :id => "37"
       assigns(:user).should be(mock_user)
@@ -23,7 +27,7 @@ describe UsersController do
   end
 
   describe "GET new" do
-    it "assigns a new user as @shop" do
+    it "assigns a new user as @user" do
       User.stub(:new) { mock_user }
       get :new
       assigns(:user).should be(mock_user)
@@ -31,7 +35,7 @@ describe UsersController do
   end
 
   describe "GET edit" do
-    it "assigns the requested user as @shop" do
+    it "assigns the requested user as @user" do
       User.stub(:find).with("37") { mock_user }
       get :edit, :id => "37"
       assigns(:user).should be(mock_user)
@@ -40,7 +44,7 @@ describe UsersController do
 
   describe "POST create" do
     describe "with valid params" do
-      it "assigns a newly created user as @shop" do
+      it "assigns a newly created user as @user" do
         User.stub(:new).with({'these' => 'params'}) { mock_user(:save => true) }
         post :create, :user => {'these' => 'params'}
         assigns(:user).should be(mock_user)
@@ -54,7 +58,7 @@ describe UsersController do
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved user as @shop" do
+      it "assigns a newly created but unsaved user as @user" do
         User.stub(:new).with({'these' => 'params'}) { mock_user(:save => false) }
         post :create, :user => {'these' => 'params'}
         assigns(:user).should be(mock_user)
@@ -76,7 +80,7 @@ describe UsersController do
         put :update, :id => "37", :user => {'these' => 'params'}
       end
 
-      it "assigns the requested user as @shop" do
+      it "assigns the requested user as @user" do
         User.stub(:find) { mock_user(:update_attributes => true) }
         put :update, :id => "1"
         assigns(:user).should be(mock_user)
@@ -90,7 +94,7 @@ describe UsersController do
     end
 
     describe "with invalid params" do
-      it "assigns the user as @shop" do
+      it "assigns the user as @user" do
         User.stub(:find) { mock_user(:update_attributes => false) }
         put :update, :id => "1"
         assigns(:user).should be(mock_user)
@@ -146,5 +150,5 @@ describe UsersController do
       pending
     end
   end
-  
+
 end
