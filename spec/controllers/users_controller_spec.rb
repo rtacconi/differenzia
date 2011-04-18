@@ -1,231 +1,120 @@
 require 'spec_helper'
 
 describe UsersController do
-=begin
-  describe "GET new" do
-
-    it "should be successful" do
-      login_admin
-      get 'new'
-      response.should be_success
-    end
+	
+	def mock_user(stubs={})
+    @mock_user ||= mock_model(User, stubs).as_null_object
   end
 
   describe "GET index" do
-
-    it "should find all users" do
-      User.should_receive(:all)
-      do_get
+    it "assigns all users as @users" do
+      User.stub(:all) { [mock_user] }
+      get :index
+      assigns(:users).should eq([mock_user])
     end
+  end
 
-    it "should be successful" do
-      do_get
-      response.should be_success
+  describe "GET show" do
+    it "assigns the requested user as @shop" do
+      User.stub(:find).with("37") { mock_user }
+      get :show, :id => "37"
+      assigns(:user).should be(mock_user)
     end
+  end
 
-    it "should render the correct template" do
-      do_get
-      response.should render_template(:index)    
-    end
-
-    it "should assign the users to the @users view variable" do
-      do_get
-      assigns[:user].should == @users
-    end
-
-    def do_get page = nil, format = 'html'
-      login_admin
-      get 'index', :format => format
+  describe "GET new" do
+    it "assigns a new user as @shop" do
+      User.stub(:new) { mock_user }
+      get :new
+      assigns(:user).should be(mock_user)
     end
   end
 
   describe "GET edit" do
-
-    before(:each) do
-      User.stub!(:find).with("1").and_return(@user)
-      login_admin
-    end
-
-    it "should be successful" do
-      get 'edit', :id => "1"
-      response.should be_success
+    it "assigns the requested user as @shop" do
+      User.stub(:find).with("37") { mock_user }
+      get :edit, :id => "37"
+      assigns(:user).should be(mock_user)
     end
   end
 
   describe "POST create" do
-
     describe "with valid params" do
-
-      before(:each) do
-        @user = mock_model(User, :id => 1, :save => true)
-        User.stub!(:new).and_return(@user)
-        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', 
-                   "role" => 'user', "password" => 'password', "password_confirmation" => 'password'}
-      end
-  
-      it "should build a new user and return object" do
-        User.should_receive(:new).with(@params).and_return(@user)
-        do_post
+      it "assigns a newly created user as @shop" do
+        User.stub(:new).with({'these' => 'params'}) { mock_user(:save => true) }
+        post :create, :user => {'these' => 'params'}
+        assigns(:user).should be(mock_user)
       end
 
-      it "should save the user" do
-        @user.should_receive(:save).and_return(true)
-        do_post
-      end
-  
-      it "should redirect to user's index page" do
-        do_post
-        response.should redirect_to users_url
-      end
-
-      def do_post format = 'html'
-        login_admin
-        post 'create', :user => @params, :format => format
+      it "redirects to the created user" do
+        User.stub(:new) { mock_user(:save => true) }
+        post :create, :user => {}
+        response.should redirect_to(user_url(mock_user))
       end
     end
-    
+
     describe "with invalid params" do
-      before(:each) do
-        login_admin
+      it "assigns a newly created but unsaved user as @shop" do
+        User.stub(:new).with({'these' => 'params'}) { mock_user(:save => false) }
+        post :create, :user => {'these' => 'params'}
+        assigns(:user).should be(mock_user)
       end
-      
-      it "should have not a successful flash notice" do
-        @user = mock_model(User, :id => 1).as_null_object
-        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', "role" => 'user'}
-        post 'create', :user => @params
-        flash[:notice].should_not eql 'Operatore creato con successo.'        
-      end
-      
-      it "should render new" do
-        @user = mock_model(User, :id => 1).as_null_object
-        @params = {"first_name" => 'name', "last_name" => 'surname', "email" => 'mail@differenzia.com', 
-                   "role" => 'user', "password" => 'password', "12345" => '12345'}
-        post 'create', :user => @params        
+
+      it "re-renders the 'new' template" do
+        User.stub(:new) { mock_user(:save => false) }
+        post :create, :user => {}
+        response.should render_template("new")
       end
     end
   end
-  
+
   describe "PUT update" do
     describe "with valid params" do
-
-      before(:each) do
-        @user = mock_model(User, :update_attributes => true)
-        User.stub!(:find).with("1").and_return(@user)
+      it "updates the requested user" do
+        User.stub(:find).with("37") { mock_user }
+        mock_user.should_receive(:update_attributes).with({'these' => 'params'})
+        put :update, :id => "37", :user => {'these' => 'params'}
       end
 
-      it "should find user and return object" do
-        User.should_receive(:find).with("1").and_return(@user)
-        do_put
+      it "assigns the requested user as @shop" do
+        User.stub(:find) { mock_user(:update_attributes => true) }
+        put :update, :id => "1"
+        assigns(:user).should be(mock_user)
       end
 
-      it "should update the user object's attributes" do
-        @user.should_receive(:update_attributes).and_return(true)
-        do_put
-      end
-
-      it "should redirect to user's index page" do
-        do_put
-        response.should redirect_to users_url
-      end
-
-      it "should have a flash notice" do
-        do_put
-        flash[:notice].should_not be_blank
-      end
-
-      it "should have a successful flash notice" do
-        do_put
-        flash[:notice].should eql 'Operatore modificato con successo.'
-      end
-
-      def do_put format = 'html'
-        login_admin
-        put 'update', :id => "1", :user => {}, :format => format
+      it "redirects to the user" do
+        User.stub(:find) { mock_user(:update_attributes => true) }
+        put :update, :id => "1"
+        response.should redirect_to(user_url(mock_user))
       end
     end
-    
+
     describe "with invalid params" do
-      before(:each) do
-        @user = mock_model(User, :update_attributes => false)
-        User.stub!(:find).with("1").and_return(@user)
+      it "assigns the user as @shop" do
+        User.stub(:find) { mock_user(:update_attributes => false) }
+        put :update, :id => "1"
+        assigns(:user).should be(mock_user)
       end
 
-      it "should find user and return object" do
-        User.should_receive(:find).with("1").and_return(@user)
-        do_put
-      end
-
-      it "should update the user object's attributes" do
-        @user.should_receive(:update_attributes).and_return(false)
-        do_put
-      end
-
-      it "should render the edit form" do
-        do_put
-        response.should render_template :edit
-      end
-
-      def do_put
-        login_admin
-        put :update, :id => "1", :user => {}
+      it "re-renders the 'edit' template" do
+        User.stub(:find) { mock_user(:update_attributes => false) }
+        put :update, :id => "1"
+        response.should render_template("edit")
       end
     end
   end
-=end  
+
   describe "DELETE destroy" do
-    
-    describe "succefully destroy the user" do
-      before(:each) do
-        @user = mock_model(User, :destroy => true)
-        User.stub!(:find).with("2").and_return(@user)
-      end
-    
-      it "should find user" do
-        User.should_receive(:find).with("2").and_return(@user)
-        do_delete
-      end
-    
-      it "should destroy the user" do
-        @user.should_receive(:destroy).and_return(true)
-        do_delete
-      end
-
-      it "should redirect to user's index page" do
-        do_delete
-        response.should redirect_to users_url
-      end
-
-      it "should set the flash" do
-        do_delete
-        flash[:notice].should eql 'Operatore eliminato con successo.'
-      end
-
-      def do_delete format = 'html'
-        login_admin
-        delete 'destroy', :id => "2", :format => format
-      end
+    it "destroys the requested user" do
+      User.stub(:find).with("37") { mock_user }
+      mock_user.should_receive(:destroy)
+      delete :destroy, :id => "37"
     end
-    
-    describe "user with an invalid id" do
 
-      before(:each) do
-        User.stub!(:find).with("1").and_raise(ActiveRecord::RecordNotFound)
-      end
-
-      it "should have a flash error" do
-        do_delete
-        flash[:error].should eql "L'Operatore non può essere eliminato."
-      end
-
-      it "should redirect to user's index page" do
-        do_delete
-        response.should redirect_to users_url
-      end
-      
-      def do_delete format = 'html'
-        login_admin
-        delete 'destroy', :id => "1", :format => format
-      end
+    it "redirects to the users list" do
+      User.stub(:find) { mock_user }
+      delete :destroy, :id => "1"
+      response.should redirect_to(users_url)
     end
   end
   
