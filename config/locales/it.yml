@@ -8,11 +8,12 @@
 
 it:
   general:
-    are_you_sure: "Sei sicuro?"  
-    Back: "Indietro"
-    Show: "Mostra"
-    Edit: "Modifica"
-    Destroy: "Elimina"
+    are_you_sure: "Sei sicuro?" 
+    new: "Nuovo" 
+    back: "Indietro"
+    show: "Mostra"
+    edit: "Modifica"
+    destroy: "Elimina"
     role: "Ruolo"
     it should be at least 6 characters: "deve essere almeno di 6 caratteri"
     it has to be the same as the password: "it has to be the same as the password"
@@ -216,10 +217,14 @@ it:
 
     models:
       user: "Operatore"
+      customer: "cliente"
     attributes:
       user:
         first_name: "Nome"
         last_name: "Cognome"
         role: "Ruolo"
+      customer:
+        full_name: "Nominativo"
+        address: "Indirizzo"
         
         
