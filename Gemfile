@@ -12,6 +12,8 @@ gem 'meta_where'
 gem 'simple_form'
 gem 'fastercsv'
 gem 'mongrel'
+gem 'inherited_resources'
+gem 'inherited_resources_views'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

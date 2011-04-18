@@ -16,7 +16,7 @@ Differenzia::Application.routes.draw do
 
   get "dashboard/index"
   
-  get "customers/list"
+  get "customers/search"
   
   resources :customers
   
