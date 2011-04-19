@@ -1,5 +1,5 @@
 class UsersController < InheritedResources::Base
-	
+
   def destroy
     begin
       @user = User.find(params[:id])
@@ -21,6 +21,11 @@ class UsersController < InheritedResources::Base
       end
     end
     redirect_to users_url
+  end
+  
+  protected
+  def collection
+  	@users ||= end_of_association_chain.paginate(:page => params[:page], :order => "created_at DESC")
   end
 
 end

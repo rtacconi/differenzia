@@ -1,26 +1,28 @@
 .column.span-24
   .list
     %table
-      %tr
-        %th First name
-        %th Last name
-        %th Email
-        %th Role
-        %th Created
-        %th
-        %th
-        %th
-      - @users.each do |user|
-        %tr{:valign => "top", :class => cycle('odd', 'even')}
-          %td= user.first_name
-          %td= user.last_name
-          %td= user.email
-          %td= user.role
-          %td= l user.created_at
-          %td= link_to t('Edit'), edit_user_path(user)
-          %td= link_to t('Destroy'), user, :confirm => 'Are you sure?', :method => :delete
-          %td= link_to 'Reset Password', reset_password_user_url(user)
+      %thead
+        %tr
+          %th First name
+          %th Last name
+          %th Email
+          %th Role
+          %th Created
+          %th
+          %th
+          %th
+      %tbody    
+        - @users.each do |user|
+          %tr{:valign => "top", :class => cycle('odd', 'even')}
+            %td= user.first_name
+            %td= user.last_name
+            %td= user.email
+            %td= user.role
+            %td= l user.created_at
+            %td= link_to t('Edit'), edit_user_path(user)
+            %td= link_to t('Destroy'), user, :confirm => t('general.are_you_sure'), :method => :delete
+            %td= link_to 'Reset Password', reset_password_user_url(user)
   %br
   
   %p
-  = link_to 'Nuovo Operatore', new_user_path
+  = link_to t('users.new_user'), new_user_path

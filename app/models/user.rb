@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	cattr_reader :per_page
+  @@per_page = 10
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   #devise :encryptable, :encryptor => :bcrypt 
