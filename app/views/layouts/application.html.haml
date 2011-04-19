@@ -16,7 +16,7 @@
     #header
       %h1 Differenzia
       .user-details= render 'shared/user_details'
-    .container.showgrid
+    .container
       .block
         .column.span-24{:style => 'background-color: red'}
           %div
@@ -33,7 +33,7 @@
               .alert
                 = flash[:alert]
       .block
-        .column.span-4
+        .column.span-4.colborder
           %div
             = render :partial => 'shared/menu'
         .column.span-20
