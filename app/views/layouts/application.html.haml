@@ -16,9 +16,9 @@
     #header
       %h1 Differenzia
       .user-details= render 'shared/user_details'
-    .container
+    .container.showgrid
       .block
-        .column.span-24
+        .column.span-24{:style => 'background-color: red'}
           %h2{:class => 'alt'}
             A simple product delivery software where operators can manage
             products, customers and stocks.
