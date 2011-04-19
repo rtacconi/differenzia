@@ -1,57 +1,58 @@
 .block
   /.column.span-4
   /  %div
-  /    = render :partial => 'shared/menu'
+  /    = render :partial => shared/menu
   .column.span-24
+    %p Customer
     %p
-      %b= 'Anno:'
+      %label Anno:
       = @customer.year
 
     %p
-      %b= 'Nominativo:'
+      %label Nominativo:
       = @customer.full_name
 
     %p
-      %b= 'Data di nascita:'
+      %label Data di nascita:
       - if @customer.birth_date
         = l @customer.birth_date    
       - else
         = @customer.birth_date
 
     %p
-      %b= 'Indirizzo di residenza:'
+      %label Indirizzo di residenza:
       = @customer.address
 
     %p
-      %b= 'Codice postale:'
+      %label Codice postale:
       = @customer.postal_code
 
     %p
-      %b= 'Città:'
+      %label Città:
       = @customer.city
 
     %p
-      %b= 'Prov.:'
+      %label Prov.:
       = @customer.prov
 
     %p
-      %b= 'Codice fiscale:'
+      %label Codice fiscale:
       = @customer.tax_code
 
     %p
-      %b= 'Numero contratto:'
+      %label Numero contratto:
       = @customer.contract_number
 
     %p
-      %b= 'Metri quadri:'
+      %label Metri quadri:
       = @customer.square_meters
 
     %p
-      %b= 'Categoria:'
+      %label Categoria:
       = @customer.category
 
     %p
-      %b= 'Indirizzo di riferimento:'
+      %label Indirizzo di riferimento:
       = @customer.taxable_address
 
     %br
