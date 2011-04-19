@@ -3,25 +3,12 @@ require 'spec_helper'
 describe CustomersController do
   include Devise::TestHelpers
 
-  describe "GET index" do
-    before(:each) do
-      @customers = mock_model(Customer, :first_name => "Riccardo", :last_name => "Tacconi")
+  describe "search" do
+    #before(:each) do
+    #  @customers = mock_model(Customer, :first_name => "Riccardo", :last_name => "Tacconi")
       #funziona anche senza parametri
       #@customers = mock_model(Customer)
-    end
-
-    shared_examples_for "index action" do
-      it "should be successful" do
-        @full_name = "user"
-        do_get
-        response.should be_success
-      end
-
-      it "should render the correct template" do
-        do_get
-        response.should render_template(:index)
-      end
-    end
+    #end
 
     context "when full_name is '*'" do
       it "should find all paginated customers" do
@@ -54,7 +41,7 @@ describe CustomersController do
 
   def do_get page = nil, format = 'html'
     login_user
-    get 'index', :customer_search => @full_name, :format => format
+    get 'search', :customer_search => @full_name, :format => format
   end
   
 end
