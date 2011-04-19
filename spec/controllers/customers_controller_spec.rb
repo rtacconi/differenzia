@@ -24,7 +24,7 @@ describe CustomersController do
     end
 
     context "when full_name is '*'" do
-      it "should find all paginated customers" do"*"
+      it "should find all paginated customers" do
         Customer.should_not_receive(:find).with("*")
         Customer.should_not_receive(:search_full_name)
         @full_name = "*"
