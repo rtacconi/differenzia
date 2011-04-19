@@ -58,6 +58,11 @@ body {
   text-decoration: none;
 }
 
+/* line 36, ../../../app/stylesheets/differenzia.scss */
+label {
+  font-weight: bold;
+}
+
 /* line 1, ../../../app/stylesheets/partials/_forms.scss */
 .button {
   background: #000;
