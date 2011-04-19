@@ -33,10 +33,11 @@
               .alert
                 = flash[:alert]
       .block
-        .column.span-4.colborder
+        .column.span-4.showgrid
           %div
             = render :partial => 'shared/menu'
-        .column.span-20
+      .block      
+        .column.span-20.last
           %div
             = yield
       .block
