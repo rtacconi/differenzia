@@ -1,4 +1,4 @@
-= render 'form'
+= render 'form' if !request.xhr?
 #results
   = render "index_navigation"
   - if collection.any?
