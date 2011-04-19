@@ -1,25 +1,33 @@
-class CustomersController < ApplicationController
-	#layout :choose_layout
-	
+class CustomersController < InheritedResources::Base
+
 	def index
-		unless params[:customer_search].blank?
-			@mq_accepted = 12
-			full_name = params[:customer_search]
-			
-			if full_name == "*"
-				@customers = Customer.all.paginate(:per_page => 15, :page => params[:page])
-			else
-				@customers = Customer.search_full_name(full_name).paginate(:per_page => 15, :page => params[:page])
-			end
+		@mq_accepted = 12 # valore al di sotto del quale non devono essere consegnati i sacchetti
+		unless params[:customer_full_name].blank?
+		full_name = params[:customer_full_name]
+		@customers = Customer.search_full_name(full_name).paginate(:per_page => 10,
+		  :page => params[:page])
+		else
+			@customers = Customer.all.paginate(:per_page => 10, :page => params[:page])
 		end
-		
 		render :layout => false if request.xhr?
 	end
-	
-	def show
-		@customer = Customer.find(params[:id])		
+=begin
+	def search
+		unless params[:customer_full_name].blank?
+			@mq_accepted = 12  # valore al di sotto del quale non devono essere consegnati i sacchetti
+			full_name = params[:customer_full_name]
+			@customers = Customer.search_full_name(full_name).paginate(:per_page => 10, :page => params[:page])
+		end
+		#render 'index'
+		render :layout => false if request.xhr?
 	end
-
+=end
+	
+	protected
+  def collection
+  	@customers ||= end_of_association_chain.paginate(:page => params[:page])
+  end
+	
 =begin	
 	private
   def choose_layout

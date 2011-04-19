@@ -1,7 +1,5 @@
-.block
-  .column.span-24
-    = render 'form'
-.block
-  .column.span-24
-    #results
-      = render 'customer_head'
+= render 'form' if !request.xhr?
+#results
+  = render "index_navigation"
+  - if collection.any?
+    = render "customer_table"

@@ -1,6 +1,6 @@
-= form_tag 'javascript:void(0)', :id => 'customer' do
+= form_tag 'javascript:void(0)', :id => 'customer_search' do
 	%p
-		= label_tag :customer_search, 'Nominativo:'
-		= text_field_tag :customer_search, params[:customer_search]
+		= label_tag :customer_full_name, 'Nominativo:'
+		= text_field_tag :customer_full_name, params[:full_name]
 		= image_tag("spinner.gif", :id => "spinner", :style => "display: none;")
 %br

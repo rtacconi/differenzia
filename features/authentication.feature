@@ -15,7 +15,9 @@ Feature: Authentication
     And I fill in "user_password" with "password"
     And I press "Sign in"
     Then I should see "user"
-    And I should see "Nominativo"
+    And I should see the link "Dashboard"
+    And I should see the link "Customers"
+    #And I should not see the link "Operators"
 
   Scenario: Sign in as manager
     Given I am not authenticated
@@ -24,7 +26,9 @@ Feature: Authentication
     And I fill in "user_password" with "password"
     And I press "Sign in"
     Then I should see "manager"
-    And I should see "Nominativo"
+    And I should see the link "Dashboard"
+    And I should see the link "Customers"
+    And I should see the link "Operators"
     
   Scenario: Sign in as admin
     Given I am not authenticated
@@ -33,5 +37,6 @@ Feature: Authentication
     And I fill in "user_password" with "password"
     And I press "Sign in"
     Then I should see "admin"
+    And I should see the link "Dashboard"
+    And I should see the link "Customers"
     And I should see the link "Operators"
-    And I should see "Nominativo"

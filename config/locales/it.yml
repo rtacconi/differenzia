@@ -7,15 +7,27 @@
 # Rails 3 version by Davide Guerri (d.guerri@caspur.it)
 
 it:
-  Are you sure?: "Sei sicuro?"  
-  Back: "Indietro"
-  Show: "Mostra"
-  Edit: "Modifica"
-  Destroy: "Elimina"
-  role: "Ruolo"
-  it should be at least 6 characters: "deve essere almeno di 6 caratteri"
-  it has to be the same as the password: "it has to be the same as the password"
-  Found: "Trovati"
+  general:
+    are_you_sure: "Sei sicuro?" 
+    new: "Nuovo" 
+    back: "Indietro"
+    show: "Mostra"
+    edit: "Modifica"
+    destroy: "Elimina"
+    role: "Ruolo"
+    it should be at least 6 characters: "deve essere almeno di 6 caratteri"
+    it has to be the same as the password: "it has to be the same as the password"
+    Found: "Trovati"
+    
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} è stato creato con successo."
+      update:
+        notice: "%{resource_name} è stato modificato con successo."
+        
+  users:
+    new_user: "Nuovo operatore"
 
   number:
     format:
@@ -205,10 +217,14 @@ it:
 
     models:
       user: "Operatore"
+      customer: "cliente"
     attributes:
       user:
         first_name: "Nome"
         last_name: "Cognome"
         role: "Ruolo"
+      customer:
+        full_name: "Nominativo"
+        address: "Indirizzo"
         
         
