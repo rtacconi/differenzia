@@ -1,28 +1,28 @@
 class CustomersController < InheritedResources::Base
-=begin	
+
 	def index
-		unless params[:customer_search].blank?
-			@mq_accepted = 12
-			full_name = params[:customer_search]
-			
-			if full_name == "*"
-				@customers = Customer.all.paginate(:per_page => 15, :page => params[:page])
-			else
-				@customers = Customer.search_full_name(full_name).paginate(:per_page => 15, :page => params[:page])
-			end
+		@mq_accepted = 12 # valore al di sotto del quale non devono essere consegnati i sacchetti
+		#@customers = Customer.all.paginate(:per_page => 10, :page => params[:page])
+		unless params[:customer_full_name].blank?
+		full_name = params[:customer_full_name]
+		@customers = Customer.search_full_name(full_name).paginate(:per_page => 10,
+		  :page => params[:page])
+		else
+			@customers = Customer.all.paginate(:per_page => 10, :page => params[:page])
 		end
-		
+		render :layout => false if request.xhr?
+	end
+=begin
+	def search
+		unless params[:customer_full_name].blank?
+			@mq_accepted = 12  # valore al di sotto del quale non devono essere consegnati i sacchetti
+			full_name = params[:customer_full_name]
+			@customers = Customer.search_full_name(full_name).paginate(:per_page => 10, :page => params[:page])
+		end
+		#render 'index'
 		render :layout => false if request.xhr?
 	end
 =end
-	def search
-		unless params[:customer_search].blank?
-			@mq_accepted = 12  # valore al di sotto del quale non devono essere consegnati i sacchetti
-			full_name = params[:customer_search]
-			@customers = Customer.search_full_name(full_name).paginate(:page => params[:page])
-		end
-		render :layout => false if request.xhr?
-	end
 	
 	protected
   def collection
