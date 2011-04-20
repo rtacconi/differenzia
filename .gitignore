@@ -1,8 +1,8 @@
 .project
 .bundle
 db/*.sqlite3
-log/*.log
-tmp/**/*
+log/*
+tmp/*
 *.swp
 Gemfile.lock
 config/database.yml
