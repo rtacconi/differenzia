@@ -2,10 +2,9 @@
 .bundle
 db/*.sqlite3
 log/*.log
-tmp/
+tmp/**/*
 *.swp
 Gemfile.lock
-.sass-cache/
 config/database.yml
 .sass-cache/
 TODO-Mauro
