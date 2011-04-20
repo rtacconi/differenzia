@@ -26,7 +26,7 @@ it:
         notice: "%{resource_name} è stato modificato con successo."
         
   users:
-    new_user: "Nuovo operatore"
+    new_user: "Nuovo Operatore"
 
   number:
     format:
