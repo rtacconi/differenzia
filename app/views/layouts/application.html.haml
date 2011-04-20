@@ -8,8 +8,8 @@
     = stylesheet_link_tag 'compiled/app', :media => 'screen, projection'
     /[if IE]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.js"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"
     = javascript_include_tag :defaults, 'searchbox'
     = csrf_meta_tag
   %body
@@ -18,7 +18,7 @@
       .user-details= render 'shared/user_details'
     .container.showgrid
       .block
-        .column.span-24{:style => 'background-color: red'}
+        .column.span-24
           %div
             %h2{:class => 'alt'}
               A simple product delivery software where operators can manage
