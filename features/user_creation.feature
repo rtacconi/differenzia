@@ -9,6 +9,7 @@ Feature: User creation
     And I fill in "user_email" with "admin@differenzia.com"
     And I fill in "user_password" with "adminadmin"
     And I press "Sign in"
+    And I follow "Customers"
     And I go to the users page
     Then I follow "Nuovo Operatore"
     And I fill in "user_email" with "op1@differenzia.com"
