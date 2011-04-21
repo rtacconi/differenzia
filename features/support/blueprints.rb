@@ -1,5 +1,5 @@
 require 'machinist/active_record'
-#require 'spec/support/blueprints.rb'
+require 'spec/support/blueprints.rb'
 
 User.blueprint do
   email {"user#{sn}@differenzia.com"}
