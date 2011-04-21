@@ -3,9 +3,13 @@ Given /^I am not authenticated$/ do
 end
 
 
-And /^I should see the link "([^"]*)"$/ do |link|
+Then /^I should see the link "([^"]*)"$/ do |link|
   page.should have_link(link)
 end
+
+Then /^I should not see the link "([^"]*)"$/ do |link|                                
+  page.should_not have_link(link)
+end 
 
 Given /^I have one user with email "([^"]*)" role "([^"]*)" and password "([^"]*)"$/ do |email, role, password|
   if User.find_by_email(email).nil?
