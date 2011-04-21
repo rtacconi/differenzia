@@ -1,9 +1,10 @@
 require 'spec_helper'
+require 'capybara/rspec'
 
 describe CustomersController do
-  include Devise::TestHelpers
+#  include Devise::TestHelpers
 
-  describe "search" do
+  describe "search whith js", :js => true  do
     before(:each) do
       @customers = mock_model(Customer, :full_name => "User-1")
     end
@@ -22,8 +23,10 @@ describe CustomersController do
     context "when full_name is blank" do
       it "should not return any object" do
         @full_name = ""
+        Customer.should_receive(:all).and_return(@customers)
+        @customers.should_receive(:paginate)
         do_get
-        assigns(:customers).size.should eql(0)
+        assigns(:customers).should_not be_empty
       end
     end
 
@@ -36,9 +39,16 @@ describe CustomersController do
     end
   end
 
-  def do_get format = 'html'
+  def do_get page= nil, format = 'html'
     login_user
-    get 'index', :customer_full_name => @full_name, :format => format
+    #get 'index', :customer_full_name => @full_name, :format => format
+    page.execute_script("$('#customer_full_name').searchbox({
+        url: '/customers',
+        param: 'customer_full_name',
+        dom_id: '#results',
+        delay: 250,
+        loading_css: '#spinner'
+        })")
   end
   
 end

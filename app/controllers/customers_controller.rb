@@ -11,17 +11,6 @@ class CustomersController < InheritedResources::Base
 		end
 		render :layout => false if request.xhr?
 	end
-=begin
-	def search
-		unless params[:customer_full_name].blank?
-			@mq_accepted = 12  # valore al di sotto del quale non devono essere consegnati i sacchetti
-			full_name = params[:customer_full_name]
-			@customers = Customer.search_full_name(full_name).paginate(:per_page => 10, :page => params[:page])
-		end
-		#render 'index'
-		render :layout => false if request.xhr?
-	end
-=end
 	
 	protected
   def collection
