@@ -11,6 +11,7 @@ describe CustomersController do
     context "when full_name is 'user'" do
       it "should find customers" do
         @full_name = "User"
+        User.make!
         Customer.should_receive(:search_full_name).with(@full_name).and_return(@customers)
         @customers.should_receive(:paginate)
         do_get
@@ -19,10 +20,10 @@ describe CustomersController do
     end
 
     context "when full_name is blank" do
-      it "should display nothing" do
+      it "should not return any object" do
         @full_name = ""
         do_get
-        assigns(:customers).should_not be_empty
+        assigns(:customers).size.should eql(0)
       end
     end
 
