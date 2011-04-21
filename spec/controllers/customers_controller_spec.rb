@@ -6,8 +6,6 @@ describe CustomersController do
   describe "search" do
     before(:each) do
       @customers = mock_model(Customer, :full_name => "User-1")
-      #funziona anche senza parametri
-      #@customers = mock_model(Customer)
     end
 
     context "when full_name is 'user'" do
