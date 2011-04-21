@@ -24,7 +24,7 @@ describe CustomersController do
       it "should display nothing" do
         @full_name = ""
         do_get
-        assigns(:customers).should be_nil
+        assigns(:customers).should be_empty
       end
     end
 
