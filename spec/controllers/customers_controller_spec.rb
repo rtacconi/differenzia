@@ -35,7 +35,7 @@ describe CustomersController do
     end
   end
 
-  def do_get page = nil, format = 'html'
+  def do_get format = 'html'
     login_user
     get 'index', :customer_full_name => @full_name, :format => format
   end
