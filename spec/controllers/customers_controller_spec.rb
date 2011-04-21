@@ -11,16 +11,12 @@ describe CustomersController do
 
     context "when full_name is 'user'" do
       it "should find customers" do
-        User.make!
-        visit '/d/users/sign_in/'
-        fill_in "user_email", :with => "user0001@differenzia.com"
-        fill_in "user_password", :with => "password"
-        click_button "Sign in"
-        #click_link "Customers"
+        login
         page.should have_content "Customers"
         page.should have_content "Dashboard"
         click_link('Customers')
-        page.should have_content "Nominativo"
+        visit customers_path
+        page.should have_content "Nominativo:"
         #visit customers_path
         #fill_in "customer_full_name", :with => "User"
         #@full_name = "User"
@@ -48,6 +44,14 @@ describe CustomersController do
         do_get
       end
     end
+  end
+
+  def login
+    User.make!
+    visit '/d/users/sign_in/'
+    fill_in "user_email", :with => "user0001@differenzia.com"
+    fill_in "user_password", :with => "password"
+    click_button "Sign in"
   end
 
   def do_get page= nil, format = 'html'

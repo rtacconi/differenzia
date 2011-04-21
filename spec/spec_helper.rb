@@ -30,6 +30,8 @@ RSpec.configure do |config|
   config.extend ControllerMacros, :type => :controller
 end
 
+Capybara.default_driver = :selenium
+
 def get_file(name)
   File.new(Rails.root.to_s+"/spec/support/#{name}")
 end
