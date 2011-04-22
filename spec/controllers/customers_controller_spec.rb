@@ -7,21 +7,19 @@ describe CustomersController do
       @customers = mock_model(Customer, :full_name => "User-1").as_null_object
     end
 
-    context "when customer_full_name is 'user'" do
+    context "when full name is 'User'" do
       it "should find customers" do
         @full_name = "User" 
         Customer.should_receive(:search_full_name).with(@full_name).and_return(@customers)
-        #@customers.should_receive(:paginate)
         do_get
         assigns(:customers).should_not be_nil
       end
     end
 
-    context "when customer_full_name is blank" do
+    context "when full name is blank" do
       it "should return all customers" do
         @full_name = ""
         Customer.should_receive(:all).and_return(@customers)
-        #@customers.should_receive(:paginate)
         do_get
         assigns(:customers).should_not be_nil
       end
@@ -36,7 +34,7 @@ describe CustomersController do
     end
   end
 
-  def do_get format = 'html'
+  def do_get(format = 'html')
     login_user
     get 'search', :customer_full_name => @full_name, :format => format
   end
