@@ -1,8 +1,6 @@
 require 'spec_helper'
-require 'capybara/rspec'
 
 describe CustomersController do
-  include Devise::TestHelpers
 
   describe "search with js", :js => true  do
     before(:each) do
@@ -15,9 +13,7 @@ describe CustomersController do
         page.should have_content "Customers"
         page.should have_content "Dashboard"
         click_link('Customers')
-        visit customers_path
-        page.should have_content "Nominativo:"
-        #visit customers_path
+        page.should have_content "Nominativo"
         #fill_in "customer_full_name", :with => "User"
         #@full_name = "User"
         #Customer.should_receive(:search_full_name).with(@full_name).and_return(@customers)
@@ -32,7 +28,7 @@ describe CustomersController do
         @full_name = ""
         Customer.should_receive(:all).and_return(@customers)
         @customers.should_receive(:paginate)
-        do_get
+ #       do_get
         assigns(:customers).should_not be_empty
       end
     end
@@ -41,7 +37,7 @@ describe CustomersController do
       it "customers should be nil" do
       	@full_name = "wrong"
         assigns(:customers).should be_nil
-        do_get
+  #      do_get
       end
     end
   end
