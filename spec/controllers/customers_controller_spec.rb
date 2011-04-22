@@ -25,11 +25,11 @@ describe CustomersController do
       end
     end
 
-    context "when customer_full_name not found" do
+    context "when full name doesn't exists" do
       it "customers should be nil" do
-      	@full_name = "wrong"
-        assigns(:customers).should be_nil
-        do_get
+      	@full_name = "wrong name"
+      	do_get
+        assigns(:customers).size.should eql(0)
       end
     end
   end

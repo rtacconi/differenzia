@@ -5,15 +5,16 @@ class CustomersController < InheritedResources::Base
   def search
 	  unless params[:customer_full_name].blank?
       full_name = params[:customer_full_name]
-      @customers = Customer.search_full_name(full_name).paginate(:per_page => 10,
+      @customers = Customer.search_full_name(full_name).paginate(
+        :per_page => 10,
         :page => params[:page])
-      else
-        @customers = Customer.all.paginate(:per_page => 10, :page => params[:page])
+    else
+      @customers = Customer.all.paginate(:per_page => 10, :page => params[:page])
     end
     render :layout => false if request.xhr?	  
 	end
 	
-	protected
+protected
   def collection
   	@customers ||= end_of_association_chain.paginate(:page => params[:page])
   end
