@@ -12,6 +12,7 @@ describe CustomersController do
         @full_name = "User" 
         Customer.should_receive(:search_full_name).with(@full_name).and_return(@customers)
         #@customers.should_receive(:paginate)
+        #assigns(:customers).should_not be_nil
         do_get
         assigns(:customers).should_not be_nil
       end
@@ -22,16 +23,19 @@ describe CustomersController do
         @full_name = ""
         Customer.should_receive(:all).and_return(@customers)
         #@customers.should_receive(:paginate)
+        #assigns(:customers).should_not be_nil
         do_get
         assigns(:customers).should_not be_nil
       end
     end
 
-    context "when customer_full_name not found" do
+    context "when customer_full_name doesn't exists" do
       it "customers should be nil" do
       	@full_name = "wrong"
-        assigns(:customers).should be_nil
+      	Customer.should_receive(:search_full_name).with(@full_name).and_return(@customers)
+        #assigns(:customers).should be_nil
         do_get
+        assigns(:customers).should be_nil
       end
     end
   end
