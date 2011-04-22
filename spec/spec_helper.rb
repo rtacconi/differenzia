@@ -52,3 +52,5 @@ def login_admin
   request.env['warden'] = mock(Warden, :authenticate => mock_user(:role => 'admin'),
                                        :authenticate! => mock_user(:role => 'admin'))
 end
+
+Capybara.default_driver = :selenium

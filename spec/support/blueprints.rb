@@ -10,7 +10,7 @@ User.blueprint do
 end
 
 Customer.blueprint do
-  full_name {"Riccardo#{sn} Tacconi"}
+  full_name {"User#{sn}"}
 end
 
 ImportTable.blueprint do
