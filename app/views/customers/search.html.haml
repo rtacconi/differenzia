@@ -1,1 +1,6 @@
-=render 'customer_table'
+= render 'form' if !request.xhr?
+#results
+  = render "index_navigation"
+  - if collection.any?
+    = render "customer_table"
+
