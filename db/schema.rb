@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110423175804) do
+=======
+ActiveRecord::Schema.define(:version => 20110315111001) do
+>>>>>>> 230a6b4511a7bcffcf3b8c018d0ddf82fd1b7d80
 
   create_table "customers", :force => true do |t|
     t.integer  "year"
@@ -30,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20110423175804) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -40,6 +45,8 @@ ActiveRecord::Schema.define(:version => 20110423175804) do
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> 230a6b4511a7bcffcf3b8c018d0ddf82fd1b7d80
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "",     :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "",     :null => false
