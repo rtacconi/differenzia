@@ -4,7 +4,12 @@
   %b Original path:
   = @import_table.original_path
   
+= render 'table_columns'
+
 = form_for :merge do |f|
+  %label= 'Select a table for merging:'
+  = f.select(:table, @tables.collect { |t| [t, t] }, { :include_blank => true }, { :onchange => "mergeTableSelected();" })
+  = f.submit "Merge", :disable_with => 'Merging...'
   %table{ :border => "1", :cellspacing => "1", :cellpadding => "1"}
     %tr
       - 0.upto(@column_index_max) do |column_index|
@@ -16,11 +21,6 @@
         - 0.upto(@column_index_max) do |column_index|
           %td
             = row.select { |cell| cell.column_index == column_index }[0].contents
-  %label= 'Select a table for merging:'
-  = f.select(:table, @tables.collect { |t| [t, t] }, { :include_blank => true }, { :onchange => "mergeTableSelected();" })
-  = f.submit "Merge", :disable_with => 'Merging...'
-
-= render 'table_columns'
 
 = link_to 'Edit', edit_import_table_path(@import_table)
 \|
