@@ -245,3 +245,12 @@ it:
   Products: "Prodotti"
   
   Users: "Operatori"
+  
+  full_name: "Nominativo"
+  date_of_birth: "Data di nascita"
+  SSN: "Codice fiscale"
+  address: "Indirizzo di residenza"
+  postal_code: "Codice postale"
+  city: "Città"
+  county: "Provincia"
+  sq: "Mq"

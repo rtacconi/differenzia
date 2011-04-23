@@ -4,14 +4,14 @@
     %table
       %thead
         %tr
-          %th= 'Nominativo'
-          %th= 'Data di nascita'
-          %th= 'Codice fiscale'
-          %th= 'Indirizzo di residenza' 
-          %th= 'Codice postale'
-          %th= 'Città'
-          %th= 'Prov.'        
-          %th= 'Mq.'
+          %th= t 'full_name'
+          %th= t 'date_of_birth'
+          %th= t 'SSN'
+          %th= t 'address' 
+          %th= t 'postal_code'
+          %th= t 'city'
+          %th= t 'county'        
+          %th= t 'sq'
           %th
       %tbody
         = render @customers

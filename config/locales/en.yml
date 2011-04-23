@@ -38,4 +38,13 @@ en:
   
   Products: "Products"
   
-  Users: "Users "
+  Users: "Users"
+  
+  full_name: "Full name"
+  date_of_birth: "Date of birth"
+  SSN: "SSN"
+  address: "Address"
+  postal_code: "Postal code"
+  city: "City"
+  county: "County"
+  sq: "Sq"  
