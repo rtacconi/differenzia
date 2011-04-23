@@ -6,10 +6,13 @@ Given /^I am authenticated with email "([^"]*)" and password "([^"]*)"$/ do |ema
 end
 
 Given /^I have one user with email "([^"]*)" role "([^"]*)" and password "([^"]*)"$/ do |email, role, password|
-  if User.find_by_email(email).nil?
+  user = User.find_by_email(email)
+  if user.nil?
     User.create!(:role => role, :email => email,
                  :password => password, :password_confirmation => password,
                  :first_name => "John", :last_name => "Doe")
+  else
+    user
   end
 end
 

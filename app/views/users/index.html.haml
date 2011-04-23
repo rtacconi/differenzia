@@ -3,14 +3,14 @@
     %table
       %thead
         %tr
-          %th First name
-          %th Last name
+          %th= t 'users.first_name'
+          %th= t 'users.last_name'
           %th Email
-          %th Role
-          %th Created
-          %th
-          %th
-          %th
+          %th= t 'users.role'
+          %th= t 'created_at'
+          %th &nbsp;
+          %th &nbsp;
+          %th &nbsp;
       %tbody    
         - @users.each do |user|
           %tr{:valign => "top", :class => cycle('odd', 'even')}
@@ -24,5 +24,4 @@
             %td= link_to 'Reset Password', reset_password_user_url(user)
   %br
   
-  %p
-  = link_to t('users.new_user'), new_user_path
+  %p= link_to t('users.new_user'), new_user_path

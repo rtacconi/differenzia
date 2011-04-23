@@ -1,11 +1,3 @@
-# Italian translations for Ruby on Rails
-#
-# created by Claudio Poli (masterkain@gmail.com)
-#
-# This localization file targets Rails 2 and 3.
-#
-# Rails 3 version by Davide Guerri (d.guerri@caspur.it)
-
 it:
   general:
     are_you_sure: "Sei sicuro?" 
@@ -24,9 +16,6 @@ it:
         notice: "%{resource_name} è stato creato con successo."
       update:
         notice: "%{resource_name} è stato modificato con successo."
-        
-  users:
-    new_user: "Nuovo Operatore"
 
   number:
     format:
@@ -227,3 +216,22 @@ it:
         address: "Indirizzo"
         
         
+# differenzia
+  users:
+    role: "role"
+    new_user: "Nuovo Operatore"
+    first_name: "Nome"
+    last_name: "Cognome"
+    
+  created_at: "Creato il"
+  
+  Edit: "Modifica"
+  
+  Destroy: "Elimina"
+  
+  simple_form:
+    labels:
+      users:
+        first_name: 'Nome'
+        last_name: 'Cognome'
+        password_confirmation: 'Conferma password'

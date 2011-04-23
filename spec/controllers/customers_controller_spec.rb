@@ -29,7 +29,7 @@ describe CustomersController do
       it "customers should be nil" do
       	@full_name = "wrong name"
       	do_get
-        assigns(:customers).size.should eql(0)
+        assigns(:customers).should be_empty
       end
     end
   end
