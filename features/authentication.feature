@@ -17,7 +17,7 @@ Feature: Authentication
     Then I should see "user"
     And I should see the link "Dashboard"
     And I should see the link "Customers"
-    And I should not see the link "Operators"
+    And I should not see the link "Users"
 
   Scenario: Sign in as manager
     Given I am not authenticated
@@ -28,7 +28,7 @@ Feature: Authentication
     Then I should see "manager"
     And I should see the link "Dashboard"
     And I should see the link "Customers"
-    And I should not see the link "Operators"
+    And I should not see the link "Users"
     
   Scenario: Sign in as admin
     Given I am not authenticated
@@ -39,4 +39,4 @@ Feature: Authentication
     Then I should see "admin"
     And I should see the link "Dashboard"
     And I should see the link "Customers"
-    And I should see the link "Operators"
+    And I should see the link "Users"

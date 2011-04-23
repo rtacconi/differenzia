@@ -235,3 +235,13 @@ it:
         first_name: 'Nome'
         last_name: 'Cognome'
         password_confirmation: 'Conferma password'
+    hints:
+      users:
+        password: "deve essere almeno di 6 caratteri"
+        password_confirmation: "deve essere almeno di 6 caratteri"
+        
+  Customers: "Clienti"
+  
+  Products: "Prodotti"
+  
+  Users: "Operatori"

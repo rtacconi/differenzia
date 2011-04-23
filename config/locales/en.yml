@@ -22,3 +22,20 @@ en:
   Edit: "Edit"
   
   Destroy: "Destroy"
+  
+  simple_form:
+    labels:
+      users:
+        first_name: 'First name'
+        last_name: 'Last name'
+        password_confirmation: 'Confirm password'
+    hints:
+      users:
+        password: "it must be at least 6 characters"
+        password_confirmation: "it must be at least 6 characters"
+        
+  Customers: "Customers"
+  
+  Products: "Products"
+  
+  Users: "Users "
