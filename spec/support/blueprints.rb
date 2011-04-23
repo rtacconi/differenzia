@@ -10,13 +10,5 @@ User.blueprint do
 end
 
 Customer.blueprint do
-  full_name {"User#{sn}"}
-end
-
-ImportTable.blueprint do
-  # Attributes here
-end
-
-ImportCell.blueprint do
-  # Attributes here
+  full_name {Faker::Name.name}
 end

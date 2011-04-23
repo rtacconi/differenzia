@@ -22,7 +22,7 @@ Feature: User creation
     And I should see "new_user@differenzia.com"
     
   Scenario: Testing already signed in
-    Given I am authenticated as admin with email "admin@differenzia.com" and password "adminadmin"
+    Given I am authenticated with email "admin@differenzia.com" and password "adminadmin"
     When I am in the users page
     And I follow "Nuovo Operatore"
     And I fill in "user_email" with "op1@differenzia.com"
