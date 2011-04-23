@@ -20,6 +20,8 @@ Differenzia::Application.routes.draw do
   
   resources :customers
   
+  resources :products
+  
   match 'import_tables/:id' => 'import_tables#merge' 
   #post 'import_tables/:id' => 'import_tables#merge' è lo  stesso?
 

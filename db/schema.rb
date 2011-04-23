@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110423173629) do
+ActiveRecord::Schema.define(:version => 20110423175804) do
 
   create_table "customers", :force => true do |t|
     t.integer  "year"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20110423173629) do
     t.integer  "square_meters"
     t.integer  "category"
     t.string   "taxable_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.decimal  "qt"
+    t.string   "unit_type"
+    t.decimal  "price",       :precision => 8, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end

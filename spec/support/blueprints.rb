@@ -12,3 +12,11 @@ end
 Customer.blueprint do
   full_name {Faker::Name.name}
 end
+
+Product.blueprint do
+  name {"Red bags"}
+  description {Faker.sentence}
+  qt {2}
+  unit_type {"Packages"}
+  price {12.4}
+end

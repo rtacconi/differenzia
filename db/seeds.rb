@@ -37,3 +37,9 @@ puts "User user was created with ID #{user2.id}."
                    :square_meters => "#{n}"*2 })
 end
 puts "Customers created"
+
+puts "Adding produtcs"
+Product.create!(:name => 'Blue bags', :description => "recycling bags", :qt => 10, 
+                :unit_type => 'package', :price => '2.50')
+Product.create!(:name => 'Green bags', :description => "recycling bags", :qt => 6, 
+                :unit_type => 'package', :price => '2.50')
