@@ -229,6 +229,8 @@ it:
   
   Destroy: "Elimina"
   
+  Details: "Dettagli"
+  
   simple_form:
     labels:
       users:

@@ -20,7 +20,7 @@ protected
   end
   
   def set_valid_square_meters
-    @valid_mq = 12 # valore dei metri quadri al di sotto del quale non devono essere consegnati i sacchetti
+    @valid_sq = 12 # valore dei metri quadri al di sotto del quale non devono essere consegnati i sacchetti
   end
 	
 =begin	
