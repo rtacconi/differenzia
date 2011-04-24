@@ -1,7 +1,5 @@
 Differenzia::Application.routes.draw do
   
-  resources :import_tables
-
   get "csv/import"
   
   post "csv/import" => 'csv#upload'
@@ -22,9 +20,6 @@ Differenzia::Application.routes.draw do
   
   resources :products
   
-  match 'import_tables/:id' => 'import_tables#merge' 
-  #post 'import_tables/:id' => 'import_tables#merge' è lo  stesso?
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
