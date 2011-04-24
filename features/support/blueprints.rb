@@ -1,5 +1,4 @@
 require 'machinist/active_record'
-require 'spec/support/blueprints.rb'
 
 User.blueprint do
   email {"user#{sn}@differenzia.com"}
@@ -11,7 +10,19 @@ User.blueprint do
 end
 
 Customer.blueprint do
-  full_name {"Riccardo#{sn} Tacconi"}
-  address {"Via dei Mille #{sn}"}
-  locality {"Italia"}
+  full_name {Faker::Name.name}
+end
+
+Product.blueprint do
+  name {"Red bags"}
+  description {Faker::Lorem.sentence}
+  qt {2}
+  unit_type {"Packages"}
+  price {12.4}
+end
+
+Delivery.blueprint do
+  product {Product.make!}
+  customer {Customer.make!}
+  notes {Faker::Lorem.sentence}
 end

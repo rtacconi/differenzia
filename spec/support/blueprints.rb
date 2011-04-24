@@ -15,8 +15,14 @@ end
 
 Product.blueprint do
   name {"Red bags"}
-  description {Faker.sentence}
+  description {Faker::Lorem.sentence}
   qt {2}
   unit_type {"Packages"}
   price {12.4}
+end
+
+Delivery.blueprint do
+  product {Product.make!}
+  customer {Customer.make!}
+  notes {Faker::Lorem.sentence}
 end

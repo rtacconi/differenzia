@@ -1,4 +1,5 @@
 class Customer < ActiveRecord::Base
+  has_many :deliveries
 	cattr_reader :per_page
   @@per_page = 10
   default_scope :order => 'full_name ASC'

@@ -74,6 +74,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'spork', '~> 0.9.0.rc'
   gem 'machinist', '>= 2.0.0.beta1'
+  gem 'faker'
 end
 
 group :development do

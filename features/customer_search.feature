@@ -10,8 +10,8 @@ Feature: Customer search
     And I go to the customers page
     When I follow "Customers"
     And I fill in "customer_full_name" with "User"
-    Then I should see "Data di nascita"
-    And I should see "Codice fiscale"
+    Then I should see "Date of birth"
+    And I should see "SSN"
     And I should see "User-0"
     And I fill in "customer_full_name" with "A very wrong user name"
     And I should not see "User-0"
