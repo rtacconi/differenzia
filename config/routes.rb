@@ -16,7 +16,9 @@ Differenzia::Application.routes.draw do
   
   get "customers/search"
   
-  resources :customers
+  resources :customers do
+    resources :deliveries
+  end
   
   resources :products
   
