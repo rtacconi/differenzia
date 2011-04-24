@@ -30,7 +30,6 @@ puts "Admin user was created with ID #{user.id}."
 puts "Manager user was created with ID #{user1.id}."
 puts "User user was created with ID #{user2.id}."
 
-puts "Adding customers"
 0.upto(100) do |n|
   Customer.create!({ :year => '2011', :full_name => "User-#{n}", :birth_date => "2011-08-02", 
                    :ssn => "asdsde12d78b324y", :address => "address-#{n}", 
@@ -39,7 +38,6 @@ puts "Adding customers"
 end
 puts "Customers created"
 
-puts "Adding produtcs"
 Product.create!(:name => 'Blue bags', :description => "recycling bags", :qt => 10, 
                 :unit_type => 'package', :price => '2.50')
 Product.create!(:name => 'Green bags', :description => "recycling bags", :qt => 6, 
