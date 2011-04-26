@@ -16,6 +16,9 @@ module NavigationHelpers
 
     when /dashboard\s?page/
       dashboard_index_url
+      
+    when /the customer delivery page/
+      customer_deliveries_url
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

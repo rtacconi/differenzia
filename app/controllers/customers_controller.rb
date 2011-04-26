@@ -20,7 +20,8 @@ protected
   end
   
   def set_valid_square_meters
-    @valid_sq = 12 # valore dei metri quadri al di sotto del quale non devono essere consegnati i sacchetti
+    # block product delivery for lower values
+    @valid_sq = Settings.valid_square_meters if Settings.enable_valid_square_meters
   end
 	
 =begin	

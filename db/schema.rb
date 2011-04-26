@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110424103928) do
+ActiveRecord::Schema.define(:version => 20110426175046) do
 
   create_table "customers", :force => true do |t|
     t.integer  "year"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20110424103928) do
     t.string   "number"
     t.string   "postal_code",     :limit => 5
     t.string   "city"
-    t.string   "prov"
+    t.string   "area"
     t.string   "tax_code",        :limit => 16
     t.string   "contract_number"
     t.integer  "square_meters"

@@ -254,5 +254,5 @@ it:
   address: "Indirizzo di residenza"
   postal_code: "Codice postale"
   city: "Città"
-  county: "Provincia"
+  area: "Provincia"
   sq: "Mq"

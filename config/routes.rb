@@ -1,5 +1,9 @@
 Differenzia::Application.routes.draw do
   
+  get "deliveries/index"
+
+  get "deliveries/show"
+
   get "csv/import"
   
   post "csv/import" => 'csv#upload'
@@ -16,7 +20,9 @@ Differenzia::Application.routes.draw do
   
   get "customers/search"
   
-  resources :customers
+  resources :customers do
+    resources :deliveries
+  end
   
   resources :products
   
