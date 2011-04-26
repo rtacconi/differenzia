@@ -55,3 +55,5 @@
     %br
     %p
       = link_to 'Indietro', "javascript:history.back()"
+      
+      = link_to @customer.full_name, customer_deliveries_url(@customer)

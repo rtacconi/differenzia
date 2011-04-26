@@ -8,7 +8,7 @@ Feature: Product delivery
     
   Scenario: Find deliveries of a customer
     Given I am authenticated with email "user@differenzia.com" and password "password"
-    When I go to the customer ("user@differenzia.com") delivery page
+    When I go to the customer delivery page
     And I should see the delivery
     Then I follow "New Delivery"
     And I fill in "product_type" with "Blue bags"
