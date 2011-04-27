@@ -12,6 +12,13 @@ describe Customer do
       Customer.search_full_name("joe pesci").count.should == 0
     end
   end
+  
+  describe "valid_square_meters" do
+    it "should return true if square meters are more or equal to a default value" do
+      @customer = Customer.make(:square_meters => Settings.valid_square_meters)
+      @customer.valid_square_meters.should be_true
+    end
+  end
 end
 
 

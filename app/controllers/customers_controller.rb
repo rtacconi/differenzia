@@ -1,6 +1,5 @@
 class CustomersController < InheritedResources::Base
   #layout :choose_layout
-  before_filter :set_valid_square_meters, :only => [:index, :search]
   
   def search
 	  unless params[:customer_full_name].blank?
@@ -17,11 +16,6 @@ class CustomersController < InheritedResources::Base
 protected
   def collection
   	@customers ||= end_of_association_chain.paginate(:page => params[:page])
-  end
-  
-  def set_valid_square_meters
-    # block product delivery for lower values
-    @valid_sq = Settings.valid_square_meters if Settings.enable_valid_square_meters
   end
 	
 =begin	

@@ -8,6 +8,10 @@ class Customer < ActiveRecord::Base
     # http://metautonomo.us/projects/metawhere/
     where(:full_name.matches => "%#{full_name}%")
   end
+  
+  def valid_square_meters
+    (Settings.valid_square_meters <= square_meters) ? true : false
+  end
 end
 
 
