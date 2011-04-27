@@ -1,2 +1,25 @@
 %h1 Deliveries#index
-%p Find me in app/views/deliveries/index.html.haml
+%fieldset
+  %legend Anagrafica
+  %p Mario Rossi - Via dei Mille 23, 55100 - Cagliari
+%hr/
+%form
+  %p
+    Quantita`
+    %input{:type => :text}
+  %p
+    Prodotto
+    %input{:type => :select}
+  %p
+    %input{:type => :submit}
+
+%hr/    
+%table
+  %tr
+    %th Prodotto
+    %th Qt
+    %th Data
+  %tr
+    %td Sacchetti blu
+    %td 4
+    %td 2011-01-10
