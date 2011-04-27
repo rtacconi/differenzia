@@ -32,8 +32,8 @@ puts "User user was created with ID #{user2.id}."
 
 0.upto(100) do |n|
   Customer.create!({ :year => '2011', :full_name => "User-#{n}", :birth_date => "2011-08-02", 
-                   :tax_code => "asdsde12d78b324y", :address => "address-#{n}", 
-                   :postal_code => "12345", :city => "ROME", :prov => "RM", 
+                   :ssn => "asdsde12d78b324y", :address => "address-#{n}", 
+                   :postal_code => "12345", :city => "ROME", :area => "RM", 
                    :square_meters => "#{n}"*2 })
 end
 puts "Customers created"
