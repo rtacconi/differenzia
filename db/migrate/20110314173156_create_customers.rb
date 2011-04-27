@@ -8,7 +8,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :number
       t.string :postal_code
       t.string :city
-      t.string :area
+      t.string :prov
       t.string :ssn
       t.string :contract_number
       t.integer :square_meters
