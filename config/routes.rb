@@ -24,6 +24,8 @@ Differenzia::Application.routes.draw do
     resources :deliveries
   end
   
+  resources :deliveries
+  
   resources :products
   
   # The priority is based upon order of creation:

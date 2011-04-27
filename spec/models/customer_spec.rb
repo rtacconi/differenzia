@@ -16,6 +16,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: customers
@@ -28,7 +29,7 @@ end
 #  number          :string(255)
 #  postal_code     :string(5)
 #  city            :string(255)
-#  prov            :string(255)
+#  area            :string(255)
 #  tax_code        :string(16)
 #  contract_number :string(255)
 #  square_meters   :integer

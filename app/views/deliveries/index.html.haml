@@ -1,25 +1,30 @@
-%h1 Deliveries#index
-%fieldset
-  %legend Anagrafica
-  %p Mario Rossi - Via dei Mille 23, 55100 - Cagliari
+%h3 Customer
+%p
+  = @customer.full_name
+  &ndash;
+  = @customer.address
+  &ndash;
+  = @customer.city
+  &ndash;
+  = @customer.area
+  &ndash;
+  = @customer.postal_code
 %hr/
-%form
-  %p
-    Quantita`
-    %input{:type => :text}
-  %p
-    Prodotto
-    %input{:type => :select}
-  %p
-    %input{:type => :submit}
+- simple_form_for Delivery.new do |f|
+  = f.association :product
+  = f.input :quantity
+  = f.input :customer_id, :as => :hidden, :input_html => { :value => params[:customer_id] }
+  = f.input :notes, :as => :string
+  = f.button :submit
 
 %hr/    
 %table
   %tr
-    %th Prodotto
-    %th Qt
-    %th Data
-  %tr
-    %td Sacchetti blu
-    %td 4
-    %td 2011-01-10
+    %th Product
+    %th Quantity
+    %th Delivared at
+  - @deliveries.each do |d|
+    %tr
+      %td= d.product.name
+      %td= d.quantity
+      %td= d.created_at
