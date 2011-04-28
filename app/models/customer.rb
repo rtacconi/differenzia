@@ -15,23 +15,24 @@ class Customer < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: customers
 #
-#  id              :integer         not null, primary key
-#  year            :integer
+#  id              :integer(10)     not null, primary key
+#  year            :integer(10)
 #  full_name       :string(255)
 #  birth_date      :date
 #  address         :string(255)
 #  number          :string(255)
-#  postal_code     :string(5)
+#  postal_code     :string(255)
 #  city            :string(255)
 #  area            :string(255)
-#  tax_code        :string(16)
+#  ssn             :string(255)
 #  contract_number :string(255)
-#  square_meters   :integer
-#  category        :integer
+#  square_meters   :integer(10)
+#  category        :integer(10)
 #  taxable_address :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
