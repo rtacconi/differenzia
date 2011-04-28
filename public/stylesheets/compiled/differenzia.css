@@ -25,12 +25,17 @@ body {
 }
 
 /* line 23, ../../../app/stylesheets/differenzia.scss */
+body .container {
+  width: 95%;
+}
+
+/* line 28, ../../../app/stylesheets/differenzia.scss */
 .spacer {
   clear: both;
   height: 1px;
 }
 
-/* line 25, ../../../app/stylesheets/differenzia.scss */
+/* line 30, ../../../app/stylesheets/differenzia.scss */
 .user-details {
   color: #fff;
   float: right;
@@ -38,27 +43,27 @@ body {
   margin-top: 10px;
 }
 
-/* line 32, ../../../app/stylesheets/differenzia.scss */
+/* line 37, ../../../app/stylesheets/differenzia.scss */
 .user-details a:link {
   color: #fff;
 }
 
-/* line 33, ../../../app/stylesheets/differenzia.scss */
+/* line 38, ../../../app/stylesheets/differenzia.scss */
 .user-details a:visited {
   color: #fff;
 }
 
-/* line 34, ../../../app/stylesheets/differenzia.scss */
+/* line 39, ../../../app/stylesheets/differenzia.scss */
 .user-details a:active {
   color: #fff;
 }
 
-/* line 35, ../../../app/stylesheets/differenzia.scss */
+/* line 40, ../../../app/stylesheets/differenzia.scss */
 .user-details a:hover {
   text-decoration: none;
 }
 
-/* line 37, ../../../app/stylesheets/differenzia.scss */
+/* line 42, ../../../app/stylesheets/differenzia.scss */
 label {
   font-weight: bold;
 }
