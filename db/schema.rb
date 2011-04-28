@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(:version => 20110427192805) do
 
   create_table "customers", :force => true do |t|
-    t.integer  "year"
+    t.integer  "year",            :limit => 10
     t.string   "full_name"
     t.date     "birth_date"
     t.string   "address"
@@ -23,17 +23,17 @@ ActiveRecord::Schema.define(:version => 20110427192805) do
     t.string   "area"
     t.string   "tax_code"
     t.string   "contract_number"
-    t.integer  "square_meters"
-    t.integer  "category"
+    t.integer  "square_meters",   :limit => 10
+    t.integer  "category",        :limit => 10
     t.string   "taxable_address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "deliveries", :force => true do |t|
-    t.integer  "customer_id"
-    t.integer  "product_id"
-    t.decimal  "quantity",    :precision => 8, :scale => 2
+    t.integer  "customer_id", :limit => 10
+    t.integer  "product_id",  :limit => 10
+    t.decimal  "quantity",                  :precision => 8, :scale => 2
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -42,9 +42,9 @@ ActiveRecord::Schema.define(:version => 20110427192805) do
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.decimal  "qt"
+    t.decimal  "qt",          :precision => 131089, :scale => 0
     t.string   "unit_type"
-    t.decimal  "price",       :precision => 8, :scale => 2
+    t.decimal  "price",       :precision => 8,      :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20110427192805) do
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
+    t.integer  "sign_in_count",        :limit => 10,  :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
