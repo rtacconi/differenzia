@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(:version => 20110427192805) do
     t.date     "birth_date"
     t.string   "address"
     t.string   "number"
-    t.string   "postal_code",     :limit => 5
+    t.string   "postal_code"
     t.string   "city"
     t.string   "area"
-    t.string   "tax_code",        :limit => 16
+    t.string   "tax_code"
     t.string   "contract_number"
     t.integer  "square_meters"
     t.integer  "category"
