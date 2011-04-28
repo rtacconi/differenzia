@@ -8,3 +8,10 @@
 // Use this to calculate the width based on the total width.
 // Or you can set $blueprint-grid-width to a fixed value and unset $blueprint-container-size -- it will be calculated for you.
 //$blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
+
+$blueprint-liquid-grid-columns: 24;
+$blueprint-liquid-grid-width: 3.167%;
+$blueprint-liquid-grid-margin: 1.042%;
+$blueprint-liquid-container-width: 80%;
+$blueprint-liquid-container-min-width: 950px;
+$blueprint-liquid-grid-push-pull: -($blueprint-liquid-grid-margin + $blueprint-liquid-grid-width)
