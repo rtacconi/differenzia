@@ -1,7 +1,7 @@
 class CustomersController < InheritedResources::Base
   #layout :choose_layout
   
-  def search
+  def search_full_name
 	  unless params[:customer_full_name].blank?
       full_name = params[:customer_full_name]
       @customers = Customer.search_full_name(full_name).paginate(
