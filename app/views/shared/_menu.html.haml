@@ -2,4 +2,4 @@
   = link_to 'Dashboard', dashboard_index_url, :id => "dashboard"
   = link_to t('Customers'), customers_url, :id => 'customers'
   = link_to t('Products'), products_url, :id => 'customers'
-  = link_to t('Users'), users_url, :id => 'operators' if admin?
+  = link_to t('Users'), users_url, :id => 'operators' if current_user_admin?

@@ -46,7 +46,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     #####primary.item :key_1, 'name', url, options
     primary.item :dashboard, t('Dashboard'), dashboard_index_url
-    primary.item :users, t('Users'), users_url, :if => Proc.new { admin? }
+    primary.item :users, t('Users'), users_url, :if => Proc.new { current_user_admin? }
     primary.item :customers, t('Customers'), customers_url
     primary.item :products, t('Products'), products_url
     

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 	before_filter :authenticate_user!
   protect_from_forgery
-  helper_method :admin?
+  helper_method :current_user_admin?
   layout :specify_layout
   
   private
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     devise_controller? ? "sign" : "application"
   end
   
-  def admin?
+  def current_user_admin?
     @current_user.role == 'admin'
   end
   
