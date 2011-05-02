@@ -14,7 +14,8 @@ gem 'fastercsv'
 gem 'mongrel'
 gem 'inherited_resources'
 gem 'inherited_resources_views'
-gem "rails_config"
+gem 'rails_config'
+gem 'simple-navigation'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -174,3 +174,54 @@ ul.menu {
   margin: 0;
   padding: 0;
 }
+
+/* line 1, ../../../app/stylesheets/partials/_navigation.scss */
+#navigation {
+  float: left;
+  width: 100%;
+  background-color: #f4fcf2;
+}
+
+/* line 7, ../../../app/stylesheets/partials/_navigation.scss */
+#navigation ul {
+  height: 25px;
+  margin: 0 30px 0 0;
+  padding: 0;
+}
+
+/* line 13, ../../../app/stylesheets/partials/_navigation.scss */
+#navigation ul li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 20, ../../../app/stylesheets/partials/_navigation.scss */
+#navigation ul li a {
+  float: left;
+  font-size: 10pt;
+  font-weight: normal;
+  margin: 0;
+  padding: 4px 8px 6px;
+  background-color: #66533f;
+  border-color: #f4fcf2;
+  border-style: solid;
+  border-width: 1px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* line 34, ../../../app/stylesheets/partials/_navigation.scss */
+#navigation ul li a:hover {
+  background-color: #8c7a6e;
+}
+
+/* line 38, ../../../app/stylesheets/partials/_navigation.scss */
+#navigation ul li a.selected {
+  background-color: #afc0a4;
+  border: 1px solid;
+  border-color: #afc0a4;
+  color: #2f3c4c;
+  font-weight: bold;
+}
