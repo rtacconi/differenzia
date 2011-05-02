@@ -5,10 +5,10 @@ class CustomersController < InheritedResources::Base
 	  unless params[:customer_full_name].blank?
       full_name = params[:customer_full_name]
       @customers = Customer.search_full_name(full_name).paginate(
-        :per_page => 10,
+        :per_page => Settings.customers_per_page,
         :page => params[:page])
     else
-      @customers = Customer.all.paginate(:per_page => 10, :page => params[:page])
+      @customers = Customer.all.paginate(:per_page => Settings.customers_per_page, :page => params[:page])
     end
     render :layout => false if request.xhr?	  
 	end
