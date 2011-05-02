@@ -36,7 +36,7 @@ describe CustomersController do
 
   def do_get(format = 'html')
     login_user
-    get 'search', :customer_full_name => @full_name, :format => format
+    get 'search_full_name', :customer_full_name => @full_name, :format => format
   end
   
 end
