@@ -67,3 +67,8 @@ body {
 label {
   font-weight: bold;
 }
+
+/* line 44, ../../../app/stylesheets/differenzia.scss */
+.pagination {
+  text-align: center;
+}

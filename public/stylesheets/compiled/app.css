@@ -68,6 +68,11 @@ label {
   font-weight: bold;
 }
 
+/* line 44, ../../../app/stylesheets/differenzia.scss */
+.pagination {
+  text-align: center;
+}
+
 /* line 1, ../../../app/stylesheets/partials/_forms.scss */
 .button {
   background: #000;
