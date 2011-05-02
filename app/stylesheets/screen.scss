@@ -29,7 +29,7 @@
 body {
   @include blueprint-typography(true);
   @include blueprint-utilities;
-  @include blueprint-debug;
+  @include blueprint-debug('/images/grid.png');
   @include blueprint-interaction;
   @include fancy-type;  
   // Remove the scaffolding when you're ready to start doing visual design.
