@@ -185,16 +185,17 @@ ul.menu {
   float: left;
   width: 100%;
   background-color: #f4fcf2;
+  margin: 0 0 30px 0;
 }
 
-/* line 7, ../../../app/stylesheets/partials/_navigation.scss */
+/* line 8, ../../../app/stylesheets/partials/_navigation.scss */
 #navigation ul {
   height: 25px;
   margin: 0 30px 0 0;
   padding: 0;
 }
 
-/* line 13, ../../../app/stylesheets/partials/_navigation.scss */
+/* line 14, ../../../app/stylesheets/partials/_navigation.scss */
 #navigation ul li {
   display: inline;
   list-style-type: none;
@@ -202,7 +203,7 @@ ul.menu {
   padding: 0;
 }
 
-/* line 20, ../../../app/stylesheets/partials/_navigation.scss */
+/* line 21, ../../../app/stylesheets/partials/_navigation.scss */
 #navigation ul li a {
   float: left;
   font-size: 10pt;
@@ -217,12 +218,12 @@ ul.menu {
   text-decoration: none;
 }
 
-/* line 34, ../../../app/stylesheets/partials/_navigation.scss */
+/* line 35, ../../../app/stylesheets/partials/_navigation.scss */
 #navigation ul li a:hover {
   background-color: #8c7a6e;
 }
 
-/* line 38, ../../../app/stylesheets/partials/_navigation.scss */
+/* line 39, ../../../app/stylesheets/partials/_navigation.scss */
 #navigation ul li a.selected {
   background-color: #afc0a4;
   border: 1px solid;
