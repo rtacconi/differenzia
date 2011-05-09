@@ -1,5 +1,5 @@
 .block
-  .column.span-24
+  .column.span-10
     %p Customer
     %p
       %label Anno:
@@ -53,4 +53,6 @@
     %p
       = link_to 'Indietro', "javascript:history.back()"
       
-      = link_to @customer.full_name, customer_deliveries_url(@customer)
+.block
+  .column.span-14.last
+    = render 'deliveries/form'

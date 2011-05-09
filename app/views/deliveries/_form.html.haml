@@ -1,0 +1,19 @@
+%p
+  'Data consegna:'
+  = l(Date.today, :format => :long)
+%br
+  -----
+= simple_form_for([@customer, @customer.deliveries.build]) do |f|
+  /= render 'shared/error_messages', :object => @delivery
+  %p
+    %a(href="javascript:void(0);" id="select_all")Seleziona tutti
+    |
+    %a(href="javascript:void(0);" id="deselect_all")Annulla
+  %p
+    
+  %br
+  
+  
+
+  %p{:class => "rightText"}
+    = f.submit 'consegna'
