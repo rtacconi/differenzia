@@ -17,7 +17,7 @@
   .column.span-14.last
     %div
       %hr/
-      - simple_form_for Delivery.new do |f|
+      = simple_form_for Delivery.new do |f|
         = f.association :product
         = f.input :quantity
         = f.input :customer_id, :as => :hidden, :input_html => { :value => params[:customer_id] }
