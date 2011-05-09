@@ -1,6 +1,6 @@
 class Delivery < ActiveRecord::Base
   has_many :delivery_items
-  has_many :products, :through > :delivery_items
+  has_many :products, :through => :delivery_items
   belongs_to :customer
 end
 

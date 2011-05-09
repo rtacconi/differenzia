@@ -1,19 +1,21 @@
 %p
-  'Data consegna:'
-  = l(Date.today, :format => :long)
+  Consegna del: 
+  = l Date.today
 %br
-  -----
 = simple_form_for([@customer, @customer.deliveries.build]) do |f|
   /= render 'shared/error_messages', :object => @delivery
-  %p
-    %a(href="javascript:void(0);" id="select_all")Seleziona tutti
-    |
-    %a(href="javascript:void(0);" id="deselect_all")Annulla
-  %p
-    
+  %a(href="javascript:void(0);" id="select_all")Seleziona tutti
+  |
+  %a(href="javascript:void(0);" id="deselect_all")Annulla
   %br
-  
-  
+  - for product in @products
+    = check_box_tag 'delivery[product_ids][]', product.id, (@delivery.products.include?(product) if @delivery)
+    = product.description
+    %br
+  %br
+  /= f.label :notes
+  /%br
+  = f.input :notes
 
-  %p{:class => "rightText"}
+  %p(class="rightText")
     = f.submit 'consegna'

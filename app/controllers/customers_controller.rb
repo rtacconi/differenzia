@@ -13,6 +13,12 @@ class CustomersController < InheritedResources::Base
     render :layout => false if request.xhr?	  
 	end
 	
+	def show
+	  @customer = Customer.find(params[:id])
+	  @products = Product.all
+	  show!
+	end
+	
 protected
   def collection
   	@customers ||= end_of_association_chain.paginate(:page => params[:page])
