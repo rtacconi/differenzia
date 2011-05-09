@@ -11,10 +11,7 @@
 
     %p
       %label Data di nascita:
-      - if @customer.birth_date
-        = l @customer.birth_date    
-      - else
-        = @customer.birth_date
+      = l @customer.birth_date if @customer.birth_date
 
     %p
       %label Indirizzo di residenza:
