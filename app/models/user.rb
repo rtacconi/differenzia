@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
   @@per_page = 10
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  #devise :encryptable, :encryptor => :bcrypt 
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, 
          :validatable
 
