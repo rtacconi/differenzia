@@ -26,3 +26,7 @@ Delivery.blueprint do
   customer {Customer.make!}
   notes {Faker::Lorem.sentence}
 end
+
+DeliveryItem.blueprint do
+  # Attributes here
+end
