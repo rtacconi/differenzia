@@ -39,7 +39,7 @@ end
 puts "Customers created"
 
 puts "Adding produtcs"
-Product.create!(:name => 'Blue bags', :description => "recycling bags", :qt => 10, 
+Product.create!(:name => 'Blue bags', :description => "recycling bags", :quantity => 10, 
                 :unit_type => 'package', :price => '2.50')
-Product.create!(:name => 'Green bags', :description => "recycling bags", :qt => 6, 
+Product.create!(:name => 'Green bags', :description => "recycling bags", :quantity => 6, 
                 :unit_type => 'package', :price => '2.50')
