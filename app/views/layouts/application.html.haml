@@ -29,16 +29,17 @@
             - if flash['notice'].present?
               .notice
                 = flash['notice']
-            -if flash['alert'].present?
+            - if flash['alert'].present?
               .alert
                 = flash['alert']
       .block
-        .column.span-4
-          %div
-            = render :partial => 'shared/menu'      
-        .column.span-20.last
-          %div
-            = yield
+        .column.span-24
+          #navigation
+            = render_navigation(:level => 1) if user_signed_in?
+        .block
+          .column.span-24
+            %div
+              = yield
       .block
         .column.span-24
           %div

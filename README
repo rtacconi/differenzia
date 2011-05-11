@@ -1,7 +1,15 @@
-== Differenzia
+Differenzia
 
-Gestione della distribuzione dei sacchetti per la raccolta differenziata. 
+A software to manage product delivery. You can search a customer, see his/her details, see a list of products already delivered and create a new delivery. English and Italian are supported but it can be translated into other languages. The admin can configure the users and managers, who have more access privileges.
 
-Tecnologia: Rails3, devise, HAML, SASS, RSpec, Cucumber, Machinist.
+This software is oriented for help in the delivery of recycling bag in Italy, but we are striving to make it product agnostic and configurable to be reused for other products.
 
-Per installare condifurate config/database.yml ed eseguite `rake db:seed`.
+The software is released under GPLv2: http://www.gnu.org/licenses/gpl-2.0.html
+
+Technologies used: Rails 3, Ruby/Jruby (1.8/1.9), jQuery, HAML, inherited resources, devise, RSpec, Cucumber, Machinist, simple_form, meta_where and more.
+
+Installation
+
+Rename config/database.yml.example to config/database.yml, run:
+
+rake db:seed

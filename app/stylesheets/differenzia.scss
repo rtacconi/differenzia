@@ -20,6 +20,11 @@ body {
   font-size: 80px;
 }
 
+.container {
+  width: 95%;
+}
+
+
 .spacer {clear:both; height:1px;}
 
 .user-details {
@@ -35,3 +40,7 @@ body {
 .user-details a:hover {text-decoration: none;}
 
 label { font-weight: bold; }
+
+.pagination {
+  text-align: center;
+}

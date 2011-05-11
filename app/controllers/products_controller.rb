@@ -1,2 +1,1 @@
-class ProductsController < InheritedResources::Base
-end
+class ProductsController < InheritedResources::Base; end

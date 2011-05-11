@@ -27,10 +27,13 @@ Delivery.blueprint do
   notes {Faker::Lorem.sentence}
 end
 
+<<<<<<< HEAD
 Delivery.blueprint do
   # Attributes here
 end
 
+=======
+>>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569
 DeliveryItem.blueprint do
   # Attributes here
 end

@@ -48,5 +48,5 @@ en:
   address: "Address"
   postal_code: "Postal code"
   city: "City"
-  county: "County"
+  area: "County"
   sq: "Sq"  

@@ -8,13 +8,14 @@
 @import "blueprint";
 
 // Import the non-default scaffolding module.
-@import "blueprint/scaffolding";
+// @import "blueprint/scaffolding";
 
 // Import the non-default fancy-type module.
 @import "blueprint/fancy-type";
 
 // Import the non-default liquid module.
 @import "blueprint/liquid";
+@include blueprint-liquid-grid;
 
 // To generate css equivalent to the blueprint css but with your
 // configuration applied, uncomment:
@@ -28,10 +29,9 @@
 body {
   @include blueprint-typography(true);
   @include blueprint-utilities;
-  @include blueprint-debug;
+  @include blueprint-debug('/images/grid.png');
   @include blueprint-interaction;
-  @include fancy-type;
-  @include blueprint-liquid-grid;
+  @include fancy-type;  
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
 }

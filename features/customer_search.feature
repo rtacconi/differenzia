@@ -8,8 +8,7 @@ Feature: Customer search
   Scenario: search for a customer 
     Given I am authenticated with email "user@differenzia.com" and password "password"
     And I go to the customers page
-    When I follow "Customers"
-    And I fill in "customer_full_name" with "User"
+    When I fill in "customer_full_name" with "User"
     Then I should see "Date of birth"
     And I should see "SSN"
     And I should see "User-0"

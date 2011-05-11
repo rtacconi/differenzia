@@ -1,0 +1,39 @@
+.block
+  .column.span-10
+    %div
+      /= render 'customers/show'
+      %h3 Customer
+      %p
+        = @customer.full_name
+        &ndash;
+        = @customer.address
+        &ndash;
+        = @customer.city
+        &ndash;
+        = @customer.area
+        &ndash;
+        = @customer.postal_code
+.block
+  .column.span-14.last
+    %div
+      %hr/
+      = simple_form_for Delivery.new do |f|
+        = f.association :product
+        = f.input :quantity
+        = f.input :customer_id, :as => :hidden, :input_html => { :value => params[:customer_id] }
+        = f.input :notes, :as => :string
+        = f.button :submit
+.block
+  .column.span-24
+    %div
+      %hr/    
+      %table
+        %tr
+          %th Product
+          %th Quantity
+          %th Delivered at
+        - @deliveries.each do |d|
+          %tr
+            %td= d.product.name
+            %td= d.quantity
+            %td= d.created_at

@@ -1,5 +1,5 @@
 .block
-  .column.span-24
+  .column.span-10
     %p Customer
     %p
       %label Anno:
@@ -11,10 +11,7 @@
 
     %p
       %label Data di nascita:
-      - if @customer.birth_date
-        = l @customer.birth_date    
-      - else
-        = @customer.birth_date
+      = l @customer.birth_date if @customer.birth_date
 
     %p
       %label Indirizzo di residenza:
@@ -30,7 +27,7 @@
 
     %p
       %label Prov.:
-      = @customer.prov
+      = @customer.area
 
     %p
       %label Codice fiscale:
@@ -55,3 +52,7 @@
     %br
     %p
       = link_to 'Indietro', "javascript:history.back()"
+      
+.block
+  .column.span-14.last
+    = render 'deliveries/form'

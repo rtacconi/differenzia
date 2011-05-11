@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110424182815) do
+=======
+ActiveRecord::Schema.define(:version => 20110509161421) do
+>>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569
 
   create_table "customers", :force => true do |t|
     t.integer  "year",            :limit => 10
@@ -20,8 +24,13 @@ ActiveRecord::Schema.define(:version => 20110424182815) do
     t.string   "number"
     t.string   "postal_code"
     t.string   "city"
+<<<<<<< HEAD
     t.string   "county"
     t.string   "ssn"
+=======
+    t.string   "area"
+    t.string   "tax_code"
+>>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569
     t.string   "contract_number"
     t.integer  "square_meters",   :limit => 10
     t.integer  "category",        :limit => 10
@@ -31,7 +40,12 @@ ActiveRecord::Schema.define(:version => 20110424182815) do
   end
 
   create_table "deliveries", :force => true do |t|
+<<<<<<< HEAD
     t.date     "delivered_at"
+=======
+    t.integer  "customer_id", :limit => 10
+    t.decimal  "quantity",                  :precision => 8, :scale => 2
+>>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569
     t.text     "notes"
     t.integer  "customer_id",  :limit => 10
     t.datetime "created_at"
@@ -46,10 +60,22 @@ ActiveRecord::Schema.define(:version => 20110424182815) do
     t.datetime "updated_at"
   end
 
+  create_table "delivery_items", :force => true do |t|
+    t.decimal  "quantity",                  :precision => 8, :scale => 2
+    t.integer  "delivery_id", :limit => 10
+    t.integer  "product_id",  :limit => 10
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "description"
+<<<<<<< HEAD
     t.decimal  "qt",          :precision => 131089, :scale => 0
+=======
+    t.decimal  "quantity",    :precision => 8, :scale => 2
+>>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569
     t.string   "unit_type"
     t.decimal  "price",       :precision => 8,      :scale => 2
     t.datetime "created_at"
