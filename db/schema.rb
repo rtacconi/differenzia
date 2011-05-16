@@ -10,11 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20110424182815) do
-=======
 ActiveRecord::Schema.define(:version => 20110509161421) do
->>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569
 
   create_table "customers", :force => true do |t|
     t.integer  "year",            :limit => 10
@@ -54,6 +50,14 @@ ActiveRecord::Schema.define(:version => 20110509161421) do
 
   create_table "delivery_items", :force => true do |t|
     t.integer  "quantity",    :limit => 10
+    t.integer  "delivery_id", :limit => 10
+    t.integer  "product_id",  :limit => 10
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "delivery_items", :force => true do |t|
+    t.decimal  "quantity",                  :precision => 8, :scale => 2
     t.integer  "delivery_id", :limit => 10
     t.integer  "product_id",  :limit => 10
     t.datetime "created_at"
