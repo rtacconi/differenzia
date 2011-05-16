@@ -24,13 +24,7 @@ Differenzia::Application.routes.draw do
     resources :deliveries
   end
   
-<<<<<<< HEAD
-  resources :customers do
-    resources :deliveries
-  end
-=======
   resources :deliveries
->>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569
   
   resources :products
   
