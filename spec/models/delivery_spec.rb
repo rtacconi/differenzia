@@ -1,10 +1,8 @@
 require 'spec_helper'
 
 describe Delivery do
-<<<<<<< HEAD
   pending "add some examples to (or delete) #{__FILE__}"
 end
-=======
 end
 
 
@@ -21,4 +19,3 @@ end
 #  updated_at  :datetime
 #
 
->>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569

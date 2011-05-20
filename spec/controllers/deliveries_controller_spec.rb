@@ -2,8 +2,6 @@ require 'spec_helper'
 
 describe DeliveriesController do
 
-<<<<<<< HEAD
-=======
   describe "GET 'index'" do
     it "should be successful" do
       login_user
@@ -37,6 +35,4 @@ describe DeliveriesController do
       assigns(:delivery)
     end
   end
-
->>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569
 end

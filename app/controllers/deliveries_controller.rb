@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-class DeliveriesController < InheritedResources::Base
-=======
 class DeliveriesController < ApplicationController
   def index
     @customer = Customer.find(params[:customer_id])
@@ -21,5 +18,4 @@ class DeliveriesController < ApplicationController
     redirect_to customer_deliveries_url(params[:delivery][:customer_id])
   end
 
->>>>>>> 1768dbde4a15355a7745928a420b1d861e07c569
 end
