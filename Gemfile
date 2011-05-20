@@ -11,11 +11,11 @@ gem 'devise'
 gem 'meta_where'
 gem 'simple_form'
 gem 'fastercsv'
-gem 'mongrel'
 gem 'inherited_resources'
 gem 'inherited_resources_views'
 gem 'rails_config'
 gem 'simple-navigation'
+gem 'mongrel'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,6 +29,7 @@ end
 
 platforms :jruby do
   gem 'activerecord-jdbc-adapter'
+  gem 'arel', '2.0.9' # da togliere con jruby-1.6.2
 
   # As rails --database switch does not support derby, hsqldb, h2 nor mssql
   # as valid values, if you are not using SQLite, comment out the SQLite gem
@@ -54,8 +55,16 @@ end
 # gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+#platforms :ruby_18 do
+#  gem 'ruby-debug'
+#  gem 'mongrel', '1.1.5'
+#  gem 'thin'
+#end
+
+#platforms :ruby_19 do
+  #gem 'ruby-debug19', :require => 'ruby-debug'
+  #gem 'mongrel', '1.2.0.pre2'
+#end
 
 # Bundle the extra gems:
 # gem 'bj'
@@ -67,7 +76,7 @@ gem 'ruby-debug'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '2.6.0.rc6' if defined?(JRUBY_VERSION)
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'launchy'
