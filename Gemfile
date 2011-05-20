@@ -11,7 +11,6 @@ gem 'devise'
 gem 'meta_where'
 gem 'simple_form'
 gem 'fastercsv'
-gem 'mongrel'
 gem 'inherited_resources'
 gem 'inherited_resources_views'
 gem 'rails_config'
@@ -54,8 +53,16 @@ end
 # gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+platforms :ruby_18 do
+  gem 'ruby-debug'
+  gem 'mongrel', '1.1.5'
+  gem 'thin'
+end
+
+platforms :ruby_19 do
+  # gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'mongrel', '1.2.0.pre2'
+end
 
 # Bundle the extra gems:
 # gem 'bj'
