@@ -1,21 +1,37 @@
 %p
-  Consegna del: 
+  Delivery of: 
   = l Date.today
-%br
+/%br
 = simple_form_for([@customer, @customer.deliveries.build]) do |f|
+  = radio_button_tag 'select_delivery_type', 'default_delivery'
+  Standard delivery
+  = radio_button_tag 'select_delivery_type', 'select_products'
+  Select products
+  %div(id='standard_delivery')
+    %hr
+    - Settings.default_delivery.products.each do |product|
+      %p
+      name:
+      = product.name
+      &ndash;
+      quantity:
+      = product.quantity
+      
+  %div(id='product_selection')
+    select products
   /= render 'shared/error_messages', :object => @delivery
-  %a(href="javascript:void(0);" id="select_all")Seleziona tutti
-  |
-  %a(href="javascript:void(0);" id="deselect_all")Annulla
-  %br
-  - for product in @products
-    = check_box_tag 'delivery[product_ids][]', product.id, (@delivery.products.include?(product) if @delivery)
-    = product.description
-    %br
-  %br
+  /%a(href="javascript:void(0);" id="select_all")Seleziona tutti
+  /|
+  /%a(href="javascript:void(0);" id="deselect_all")Annulla
+  /%br
+  /- for product in @products
+  /  = check_box_tag 'delivery[product_ids][]', product.id, (@delivery.products.include?(product) if @delivery)
+  /  = product.description
+  /  %br
+  /%br
   /= f.label :notes
   /%br
-  = f.input :notes
+  /= f.input :notes
 
-  %p(class="rightText")
+  %p
     = f.submit 'consegna'

@@ -1,3 +1,5 @@
 enable_valid_square_meters: true
 valid_square_meters: 12
 customers_per_page: 10
+default_delivery:
+  products: [ {name: blue_bags, quantity: 10}, {name: green_bags, quantity: 10} ]

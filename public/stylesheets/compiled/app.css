@@ -231,3 +231,13 @@ ul.menu {
   color: #2f3c4c;
   font-weight: bold;
 }
+
+/* line 7, ../../../app/stylesheets/app.scss */
+#standard_delivery {
+  display: none;
+}
+
+/* line 11, ../../../app/stylesheets/app.scss */
+#product_selection {
+  display: none;
+}
