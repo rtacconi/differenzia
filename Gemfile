@@ -29,7 +29,7 @@ end
 
 platforms :jruby do
   gem 'activerecord-jdbc-adapter'
-  gem 'arel', '2.0.9' # da togliere con jruby-1.6.2
+  gem 'arel'
 
   # As rails --database switch does not support derby, hsqldb, h2 nor mssql
   # as valid values, if you are not using SQLite, comment out the SQLite gem
@@ -37,10 +37,8 @@ platforms :jruby do
   # If you are using oracle, db2, sybase, informix or prefer to use the plain
   # JDBC adapter, comment out all the adapter gems below.
 
-  # SQLite JDBC adapter
-  # gem 'jdbc-sqlite3', :require => false
   # Postgres JDBC adapter
-  #gem 'activerecord-jdbcpostgresql-adapter'
+  gem 'activerecord-jdbcpostgresql-adapter'
   gem 'jdbc-postgres'
 
   gem 'jruby-openssl'
@@ -76,7 +74,7 @@ end
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-  gem 'rspec-rails', '2.6.0.rc6' if defined?(JRUBY_VERSION)
+  gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'launchy'

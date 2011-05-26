@@ -4,7 +4,7 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-module ::Protezionecivile
+module ::Differenzia
     class Application
           include Rake::DSL
             end
