@@ -40,7 +40,6 @@ platforms :jruby do
   # Postgres JDBC adapter
   gem 'activerecord-jdbcpostgresql-adapter'
   gem 'jdbc-postgres'
-
   gem 'jruby-openssl'
   gem 'warbler'
 
