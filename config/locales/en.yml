@@ -9,7 +9,7 @@ en:
     it should be at least 6 characters: "it should be at least 6 characters"
     it has to be the same as the password: "it has to be the same as the password"
     Found: "Found"
-         
+
   # differenzia
   users:
     role: "role"

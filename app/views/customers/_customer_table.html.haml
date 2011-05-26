@@ -1,6 +1,5 @@
 .list
   - if @customers.present?
-    %p= page_entries_info
     %table
       %thead
         %tr
@@ -16,4 +15,4 @@
       %tbody
         = render @customers
     %br
-    = will_paginate :previous_label => "« prec.", :next_label =>"succ. »"
+    = paginate @customers

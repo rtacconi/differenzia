@@ -26,12 +26,10 @@
       .block
         .column.span-24
           %div
-            - if flash['notice'].present?
-              .notice
-                = flash['notice']
-            - if flash['alert'].present?
-              .alert
-                = flash['alert']
+            - flash.each do |key, value|
+              - unless value.blank?
+                %div(class="#{key}")
+                  = value
       .block
         .column.span-24
           #navigation

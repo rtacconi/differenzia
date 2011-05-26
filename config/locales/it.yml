@@ -214,8 +214,15 @@ it:
       customer:
         full_name: "Nominativo"
         address: "Indirizzo"
-        
-        
+
+  views:
+    pagination:
+      previous: "&laquo; Prec."
+      next: "Succ. &raquo;"
+      truncate: "&hellip;"
+      first: "Primo"
+      last: "Ultimo"
+
 # differenzia
   users:
     role: "role"

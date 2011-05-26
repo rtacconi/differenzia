@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails'
 gem 'compass'
-gem 'will_paginate', '~> 3.0.pre2'
+#gem 'will_paginate', '~> 3.0.pre2'
 gem 'annotate'
 gem 'normalize_attributes'
 gem 'haml-rails'
@@ -16,6 +16,7 @@ gem 'inherited_resources_views'
 gem 'rails_config'
 gem 'simple-navigation'
 gem 'mongrel'
+gem 'kaminari'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
