@@ -41,8 +41,6 @@ platforms :jruby do
   gem 'activerecord-jdbcpostgresql-adapter'
   gem 'jdbc-postgres'
   gem 'jruby-openssl'
-  gem 'warbler'
-
 end
 
 # Use unicorn as the web server
