@@ -77,7 +77,7 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'autotest'
+  gem 'autotest-rails'
   gem 'autotest-notification'
   gem 'database_cleaner'
   gem 'spork', '~> 0.9.0.rc'
