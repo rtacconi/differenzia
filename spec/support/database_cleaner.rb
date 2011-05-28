@@ -1,7 +1,7 @@
-RSpec.configure do |config|
-  config.use_transactional_fixtures = false
+###RSpec.configure do |config|
+###  config.use_transactional_fixtures = false
   
-  config.before(:suite) do
+###  config.before(:suite) do
     #if Capybara.current_driver == :rack_test
     #  DatabaseCleaner.strategy = :transaction
     #  DatabaseCleaner.clean_with(:truncation)
@@ -9,20 +9,34 @@ RSpec.configure do |config|
     #else
     #  DatabaseCleaner.strategy = :truncation
     #end
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
+###    DatabaseCleaner.strategy = :transaction
+###    DatabaseCleaner.clean_with(:truncation)
+###  end
 
-  config.before(:each) do
+###  config.before(:each) do
     #if Capybara.current_driver == :rack_test
     #  DatabaseCleaner.strategy = :transaction
     #else
     #  DatabaseCleaner.strategy = :truncation
     #end
+###    DatabaseCleaner.start
+###  end
+
+###  config.after(:each) do
+###    DatabaseCleaner.clean
+###  end
+###end
+
+DatabaseCleaner.strategy = :transaction
+
+RSpec.configure do |config|
+  config.before :suite do
+    DatabaseCleaner.clean_with :truncation
+  end
+  config.before :each do
     DatabaseCleaner.start
   end
-
-  config.after(:each) do
+  config.after :each do
     DatabaseCleaner.clean
   end
 end
