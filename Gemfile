@@ -86,4 +86,5 @@ end
 group :development do
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'warbler' if defined?(JRUBY_VERSION)
 end
