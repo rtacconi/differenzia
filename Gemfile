@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'meta_where'
 gem 'simple_form'
-gem 'fastercsv'
+#gem 'fastercsv'
 gem 'inherited_resources'
 gem 'inherited_resources_views'
 gem 'rails_config'
@@ -29,7 +29,6 @@ end
 
 platforms :jruby do
   gem 'activerecord-jdbc-adapter'
-  gem 'arel'
 
   # As rails --database switch does not support derby, hsqldb, h2 nor mssql
   # as valid values, if you are not using SQLite, comment out the SQLite gem
@@ -39,7 +38,6 @@ platforms :jruby do
 
   # Postgres JDBC adapter
   gem 'activerecord-jdbcpostgresql-adapter'
-  gem 'jdbc-postgres'
   gem 'jruby-openssl'
 end
 
@@ -70,7 +68,7 @@ end
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-group :development, :test do
+group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'capybara'
@@ -79,12 +77,12 @@ group :development, :test do
   gem 'autotest-notification'
   gem 'database_cleaner'
   gem 'spork', '~> 0.9.0.rc'
-  gem 'machinist', '>= 2.0.0.beta1'
+  gem 'machinist', '~> 2.0.0.beta'
   gem 'faker'
 end
 
 group :development do
   gem 'hpricot'
   gem 'ruby_parser'
-  gem 'warbler' if defined?(JRUBY_VERSION)
+  gem 'warbler', '1.3.1' if defined?(JRUBY_VERSION)
 end
