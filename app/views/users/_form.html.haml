@@ -2,7 +2,7 @@
   = f.input :first_name
   = f.input  :last_name
   = f.input :email
-  = f.input :role, :collection => User::ROLES
+  = f.input :role, :collection => User::ROLES, :include_blank => false
   = f.input :password
   = f.input :password_confirmation
   %p= f.button :submit, :class => "button"
