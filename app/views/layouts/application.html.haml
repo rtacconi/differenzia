@@ -8,8 +8,8 @@
     = stylesheet_link_tag 'compiled/app', :media => 'screen, projection'
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"
     = javascript_include_tag 'rails', 'application', 'searchbox'
     = csrf_meta_tag
   %body
@@ -42,4 +42,4 @@
         .column.span-24
           %div
             %hr
-            Copyright Mauro Sanna e Riccardo Tacconi
+            %em Copyright Mauro Sanna e Riccardo Tacconi
