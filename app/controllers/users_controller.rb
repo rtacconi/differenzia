@@ -25,7 +25,7 @@ class UsersController < InheritedResources::Base
   
   protected
   def collection
-  	@users ||= end_of_association_chain.paginate(:page => params[:page], :order => "created_at DESC")
+  	@users ||= end_of_association_chain.page(params[:page])
   end
 
 end
