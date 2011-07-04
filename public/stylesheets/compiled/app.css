@@ -241,3 +241,8 @@ ul.menu {
 #product_selection {
   display: none;
 }
+
+/* line 15, ../../../app/stylesheets/app.scss */
+.simple_form textarea {
+  height: 120px;
+}

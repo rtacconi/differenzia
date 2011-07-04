@@ -3,6 +3,7 @@ class Customer < ActiveRecord::Base
 	cattr_reader :per_page
   @@per_page = 10
   default_scope :order => 'full_name ASC'
+  accepts_nested_attributes_for :deliveries
   
   def self.search_full_name(full_name)
     # http://metautonomo.us/projects/metawhere/

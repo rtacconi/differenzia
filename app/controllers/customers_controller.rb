@@ -13,6 +13,7 @@ class CustomersController < InheritedResources::Base
 	
 	def show
 	  @customer = Customer.find(params[:id])
+	  @delivery = @customer.deliveries.build
 	  @products = Product.all
 	  show!
 	end
