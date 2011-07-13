@@ -10,10 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110509161421) do
+ActiveRecord::Schema.define(:version => 20110713093149) do
 
   create_table "customers", :force => true do |t|
-    t.integer  "year",            :limit => 10
+    t.integer  "year"
     t.string   "full_name"
     t.date     "birth_date"
     t.string   "address"
@@ -23,25 +23,25 @@ ActiveRecord::Schema.define(:version => 20110509161421) do
     t.string   "area"
     t.string   "tax_code"
     t.string   "contract_number"
-    t.integer  "square_meters",   :limit => 10
-    t.integer  "category",        :limit => 10
+    t.integer  "square_meters"
+    t.integer  "category"
     t.string   "taxable_address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "deliveries", :force => true do |t|
-    t.integer  "customer_id", :limit => 10
-    t.decimal  "quantity",                  :precision => 8, :scale => 2
+    t.integer  "customer_id"
+    t.decimal  "quantity",    :precision => 8, :scale => 2
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "delivery_items", :force => true do |t|
-    t.decimal  "quantity",                  :precision => 8, :scale => 2
-    t.integer  "delivery_id", :limit => 10
-    t.integer  "product_id",  :limit => 10
+    t.decimal  "quantity",    :precision => 8, :scale => 2
+    t.integer  "delivery_id"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20110509161421) do
   create_table "products", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.decimal  "quantity",    :precision => 8, :scale => 2
+    t.integer  "quantity"
     t.string   "unit_type"
     t.decimal  "price",       :precision => 8, :scale => 2
     t.datetime "created_at"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20110509161421) do
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",        :limit => 10,  :default => 0
+    t.integer  "sign_in_count",                       :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
