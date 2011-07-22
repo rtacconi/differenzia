@@ -1,49 +1,19 @@
-%p
-  Delivery of: 
-  = l Date.today
-/%br
-%table
-  %th= 'product'
-  %th= 'quantity'
-  - Settings.default_delivery.products.each do |product|
-    %tr
-      %td= product.name
-      %td= product.quantity
+Delivery of: 
+= l Date.today
+/%table
+/  %th= 'product'
+/  %th= 'quantity'
+/  - Settings.default_delivery.products.each do |product|
+/    %tr
+/      %td= product.name
+/      %td= product.quantity
 = simple_form_for @customer do |f|
   = f.simple_fields_for :deliveries do |deliveries_f|
-    %p
-      = deliveries_f.label :notes, t('notes')
-      %br
-      = deliveries_f.input :notes, :label => false
-  
-  /= radio_button_tag 'select_delivery_type', 'default_delivery'
-  /Standard delivery
-  /= radio_button_tag 'select_delivery_type', 'select_products'
-  /Select products
-  /%div(id='standard_delivery')
-  /  %hr
-  /  - Settings.default_delivery.products.each do |product|
-  /    %p
-  /    name:
-  /    = product.name
-  /    &ndash;
-  /    quantity:
-  /    = product.quantity      
-  /%div(id='product_selection')
-  /  select products
-  /= render 'shared/error_messages', :object => @delivery
-  /%a(href="javascript:void(0);" id="select_all")Seleziona tutti
-  /|
-  /%a(href="javascript:void(0);" id="deselect_all")Annulla
-  /%br
-  /- for product in @products
-  /  = check_box_tag 'delivery[product_ids][]', product.id, (@delivery.products.include?(product) if @delivery)
-  /  = product.description
-  /  %br
-  /%br
-  /= f.label :notes
-  /%br
-  /= f.input :notes
+    = deliveries_f.association :products, :multiple => true, :input_html => { :title => "- Select product -" }
+    /= deliveries_f.label :notes, t('notes')
+    /%br
+    = deliveries_f.input :notes
+
   .box
     .column.span-14.prepend-5
       = f.submit
