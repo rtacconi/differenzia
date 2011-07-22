@@ -15,6 +15,7 @@ class CustomersController < InheritedResources::Base
 	  @customer = Customer.find(params[:id])
 	  @delivery = @customer.deliveries.build
 	  @products = Product.all
+	  @products_selected = Product.first
 	  show!
 	end
 	

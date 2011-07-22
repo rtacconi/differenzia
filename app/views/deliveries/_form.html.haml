@@ -9,7 +9,7 @@ Delivery of:
 /      %td= product.quantity
 = simple_form_for @customer do |f|
   = f.simple_fields_for :deliveries do |deliveries_f|
-    = deliveries_f.association :products, :multiple => true, :input_html => { :title => "- Select product -" }
+    = deliveries_f.association :products, :multiple => true, :selected => @products_selected.id, :input_html => { :title => "- Select product -" }
     /= deliveries_f.label :notes, t('notes')
     /%br
     = deliveries_f.input :notes
