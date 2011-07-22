@@ -9,5 +9,7 @@ $(function() {
       $('#product_selection').fadeIn(2000); 
     }
   });
-  $("select[multiple]").asmSelect();
+  $("select[multiple]").asmSelect({
+	  hideWhenAdded: true
+  });
 })
