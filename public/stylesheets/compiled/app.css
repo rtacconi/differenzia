@@ -245,4 +245,5 @@ ul.menu {
 /* line 15, ../../../app/stylesheets/app.scss */
 .simple_form textarea {
   height: 120px;
+  width: 90%;
 }

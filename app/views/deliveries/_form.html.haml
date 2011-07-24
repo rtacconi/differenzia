@@ -15,9 +15,10 @@
       .column.span-12
         = deliveries_f.association :products, :multiple => true, :selected => @products_selected_id, 
                                    :input_html => { :title => "- Select product -" }, :label => false
+        = deliveries_f.input :notes
     .block
       .column.span-12
-        = deliveries_f.input :notes
+        quantity
 
   .block
     .column.span-14
