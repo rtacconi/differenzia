@@ -2,13 +2,6 @@
   Delivery of: 
   = l Date.today
 
-/%table
-/  %th= 'product'
-/  %th= 'quantity'
-/  - Settings.default_delivery.products.each do |product|
-/    %tr
-/      %td= product.name
-/      %td= product.quantity
 = simple_form_for @customer do |f|
   = f.simple_fields_for :deliveries do |deliveries_f|
     .block
