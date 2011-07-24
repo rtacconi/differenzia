@@ -3,17 +3,13 @@
 @import "partials/menu";
 @import "partials/navigation";
 
-// delivery_form
-#standard_delivery {
-  display: none;
-}
-
-#product_selection {
-  display: none;
-}
-
-.simple_form textarea {
+.simple_form.customer textarea {
   height: 120px;
   width: 90%;
   //margin-left: -40px;
+}
+
+.simple_form.customer label {
+  text-align: left;
+  margin-left: 0px;
 }
