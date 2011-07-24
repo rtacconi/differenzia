@@ -25,12 +25,13 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: customers
 #
 #  id              :integer(10)     not null, primary key
-#  year            :integer(10)
+#  year            :integer
 #  full_name       :string(255)
 #  birth_date      :date
 #  address         :string(255)
@@ -38,10 +39,10 @@ end
 #  postal_code     :string(255)
 #  city            :string(255)
 #  area            :string(255)
-#  ssn             :string(255)
+#  tax_code        :string(255)
 #  contract_number :string(255)
-#  square_meters   :integer(10)
-#  category        :integer(10)
+#  square_meters   :integer
+#  category        :integer
 #  taxable_address :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
