@@ -6,13 +6,12 @@
   = f.simple_fields_for :deliveries do |deliveries_f|
     .block
       .column.span-12
-        = deliveries_f.association :products, :multiple => true, :selected => @products_selected_id, 
+        = deliveries_f.association :products, :multiple => true, :selected => @products_selected, 
                                    :input_html => { :title => "- Select product -" }, :label => false
         = deliveries_f.input :notes
     .block
       .column.span-12
         %label quantity:
-        /= deliveries_f.input :delivery_items_quantity
   .block
     .column.span-24
       = f.submit
