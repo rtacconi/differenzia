@@ -16,7 +16,7 @@ class CustomersController < InheritedResources::Base
 	  @delivery = @customer.deliveries.build
 	  @products = Product.all
 	  @products_selected = []
-	  Settings.default_delivery.products.each{|pr| @products_selected << pr.id_value}
+	  Settings.default_delivery.products.each{|product| @products_selected << product.id_value}
 	  show!
 	end
 	
