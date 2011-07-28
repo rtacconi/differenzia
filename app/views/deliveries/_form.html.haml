@@ -9,9 +9,10 @@
         = deliveries_f.association :products, :multiple => true, :selected => @products_selected, 
                                    :input_html => { :title => "- Select product -" }, :label => false
         = deliveries_f.input :notes
-    .block
-      .column.span-12
-        %label quantity:
+        = deliveries_f.simple_fields_for :delivery_items do |d_items_f|
+          .block
+            .column.span-12
+              %label quantity:
   .block
     .column.span-24
       = f.submit

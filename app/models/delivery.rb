@@ -2,6 +2,7 @@ class Delivery < ActiveRecord::Base
   has_many :delivery_items
   has_many :products, :through => :delivery_items
   belongs_to :customer
+  accepts_nested_attributes_for :delivery_items
 end
 
 
