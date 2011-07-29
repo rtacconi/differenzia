@@ -19,7 +19,7 @@ class CustomersController < InheritedResources::Base
 	  Settings.default_delivery.products.each{|product| @products_selected << product.id_value}
 	  show!
 	end
-	
+
 protected
   def collection
   	@customers ||= end_of_association_chain.page(params[:page])
