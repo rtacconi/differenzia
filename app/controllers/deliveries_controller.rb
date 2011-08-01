@@ -1,4 +1,5 @@
-class DeliveriesController < ApplicationController
+class DeliveriesController < InheritedResources::Base
+=begin 
   def index
     @customer = Customer.find(params[:customer_id])
     @deliveries = Delivery.where("customer_id = ?", params[:customer_id])
@@ -17,5 +18,5 @@ class DeliveriesController < ApplicationController
     
     redirect_to customer_deliveries_url(params[:delivery][:customer_id])
   end
-
+=end
 end

@@ -2,17 +2,8 @@
   Delivery of: 
   = l Date.today
 
-= simple_form_for @customer do |f|
-  = f.simple_fields_for :deliveries do |deliveries_f|
-    .block
-      .column.span-12
-        = deliveries_f.association :products, :multiple => true, :selected => @products_selected, 
-                                   :input_html => { :title => "- Select product -" }, :label => false
-        = deliveries_f.input :notes
-        = deliveries_f.simple_fields_for :delivery_items do |d_items_f|
-          .block
-            .column.span-12
-              %label quantity:
-  .block
-    .column.span-24
-      = f.submit
+= simple_form_for @delivery do |f|
+  = f.simple_fields_for :delivery_items do |items_f|
+    = items_f.input :product
+    = items_f.input :quantity
+  = f.submit
