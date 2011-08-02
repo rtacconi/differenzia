@@ -100,18 +100,23 @@ label {
 }
 
 /* line 18, ../../../app/stylesheets/partials/_forms.scss */
+.simple_form input[type='number'] {
+  width: 100px;
+}
+
+/* line 22, ../../../app/stylesheets/partials/_forms.scss */
 .simple_form div.boolean label, .simple_form label.collection_radio {
   float: none;
   margin: 0;
 }
 
-/* line 23, ../../../app/stylesheets/partials/_forms.scss */
+/* line 27, ../../../app/stylesheets/partials/_forms.scss */
 .simple_form label.collection_radio {
   margin-right: 10px;
   margin-left: 2px;
 }
 
-/* line 28, ../../../app/stylesheets/partials/_forms.scss */
+/* line 32, ../../../app/stylesheets/partials/_forms.scss */
 .simple_form .error {
   clear: left;
   margin-left: 120px;
@@ -120,7 +125,7 @@ label {
   display: block;
 }
 
-/* line 36, ../../../app/stylesheets/partials/_forms.scss */
+/* line 40, ../../../app/stylesheets/partials/_forms.scss */
 .simple_form .hint {
   clear: left;
   margin-left: 120px;
