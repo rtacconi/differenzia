@@ -4,8 +4,14 @@
 
 = simple_form_for @customer do |f|
   = f.simple_fields_for :deliveries do |delivery_f|
-    = delivery_f.simple_fields_for :delivery_items do |item_f|
-      = item_f.association :product
-      = item_f.input :quantity
+    %table{:style => "border-style: solid; border-width: 1px;"}
+      %th products
+      %th quantity
+      = delivery_f.simple_fields_for :delivery_items do |item_f|
+        %tr{:style => "border-style: solid; border-width: 1px;"}
+          %td{:style => "border-style: solid; border-width: 1px;"}
+            = item_f.association :product, :label => false
+          %td{:style => "border-style: solid; border-width: 1px;"}
+            = item_f.input :quantity, :label => false
     = delivery_f.input :notes
   = f.submit
