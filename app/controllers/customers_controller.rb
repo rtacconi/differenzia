@@ -13,8 +13,8 @@ class CustomersController < InheritedResources::Base
 	
 	def show
 	  @customer = Customer.find(params[:id])
-	  #@delivery = @customer.deliveries.build
-	  @delivery = Delivery.new
+	  @delivery = @customer.deliveries.build
+	  #@delivery = Delivery.new
 	  Settings.default_delivery.products.size.times { @delivery.delivery_items.build }
 	  #@products = Product.all
 	  #@products_selected = []
