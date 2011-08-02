@@ -3,12 +3,15 @@
 @import "partials/menu";
 @import "partials/navigation";
 
+
+// form for customer_deliveries
+
 .simple_form.customer textarea {
   height: 120px;
-  width: 90%;
+  width: 300px;
 }
 
-.simple_form.customer label {
-  text-align: left;
-  margin-left: 0px;
-}
+//.simple_form.customer label {
+//  text-align: left;
+//  margin-left: 0px;
+//}

@@ -7,4 +7,5 @@
     = delivery_f.simple_fields_for :delivery_items do |item_f|
       = item_f.association :product
       = item_f.input :quantity
+    = delivery_f.input :notes
   = f.submit

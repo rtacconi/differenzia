@@ -237,14 +237,8 @@ ul.menu {
   font-weight: bold;
 }
 
-/* line 6, ../../../app/stylesheets/app.scss */
+/* line 9, ../../../app/stylesheets/app.scss */
 .simple_form.customer textarea {
   height: 120px;
-  width: 90%;
-}
-
-/* line 11, ../../../app/stylesheets/app.scss */
-.simple_form.customer label {
-  text-align: left;
-  margin-left: 0px;
+  width: 300px;
 }
