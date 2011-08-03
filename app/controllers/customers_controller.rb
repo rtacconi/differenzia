@@ -15,7 +15,7 @@ class CustomersController < InheritedResources::Base
 	  @customer = Customer.find(params[:id])
 	  @delivery = @customer.deliveries.build
 	  Settings.default_delivery.products.each { |product| @delivery.delivery_items.build(
-	                                                      :product => Product.find(product.id_value),
+	                                                      :product => Product.find_by_name(product.name),
 	                                                      :quantity => product.quantity) }
 	  #@products = Product.all
 	  #@products_selected = []
