@@ -6,12 +6,12 @@
 
 // form for customer_deliveries
 
+.simple_form.customer label {
+  text-align: left;
+  margin-left: 0px;
+  width: 100%;
+}
 .simple_form.customer textarea {
   height: 120px;
   width: 300px;
 }
-
-//.simple_form.customer label {
-//  text-align: left;
-//  margin-left: 0px;
-//}

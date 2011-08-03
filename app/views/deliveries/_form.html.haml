@@ -13,5 +13,7 @@
             = item_f.association :product, :label => false, :include_blank => false
           %td{:style => "border-style: solid; border-width: 1px;"}
             = item_f.input :quantity, :label => false
+    /= delivery_f.label :notes
+    /%br
     = delivery_f.input :notes
   = f.submit
