@@ -16,7 +16,7 @@ gem 'rails_config'
 gem 'simple-navigation'
 gem 'mongrel'
 gem 'kaminari'
-gem 'nested_form'
+gem 'nested_form', :git => 'git://github.com/ryanb/nested_form.git'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

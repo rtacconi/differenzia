@@ -16,7 +16,7 @@ jQuery(function($) {
       var parent_names = context.match(/[a-z_]+_attributes/g) || [];
       var parent_ids   = context.match(/(new_)?[0-9]+/g) || [];
 
-      for(i = 0; i < parent_names.length; i++) {
+      for(var i = 0; i < parent_names.length; i++) {
         if(parent_ids[i]) {
           content = content.replace(
             new RegExp('(_' + parent_names[i] + ')_.+?_', 'g'),
@@ -34,8 +34,8 @@ jQuery(function($) {
     var new_id  = new Date().getTime();
     content     = content.replace(regexp, "new_" + new_id);
 
-    $(this).before(content);
-    $(this).closest("form").trigger('nested:fieldAdded');
+    var field = $(content).insertBefore(this);
+    $(this).closest("form").trigger({type: 'nested:fieldAdded', field: field});
     return false;
   });
 
