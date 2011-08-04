@@ -7,3 +7,4 @@ $(function() {
     loading_css: '#spinner'
   });
 })
+

@@ -1,4 +1,4 @@
-$(function() {
+/*$(function() {
   $('input[name=select_delivery_type]:radio').change(function(){
 	if ($("input[@name='select_delivery_type']:checked").val() == 'default_delivery') {
 	  $('#product_selection').fadeOut(2000);
@@ -12,4 +12,9 @@ $(function() {
   $("select[multiple]").asmSelect({
 	  hideWhenAdded: true
   });
-})
+})*/
+
+function remove_fields(link) {  
+    $(link).prev("input[type=hidden]").val("1");  
+    $(link).closest(".fields").hide();  
+}
