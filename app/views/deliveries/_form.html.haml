@@ -8,7 +8,7 @@
       %th products
       %th quantity
       = delivery_f.simple_fields_for :delivery_items do |item_f|
-        %tr
+        %tr{:class => "fields"}
           %td{:class => "delivery_tbl"}
             = item_f.association :product, :label => false
           %td{:class => "delivery_tbl"}
