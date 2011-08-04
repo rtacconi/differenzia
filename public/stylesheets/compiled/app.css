@@ -249,3 +249,9 @@ ul.menu {
   height: 120px;
   width: 300px;
 }
+
+/* line 19, ../../../app/stylesheets/app.scss */
+.simple_form.customer td.delivery_tbl {
+  border-style: solid;
+  border-width: 1px;
+}
