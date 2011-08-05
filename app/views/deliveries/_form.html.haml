@@ -15,6 +15,6 @@
             = item_f.input :quantity, :label => false
           %td{:class => "delivery_tbl"}
             = item_f.hidden_field :_destroy
-            = link_to_function "remove", "remove_fields(this)"
+            = link_to_remove_fields "remove", item_f
     = delivery_f.input :notes
   = f.submit
