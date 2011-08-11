@@ -1,0 +1,8 @@
+%tr{:class => "fields"}
+  %td{:class => "delivery_tbl"}
+    = f.association :product, :label => false
+  %td{:class => "delivery_tbl"}
+    = f.input :quantity, :label => false
+  %td{:class => "delivery_tbl"}
+    = f.hidden_field :_destroy
+    = link_to_remove_fields "remove", f
