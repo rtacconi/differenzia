@@ -8,14 +8,7 @@
       %th products
       %th quantity
       = delivery_f.simple_fields_for :delivery_items do |item_f|
-        %tr{:class => "fields"}
-          %td{:class => "delivery_tbl"}
-            = item_f.association :product, :label => false
-          %td{:class => "delivery_tbl"}
-            = item_f.input :quantity, :label => false
-          %td{:class => "delivery_tbl"}
-            = item_f.hidden_field :_destroy
-            = link_to_remove_fields "remove", item_f
+        = render 'deliveries/delivery_items', :f => item_f
     = link_to_add_fields "Add", delivery_f, :delivery_items
     = delivery_f.input :notes
   = f.submit
