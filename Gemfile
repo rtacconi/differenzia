@@ -77,12 +77,12 @@ group :test do
 #  gem 'autotest-notification'
   gem 'database_cleaner'
   gem 'spork', '~> 0.9.0.rc'
-  gem 'machinist', '~> 2.0.0.beta'
+  gem 'machinist', '>= 2.0.0.beta'
   gem 'faker'
 end
 
 group :development do
   gem 'hpricot'
   gem 'ruby_parser'
-  gem 'warbler', '1.3.1' if defined?(JRUBY_VERSION)
+  gem 'warbler' if defined?(JRUBY_VERSION)
 end
