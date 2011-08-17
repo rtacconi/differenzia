@@ -1,0 +1,14 @@
+%p
+  Delivery of: 
+  = l Date.today
+
+= simple_form_for @customer do |f|
+  = f.simple_fields_for :deliveries do |delivery_f|
+    %table{:class => "delivery_tbl"}
+      %th products
+      %th quantity
+      = delivery_f.simple_fields_for :delivery_items do |item_f|
+        = render 'deliveries/delivery_items', :f => item_f
+    = link_to_add_fields "Add", delivery_f, :delivery_items
+    = delivery_f.input :notes
+  = f.submit

@@ -1,0 +1,11 @@
+.project
+.bundle
+db/*.sqlite3
+log/*
+tmp/*
+*.swp
+Gemfile.lock
+config/database.yml
+.sass-cache/
+.DS_Store
+TODO-Mauro
