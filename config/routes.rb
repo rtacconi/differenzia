@@ -28,6 +28,8 @@ Differenzia::Application.routes.draw do
   
   resources :products
   
+  match 'render_select' => 'products#render_select'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
