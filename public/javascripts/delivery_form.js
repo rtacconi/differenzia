@@ -45,6 +45,22 @@ $(document).ready(function(){
   $("#save_item").click(function(event){
     alert('product saved');
   });
+  
+  // test
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:3000/render_select.json",    
+    dataType: "json",
+    success: function(data){
+      option = '<select>';
+      for( var i=0; i<data.length; i++ ){
+        option += '<option value="'+data[i].product.id + '">'+data[i].product.name+'</option>';
+      }
+      option += '</select>';
+      alert(option);
+    }
+  });
+  
 });
 
 $('#remove_1').click(function(event){
