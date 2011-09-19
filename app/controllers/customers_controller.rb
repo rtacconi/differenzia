@@ -4,9 +4,9 @@ class CustomersController < InheritedResources::Base
   def search_full_name
 	  unless params[:customer_full_name].blank?
       full_name = params[:customer_full_name]
-      @customers = Customer.search_full_name(full_name).page(params[:page]).per(Settings.customer_per_page)
+      @customers = Customer.search_full_name(full_name).page(params[:page]).per(AppConfig['.customer_per_page'])
     else
-      @customers = Customer.all.page(params[:page]).per(Settings.customer_per_page)
+      @customers = Customer.all.page(params[:page]).per(AppConfig['.customer_per_page'])
     end
     render :layout => false if request.xhr?	  
 	end
