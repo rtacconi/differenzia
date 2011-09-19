@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Differenzia::Application.config.secret_token = 'd76b62bd1a573d6a482cefd2c61c2a335d78da46e797a4ab0b875d5323527dc4b2eaa6002fc291a808a1b2203de9953af17c03425a2ce76ef88a8b23516ab681'
+Differenzia::Application.config.secret_token = 'ddcab4fa2ab55640435e8730d98bfabad47295d016573f909f7cec00dc918283a6f814489b4ab4a281801ea04073bb239ab7db2a56c5eb631a97d01d53d7f43a'
