@@ -1,18 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-gem 'compass'
 gem 'annotate'
 gem 'normalize_attributes'
 gem 'haml-rails'
-gem 'jquery-rails'
 gem 'devise'
 gem 'meta_where'
 gem 'simple_form'
 #gem 'fastercsv'
 gem 'inherited_resources'
-gem 'inherited_resources_views'
-gem 'rails_config'
+gem 'app_config'
 gem 'simple-navigation'
 gem 'mongrel'
 gem 'kaminari'
@@ -28,18 +25,24 @@ platforms :ruby do
 end
 
 platforms :jruby do
-  gem 'activerecord-jdbc-adapter'
-
-  # As rails --database switch does not support derby, hsqldb, h2 nor mssql
-  # as valid values, if you are not using SQLite, comment out the SQLite gem
-  # below and uncomment the gem declaration for the adapter you are using.
-  # If you are using oracle, db2, sybase, informix or prefer to use the plain
-  # JDBC adapter, comment out all the adapter gems below.
 
   # Postgres JDBC adapter
   gem 'activerecord-jdbcpostgresql-adapter'
   gem 'jruby-openssl'
+  group :assets do
+    gem 'therubyrhino'
+  end
 end
+
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'compass', :git => 'https://github.com/chriseppstein/compass.git', :branch => 'rails31'
+end
+
+gem 'jquery-rails'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -69,20 +72,22 @@ end
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :test do
+  # Pretty printed test output
+  gem 'turn', :require => false
   gem 'rspec-rails'
-  gem 'cucumber-rails'
+#  gem 'cucumber-rails'
   gem 'capybara'
   gem 'launchy'
 #  gem 'autotest-rails'
 #  gem 'autotest-notification'
   gem 'database_cleaner'
-  gem 'spork', '~> 0.9.0.rc'
+#  gem 'spork', '~> 0.9.0.rc'
   gem 'machinist', '>= 2.0.0.beta'
   gem 'faker'
 end
 
 group :development do
-  gem 'hpricot'
-  gem 'ruby_parser'
+#  gem 'hpricot'
+#  gem 'ruby_parser'
   gem 'warbler' if defined?(JRUBY_VERSION)
 end
