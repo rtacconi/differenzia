@@ -7,7 +7,7 @@ it:
       already_confirmed: "è stato già confermato"
       not_locked: "non era bloccato"
 
-  devise:  	
+  devise:
     failure:
       unauthenticated: "Devi accedere o registrarti per continuare."
       unconfirmed: "Devi confermare il tuo account per continuare."

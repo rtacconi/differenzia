@@ -1,11 +1,22 @@
-# Italian translations for Ruby on Rails
-#
-# Contributors:
-# - Claudio Poli (masterkain@gmail.com)
-# - Simone Carletti (weppos@weppos.net)
-# - Davide Guerri (d.guerri@caspur.it)
-
 it:
+  general:
+    are_you_sure: "Sei sicuro?" 
+    new: "Nuovo" 
+    back: "Indietro"
+    show: "Mostra"
+    edit: "Modifica"
+    destroy: "Elimina"
+    it should be at least 6 characters: "deve essere almeno di 6 caratteri"
+    it has to be the same as the password: "it has to be the same as the password"
+    Found: "Trovati"
+    
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} è stato creato con successo."
+      update:
+        notice: "%{resource_name} è stato modificato con successo."
+
   number:
     format:
       delimiter: ""
@@ -13,7 +24,7 @@ it:
       significant: false
       strip_insignificant_zeros: false
       separator: "."
-
+      
     currency:
       format:
         format: "%n %u"
@@ -23,21 +34,21 @@ it:
         precision: 2
         significant: false
         strip_insignificant_zeros: false
-
+        
     percentage:
       format:
         delimiter: ""
-        # precision:
-
+        # precision: 
+        
     precision:
       format:
         # separator:
         delimiter: ""
         # precision:
-
+        
     human:
       format:
-        # separator:
+        # separator: 
         delimiter: ""
         precision: 1
         significant: true
@@ -58,9 +69,9 @@ it:
           unit: ""
           thousand: "Mila"
           million: "Milioni"
-          billion: "Miliardi"
-          trillion: "Bilioni"
-          quadrillion: "Biliardi"
+          billion: "Bilioni"
+          trillion: "Trilioni"
+          quadrillion: "Quadrilioni"
 
   date:
     formats:
@@ -68,64 +79,22 @@ it:
       short: "%d %b"
       long: "%d %B %Y"
 
-    day_names:
-      - Domenica
-      - Lunedì
-      - Martedì
-      - Mercoledì
-      - Giovedì
-      - Venerdì
-      - Sabato
-    abbr_day_names:
-      - Dom
-      - Lun
-      - Mar
-      - Mer
-      - Gio
-      - Ven
-      - Sab
+    day_names: [Domenica, Lunedì, Martedì, Mercoledì, Giovedì, Venerdì, Sabato]
+    abbr_day_names: [Dom, Lun, Mar, Mer, Gio, Ven, Sab]
 
-    month_names:
-      - ~
-      - Gennaio
-      - Febbraio
-      - Marzo
-      - Aprile
-      - Maggio
-      - Giugno
-      - Luglio
-      - Agosto
-      - Settembre
-      - Ottobre
-      - Novembre
-      - Dicembre
-    abbr_month_names:
-      - ~
-      - Gen
-      - Feb
-      - Mar
-      - Apr
-      - Mag
-      - Giu
-      - Lug
-      - Ago
-      - Set
-      - Ott
-      - Nov
-      - Dic
-    order:
-      - :day
-      - :month
-      - :year
-
+    month_names: [~, Gennaio, Febbraio, Marzo, Aprile, Maggio, Giugno, Luglio, Agosto, Settembre, Ottobre, Novembre, Dicembre]
+    abbr_month_names: [~, Gen, Feb, Mar, Apr, Mag, Giu, Lug, Ago, Set, Ott, Nov, Dic]
+    order: [ :day, :month, :year ]
+  
   time:
     formats:
       default: "%a %d %b %Y, %H:%M:%S %z"
       short: "%d %b %H:%M"
       long: "%d %B %Y %H:%M"
+          
     am: 'am'
     pm: 'pm'
-
+      
   datetime:
     distance_in_words:
       half_a_minute: "mezzo minuto"
@@ -174,8 +143,8 @@ it:
     array:
       words_connector: ", "
       two_words_connector: " e "
-      last_word_connector: " e "
-
+      last_word_connector: ", e "
+      
     select:
       prompt: "Per favore, seleziona"
 
@@ -199,13 +168,13 @@ it:
         accepted: "deve essere accettata"
         empty: "non può essere vuoto"
         blank: "non può essere lasciato in bianco"
-        too_long:
+        too_long: 
           one: "è troppo lungo (il massimo è 1 carattere)"
           other: "è troppo lungo (il massimo è %{count} caratteri)"
-        too_short:
+        too_short: 
           one:  "è troppo corto (il minimo è 1 carattere)"
           other:  "è troppo corto (il minimo è %{count} caratteri)"
-        wrong_length:
+        wrong_length: 
           one: "è della lunghezza sbagliata (deve essere di 1 carattere)"
           other: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
         not_a_number: "non è un numero"
@@ -217,11 +186,11 @@ it:
         less_than_or_equal_to: "deve essere meno o uguale a %{count}"
         odd: "deve essere dispari"
         even: "deve essere pari"
-
+      
   activerecord:
     errors:
       template:
-        header:
+        header: 
           one: "Non posso salvare questo %{model}: 1 errore"
           other: "Non posso salvare questo %{model}: %{count} errori."
         body: "Per favore ricontrolla i seguenti campi:"
@@ -232,12 +201,11 @@ it:
         <<: *errors_messages
 
       full_messages:
-        format: "%{attribute} %{message}"
+        format: "%{attribute}%{message}"
 
     models:
       user: "Operatore"
       customer: "cliente"
-
     attributes:
       user:
         first_name: "Nome"
@@ -254,7 +222,7 @@ it:
       truncate: "&hellip;"
       first: "Primo"
       last: "Ultimo"
-      
+
 # differenzia
   users:
     role: "role"
