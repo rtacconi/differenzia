@@ -3,16 +3,18 @@
   %head
     %title= (yield(:title).blank? ? "Differenzia" : "Differenzia - #{yield(:title)}")
     %meta{:name => "description", :content => "host-tastic support system"}
-    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'compiled/print.css', :media => 'print'
-    = stylesheet_link_tag 'compiled/app', :media => 'screen, projection'
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    /////= stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
+    /////= stylesheet_link_tag 'compiled/print.css', :media => 'print'
+    /////= stylesheet_link_tag 'compiled/app', :media => 'screen, projection'
     /[if lt IE 8]
-      = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'jquery.asmselect'
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"
-    = javascript_include_tag 'rails', 'application', 'searchbox', 'jquery.asmselect'
-    = csrf_meta_tag
+      /////= stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+    /////= stylesheet_link_tag 'jquery.asmselect'
+    /////= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    /////= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"
+    /////= javascript_include_tag 'rails', 'application', 'searchbox', 'jquery.asmselect'
+    = csrf_meta_tags
   %body
     #header
       %h1 Differenzia
