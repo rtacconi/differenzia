@@ -1,0 +1,18 @@
+@import "blueprint/reset";
+@import '_blueprint';
+@import "blueprint/fancy-type";
+@import 'blueprint/liquid';
+@include blueprint;
+@include blueprint-liquid-grid;
+
+body {
+  @include blueprint-typography(true);
+  @include blueprint-utilities;
+  @include blueprint-debug;
+  @include blueprint-interaction;
+  @include fancy-type;
+}
+
+form {
+  @include blueprint-form;
+}
