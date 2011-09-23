@@ -6,7 +6,7 @@ class Customer < ActiveRecord::Base
   accepts_nested_attributes_for :deliveries
   
   def self.search_full_name(full_name)
-    # http://metautonomo.us/projects/metawhere/
+    # http://erniemiller.org/projects/squeel/
     where(:full_name.matches => "%#{full_name}%")
   end
   
