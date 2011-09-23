@@ -8,9 +8,9 @@ gem 'devise'
 gem 'squeel'
 gem 'simple_form'
 gem 'inherited_resources'
-gem 'app_config'
+gem 'rails_config'
 gem 'simple-navigation'
-gem 'mongrel'
+#gem 'mongrel'
 gem 'kaminari'
 
 # Bundle edge Rails instead:

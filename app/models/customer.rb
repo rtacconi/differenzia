@@ -11,7 +11,7 @@ class Customer < ActiveRecord::Base
   end
   
   def valid_square_meters
-    (AppConfig['valid_square_meters'] >= square_meters) ? true : false
+    (Settings.valid_square_meters >= square_meters) ? true : false
   end
 end
 

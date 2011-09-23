@@ -9,3 +9,7 @@ config/database.yml
 .sass-cache/
 .DS_Store
 TODO-Mauro
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

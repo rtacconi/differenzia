@@ -4,9 +4,9 @@ class CustomersController < InheritedResources::Base
   def search_full_name
 	  unless params[:customer_full_name].blank?
       full_name = params[:customer_full_name]
-      @customers = Customer.search_full_name(full_name).page(params[:page]).per(AppConfig['customers_per_page'])
+      @customers = Customer.search_full_name(full_name).page(params[:page]).per(Settings.customers_per_page)
     else
-      @customers = Customer.all.page(params[:page]).per(AppConfig['customers_per_page'])
+      @customers = Customer.all.page(params[:page]).per(Settings.customers_per_page)
     end
     render :layout => false if request.xhr?	  
 	end
@@ -14,7 +14,7 @@ class CustomersController < InheritedResources::Base
 	def show
 	  @customer = Customer.find(params[:id])
 	  @delivery = @customer.deliveries.build
-	  AppConfig['default_delivery'].products.each { |product| @delivery.delivery_items.build(
+	  Settings.default_delivery.products.each { |product| @delivery.delivery_items.build(
 	                                                      :product => Product.find_by_name(product.name),
 	                                                      :quantity => product.quantity) }
 	  #@products = Product.all
@@ -25,7 +25,7 @@ class CustomersController < InheritedResources::Base
 
 protected
   def collection
-  	@customers ||= end_of_association_chain.page(params[:page]).per(AppConfig['customers_per_page'])
+  	@customers ||= end_of_association_chain.page(params[:page]).per(Settings.customers_per_page)
   end
 	
 =begin	
