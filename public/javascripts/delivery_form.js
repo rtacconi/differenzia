@@ -49,7 +49,7 @@ $(document).ready(function(){
   // test
   $.ajax({
     type: "GET",
-    url: "http://localhost:3000/render_select.json",    
+    url: "http://localhost:3001/render_select.json",    
     dataType: "json",
     success: function(data){
       option = '<select>';
