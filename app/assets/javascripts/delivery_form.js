@@ -30,7 +30,8 @@ $(document).ready(function(){
   $("#add_item").click(function(event){
     form = '<div id="item_'+counter+'">'
     form += '<select name="delivery_item[product_id]"><option value="1">prod 1</option>';
-    form += '<option value="2">prod 2</option></select>';
+    form += '<option value="2">prod 2</option>';
+    form += '<option value="3">prod 3</option></select>';
     form += ' <input type="text" name="delivery_item[quantity]" value="1" />';
     form += ' <a href="#" id="remove_'+counter+'" data-id="'+counter+'">remove</a>' // save id as the div
     form += '</div>'
