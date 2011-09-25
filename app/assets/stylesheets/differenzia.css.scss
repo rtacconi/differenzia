@@ -44,3 +44,20 @@ label { font-weight: bold; }
 .pagination {
   text-align: center;
 }
+
+// form for customer_deliveries
+
+.simple_form.customer label {
+  text-align: left;
+  margin-left: 0px;
+  width: 100%;
+}
+.simple_form.customer textarea {
+  height: 120px;
+  width: 300px;
+}
+
+.simple_form.customer table.delivery_tbl, td.delivery_tbl {
+  border-style: solid; 
+  border-width: 1px;
+}

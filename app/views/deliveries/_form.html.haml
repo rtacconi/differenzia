@@ -1,25 +1,14 @@
-%h2 
-  New delivery
-  = l Date.today
 %p
-  %a{:src => '#', :id => 'add_item'} Add item
+  Delivery of: 
+  = l Date.today
 
-#new_delivery
-  
-%input{:type => :hidden, :name => "delivery[customer_id]"}
-%label Notes
-%textarea{:name => "delivery[notes]"}
-%p= submit_tag 'Save', :id => 'save_item'
-
-%hr
-%h2 Previous deliveries
-%table
-  %tr
-    %th id
-    %th created_at
-  - @customer.deliveries.each do |delivery|
-    %tr
-      %td= delivery.id
-      %td= delivery.created_at
-      
-
+= simple_form_for @customer do |f|
+  = f.simple_fields_for :deliveries do |delivery_f|
+    %table{:class => "delivery_tbl"}
+      %th products
+      %th quantity
+      = delivery_f.simple_fields_for :delivery_items do |item_f|
+        = render 'deliveries/delivery_items', :f => item_f
+    = link_to_add_fields "Add", delivery_f, :delivery_items
+    = delivery_f.input :notes
+  = f.submit

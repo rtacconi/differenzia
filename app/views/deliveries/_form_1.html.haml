@@ -1,0 +1,25 @@
+%h2 
+  New delivery
+  = l Date.today
+%p
+  %a{:src => '#', :id => 'add_item'} Add item
+
+#new_delivery
+  
+%input{:type => :hidden, :name => "delivery[customer_id]"}
+%label Notes
+%textarea{:name => "delivery[notes]"}
+%p= submit_tag 'Save', :id => 'save_item'
+
+%hr
+%h2 Previous deliveries
+%table
+  %tr
+    %th id
+    %th created_at
+  - @customer.deliveries.each do |delivery|
+    %tr
+      %td= delivery.id
+      %td= delivery.created_at
+      
+
